@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS ARRAYS</title>
+</head>
+
+<style>
+
+    body{
+        font-family: sans-serif;
+        background-color: rgb(26, 17, 66);
+        color: cornsilk;
+        padding-left: 40px;
+    }
+
+    pre{
+        background-color:rgb(215, 230, 250);
+        color:rgba(0, 0, 0, 0.521);
+        display: none;
+        padding-right: 40px;
+        margin-left: 40px;
+    }
+
+    p{
+        user-select: none; 
+        padding-left: 20px; 
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .display{
+        display: inline-block;
+    }
+
+</style>
+<script>
+    function toggle(){
+        document.querySelector("#pre").classList.toggle("display");
+        document.querySelector("#pre2").classList.toggle("display");
+    }
+    
+    function toggle2(){
+        document.querySelector("#pre3").classList.toggle("display");
+        document.querySelector("#pre4").classList.toggle("display");
+    }
+    
+    function toggle3(){
+        document.querySelector("#pre5").classList.toggle("display");
+        document.querySelector("#pre6").classList.toggle("display");
+    }
+    
+       
+    function toggle4(){
+        document.querySelector("#pre7").classList.toggle("display");
+    }
+
+    function toggle5(){
+        document.querySelector("#pre8").classList.toggle("display");
+    }
+
+    function toggle6(){
+        document.querySelector("#pre9").classList.toggle("display");
+    }
+
+    function toggle7(){
+        document.querySelector("#pre10").classList.toggle("display");
+    }
+
+    function toggle8(){
+        document.querySelector("#pre11").classList.toggle("display");
+        document.querySelector("#pre11a").classList.toggle("display");
+    }
+
+    function toggle9(){
+        document.querySelector("#pre12").classList.toggle("display");
+    }
+
+    function toggle11(){
+        document.querySelector("#pre14").classList.toggle("display");
+        document.querySelector("#pre14a").classList.toggle("display");
+    }
+
+        function toggle12(){
+        document.querySelector("#pre15").classList.toggle("display");
+        document.querySelector("#pre15a").classList.toggle("display");
+    }
+    
+    function toggle13(){
+        document.querySelector("#pre16").classList.toggle("display");
+        document.querySelector("#pre16a").classList.toggle("display");
+    }
+
+    function toggle14(){
+        document.querySelector("#pre17").classList.toggle("display");
+        document.querySelector("#pre17a").classList.toggle("display");
+    }
+
+    function toggle15(){
+        document.querySelector("#pre18").classList.toggle("display");
+        document.querySelector("#pre18a").classList.toggle("display");
+    }
+
+    function toggle16(){
+        document.querySelector("#pre19").classList.toggle("display");
+        document.querySelector("#pre19a").classList.toggle("display");
+    }
+
+    function toggle17(){
+        document.querySelector("#pre20").classList.toggle("display");
+        document.querySelector("#pre20a").classList.toggle("display");
+    }
+     
+    function toggle18(){
+        document.querySelector("#pre21").classList.toggle("display");
+        document.querySelector("#pre21a").classList.toggle("display");
+    }
+
+    function toggle19(){
+        document.querySelector("#pre22").classList.toggle("display");
+        document.querySelector("#pre22a").classList.toggle("display");
+    }
+
+    function toggle20(){
+        document.querySelector("#pre23").classList.toggle("display");
+        document.querySelector("#pre23a").classList.toggle("display");
+    }
+
+    function toggle21(){
+        document.querySelector("#pre24").classList.toggle("display");
+        document.querySelector("#pre24a").classList.toggle("display");
+    }
+
+    function toggle22(){
+        document.querySelector("#pre25").classList.toggle("display");
+        document.querySelector("#pre25a").classList.toggle("display");
+    }
+
+    function toggle23(){
+        document.querySelector("#pre26").classList.toggle("display");
+        document.querySelector("#pre26a").classList.toggle("display");
+    }
+
+    function toggle24(){
+        document.querySelector("#pre27").classList.toggle("display");
+        document.querySelector("#pre27a").classList.toggle("display");
+    }
+
+    function toggle25(){
+        document.querySelector("#pre28").classList.toggle("display");
+        document.querySelector("#pre28a").classList.toggle("display");
+    }
+
+    function toggle26(){
+        document.querySelector("#pre29").classList.toggle("display");
+    }
+
+  
+
+
+</script>
+<body>
+
+    <h1>Arrays</h1>
+
+    <div>  <!-- Adds and/or removes elements from an array -->
+    <p onclick="toggle()">Adds and/or removes elements from an array</p>
+
+        <pre id="pre">
+
+            let arr = [5, 1, 8]
+            arr.splice(2, 0, 'tacos')
+            console.log(arr)
+
+            Output
+            [5, 1, 'tacos', 8]
+        </pre>
+        <pre id="pre2">
+          
+            let vec=[0,7,2,3,4,2,6,8,2]
+
+            for(i = 0; i < vec.length; i++){  
+                if (vec[i]==2){   //if a item == 2 
+                    vec.splice(i,1,'huhu') //replace with a string
+                }
+                console.log(vec[i])
+            }
+
+            Output
+            0 7 huhu 3 4 huhu 6 8 huhu
+        </pre>
+    </div>  
+    <div>  <!-- Adds one or more elements to the end of an array -->
+        <p onclick="toggle2()">Adds one or more elements to the end of an array</p>
+
+        <pre id="pre3">
+
+            let arr = [5, 1, 8];
+            arr.push(2);
+            console.log(arr);
+
+            Output
+            [5, 1, 8, 2]
+        </pre>
+        <pre id="pre4">
+          
+            The reverse method called pop extracts the last element of the Array 
+            and decrements the length attribute by one
+
+            let arr = [5, 1, 8];
+            arr.pop();
+            console.log(arr);
+
+            Output
+            [5, 1]
+         </pre>    
+    </div>  
+    <div>  <!-- Adds one or more elements to the front of an array -->
+        <p onclick="toggle3()">Adds one or more elements to the FRONT of an array</p>
+
+        <pre id="pre5">
+
+            let arr = [5, 1, 8];
+            arr.unshift(2, 7);
+            console.log(arr);
+            
+            Output
+            [2, 7, 5, 1, 8]
+        </pre>
+        <pre id="pre6">
+
+            The shift method extracts the first element of the vector 
+            and shifts the rest of the vector elements forward.
+            
+            let arr = [5, 1, 8];
+            arr.shift();
+            console.log(arr);
+
+            Output
+            [1, 8]
+         </pre>    
+    </div> 
+    <div>  <!-- Returns a new array comprised of this array joined with other array(s) and/or value(s) -->
+        <p onclick="toggle4()">New array comprised of this array joined with other array(s) and/or value(s)</p>
+
+        <pre id="pre7">
+
+            let arr = [5, 1, 8];
+            let arr2 = ['a', 'b', 'c'];
+            let arr3 = arr.concat(arr2);
+            console.log(arr3);
+            
+            Output
+            [5, 1, 8, 'a', 'b', 'c']
+        </pre>
+       
+    </div>  
+
+    <br/>
+
+    <div> <!--removes elements from an array. -->
+       <p onclick="toggle5()">removes elements from an array.</p>
+       <pre id="pre8">
+
+           let arr = [5, 1, 8];
+           arr.splice(2, 1);
+           console.log(arr);
+        
+           Output
+           [5, 1] 
+       </pre>
+    </div>
+    <div> <!-- Removes the last element from an array and returns that element. -->
+        <p onclick="toggle6()">Removes the last element from an array and returns that element.</p>
+        <pre id="pre9">
+ 
+            let arr = [5, 1, 8];
+            arr.pop();
+            console.log(arr);
+
+            Output
+            [5,1]
+        </pre>
+    </div> 
+    <div> <!-- Removes the first element from an array and returns that element. -->
+        <p onclick="toggle7()">Removes the first element from an array and returns that element.</p>
+        <pre id="pre10">
+ 
+            let arr = [5, 1, 8];
+            let shiftValue = arr.shift();
+            console.log(arr); // [1,8]
+            console.log(wer); // 5 
+            
+            Output
+            [1, 8]
+        </pre>
+    </div>  
+    <div> <!-- one or more elements in order for use -->
+        <p onclick="toggle8()">one or more elements in order for use</p>
+        <pre id="pre11">
+ 
+            let arr = [5, 1, 8];
+            let slicedArr = arr.slice(1);
+            console.log(arr);
+            console.log(slicedArr);
+            
+            Output
+            [5, 1, 8]
+            [1, 8]
+        </pre>
+        <pre id="pre11a">
+ 
+            The slice() method returns a shallow copy
+            of a portion of an array into a new array object. 
+            You can specify either just the beginning element 
+            (where end will default to the arrays length) 
+            or both the beginning and the end, 
+            comma-separated. The original array will not be modified.
+        </pre>
+    </div>  
+
+    <br>
+
+    <div> <!-- find items. out if a certain element exist-->
+        <p onclick="toggle9()">find items. out if a certain element exist</p>
+        <pre id="pre12">
+ 
+            let arr = [5, 1, 8];
+            let inc = arr.includes(1)
+            console.log(inc)
+
+            Output
+            true
+        </pre>
+    </div> 
+    <div> <!-- find items index -->
+        <p onclick="toggle11()">find items. first or last index </p>
+        <pre id="pre14">
+
+            Returns the first index at which a given element 
+            can be found in the array, or -1 if it is not present.
+
+            let arr = [5, 1, 8, 5];
+            console.log(arr.indexOf(5));
+
+            Output
+            0
+        </pre>
+        <pre id="pre14a">
+
+            Returns the LAST (greatest) index of an element within the array 
+            equal to the specified value, or -1 if none is found.
+ 
+            let arr = [5, 1, 8, 5];
+            console.log(arr.lastIndexOf(5))                     
+
+            Output
+            3
+        </pre>
+    </div>   
+    <div> <!-- the first element that satisfies a condition -->
+        <p onclick="toggle12()">the first element that satisfies a condition</p>
+        <pre id="pre15">
+
+            let arr = [5, 1, 8];
+            let isTiny = (el) => el < 2;
+            console.log(arr.find(isTiny));
+            
+            Output
+            1
+        </pre>
+        <pre id="pre15a">
+
+            Returns the found value in the array, 
+            if an element in the array satisfies 
+            the provided testing function or undefined if not found. 
+            Similar to findIndex(), but it returns the item instead of the index.
+
+            const array = [0,1,,,,5,6];
+
+            array.find(function(value, index) {
+                  console.log('Visited index ' + index + ' with value ' + value);
+            });
+        </pre>
+    </div> 
+    <div> <!-- the first index of an item that satisfies a condition -->
+        <p onclick="toggle13()">the first index of an item that satisfies a condition</p>
+        <pre id="pre16">
+
+            let arr = [5, 1, 8];
+            let isBig = (el) => el > 6;
+            console.log(arr.findIndex(isBig));
+
+            Output
+            2
+        </pre>
+        <pre id="pre16a">
+
+            Returns the index of the first element in the array 
+            that satisfies the provided testing function. 
+            Otherwise -1 is returned. Similar to find()
+            but it returns the index instead of the item.
+        </pre>
+    </div> 
+    <div> <!-- a value by reducing the Array, start to finish -->
+        <p onclick="toggle14()">a value by reducing the Array, start to finish</p>
+        <pre id="pre17">
+
+            let arr = [5, 1, 8];
+            let reducer = (a, b) => a + b;
+            console.log(arr.reduce(reducer));
+            
+            Output
+            14
+        </pre>
+        <pre id="pre17a">
+
+            Apply a function against an accumulator and
+            each value of the array (from left-to-right)
+            as to reduce it to a single value.
+        </pre>
+    </div>   
+    <div> <!-- a value by reducing the Array, finish to start-->
+        <p onclick="toggle15()">a value by reducing the Array, finish to start</p>
+        <pre id="pre18">
+
+            let arr = [5, 1, 8];
+            [arr, [0, 1]].reduceRight((a, b) => {
+            return a.concat(b)
+            }, [])
+
+            Output
+            [0, 1, 5, 1, 8]
+        </pre>
+        <pre id="pre18a">
+
+            Apply a function against an accumulator and 
+            each value of the array (from right-to-left)
+            as to reduce it to a single value.
+        </pre>
+    </div>  
+
+    <br>
+
+    <div> <!--  one or many items values based on a condition i create -->
+        <p onclick="toggle16()">one or many items values based on a condition i create</p>
+        <pre id="pre19">
+
+            let arr = [5, 1, 8];
+            let filtered = arr.filter(el => el > 4);
+            console.log(filtered)
+
+            Output
+            [5, 8]
+        </pre>
+        <pre id="pre19a">
+
+            Creates a new array with all of the elements 
+            of this array for which the provided 
+            filtering function returns true.
+        </pre>
+    </div> 
+    <div> <!-- one or many items whether or not every item satisfies a condition -->
+        <p onclick="toggle17()">one or many items whether or not every item satisfies a condition</p>
+        <pre id="pre20">
+
+            let arr = [5, 1, 8];
+            let isSmall = (el) => el < 10;
+            console.log(arr.every(isSmall));
+            
+            Output
+            true
+        </pre>
+        <pre id="pre20a">
+
+            Returns true if every element in this array
+            satisfies the provided testing function.
+        </pre>
+    </div>   
+    <div> <!-- one or many items whether or not at least one item satisfies a condition -->
+        <p onclick="toggle18()">one or many items whether or not at least one item satisfies a condition</p>
+        <pre id="pre21">
+
+            let arr = [5, 1, 8];
+            let biggerThan4 = (el) => el > 4;
+            console.log(arr.some(biggerThan4));
+
+            Output
+            true
+        </pre>
+        <pre id="pre21a">
+
+            Returns true if at least one element in this array 
+            satisfies the provided testing function.
+        </pre>
+    </div>
+
+    <br>
+
+    <div> <!-- walk over items, execuiting a function i will create for each element -->
+        <p onclick="toggle19()">walk over items, execuiting a function i will create for each element</p>
+        <pre id="pre22">
+
+            let arr = [5, 1, 8];
+            arr.forEach((element) => {
+              console.log(element)
+            });
+            
+            Output
+
+            5
+            1
+            8
+        </pre>
+        <pre id="pre22a">
+
+            The forEach() method executes a provided function once for each array element.
+
+            const array1 = ['a', 'b', 'c'];
+
+            array1.forEach((element, index,  array) => console.log(index, element, array));
+             
+            Output
+
+            > 0 "a" Array ["a", "b", "c"]
+            > 1 "b" Array ["a", "b", "c"]
+            > 2 "c" Array ["a", "b", "c"]
+        </pre>
+    </div> 
+    
+    <div> <!-- walk over items, creating new array from each element with a function i crerate -->
+        <p onclick="toggle20()">walk over items, creating new array from each element with a function i crerate</p>
+        <pre id="pre23">
+
+            let arr = [5, 1, 8];
+            let map = arr.map(x => x + 1);
+            console.log(map);
+
+            Output
+
+            [6, 2, 9]
+        </pre>
+        <pre id="pre23a">
+
+            Creates a new array with the results of calling a 
+            provided function on every element in this array.
+
+            let string = Array.from('hello')
+
+            console.log(string)  
+            console.log(Array.from([1, 2, 3], x => x * 3 ));
+
+            Output
+ 
+            > Array ["h", "e", "l", "l", "o"]
+            > Array [3, 6, 9]
+        </pre>
+    </div> 
+    <div> <!--  creating an iterator object    -->
+        <p onclick="toggle21()">creating an iterator object</p>
+        <pre id="pre24">
+
+            let arr = [5, 1, 8];
+            let iterator = arr.entries();
+            console.log(iterator.next().value);
+            console.log(iterator.next().value);
+
+            Output
+            [0, 5]
+            // the 0 is the index,
+            // the 5 is the first number
+
+            [1, 1]
+        </pre>
+        <pre id="pre24a">
+
+            Returns a new Array Iterator object that contains the key/value 
+            pairs for each index in the array. There are a lot of uses for iterators, 
+            as well as other methods used with it in conjuction, like values and keys
+        </pre>
+    </div>  
+   
+    <br>
+
+    <div> <!-- return a string, join all Elements of the array into a string -->
+        <p onclick="toggle22()">return a string, join all Elements of the array into a string</p>
+        <pre id="pre25">
+
+            let arr = [5, 1, 8];
+            console.log(arr.join(' '));
+
+            Output
+
+            5 1 8
+
+            let arr = [5, 1, 8];
+            console.log(arr.join('-'));
+
+            Output
+
+            5-1-8
+        </pre>
+        <pre id="pre25a">
+
+            Returns a string representing the array and its elements.
+
+            let arr = [5, 1, 8];
+            console.log(arr.toString());
+            
+            Output
+            "5,1,8" 
+        </pre>
+    </div>
+    <div> <!-- order an array, reverse the order of the array -->
+        <p onclick="toggle23()"> order an array, reverse the order of the array</p>
+        <pre id="pre26">
+
+            let arr = [5, 1, 8];
+            arr.reverse();
+            console.log(arr);
+            
+            Output
+            [8, 1, 5]
+        </pre>
+        <pre id="pre26a">
+
+            Reverses the order of the elements of an array in place
+          — the first becomes the last, and the last becomes the first.
+
+          const points = [40, 100, 1, 5, 25, 10];
+
+          points.sort(function(a, b){return b - a});
+          points.reverse()
+          console.log(points)
+        </pre>
+    </div> 
+    <div> <!-- sort the items of the array -->
+        <p onclick="toggle24()"> sort the items of the array</p>
+        <pre id="pre27">
+
+            let arr = [5, 1, 8];
+            arr.reverse();
+            console.log(arr);
+            
+            Output
+            [8, 1, 5]
+        </pre>
+        <pre id="pre27a">
+
+            Sorts the elements of an array in place and returns the array.
+
+            Important note: If compareFunction is not supplied, 
+            elements are sorted by converting them to strings and
+            comparing strings in Unicode code point order. 
+
+            For example, "Banana" comes before "cherry".
+            In a numeric sort, 9 comes before 80, but because numbers 
+            are converted to strings, "80" comes before "9" in Unicode order. 
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+             target="_blank">see the docs →</a>
+        </pre>
+    </div>  
+    <div> <!-- Fills all the elements of an array  -->
+        <p onclick="toggle25()"> Fills all the elements of an array </p>
+        <pre id="pre28">
+
+            const array1 = [1, 2, 3, 4];
+
+            // fill with 0 from position 2 until position 4
+            console.log(array1.fill(0, 2, 4));
+            // expected output: [1, 2, 0, 0]
+            
+            // fill with 5 from position 1
+            console.log(array1.fill(5, 1));
+            // expected output: [1, 5, 5, 5]
+            
+            console.log(array1.fill(6));
+            // expected output: [6, 6, 6, 6]
+        </pre>
+        <pre id="pre28a">
+
+            Sorts the elements of an array in place and returns the array.
+
+            Important note: If compareFunction is not supplied, 
+            elements are sorted by converting them to strings and
+            comparing strings in Unicode code point order. 
+
+            For example, "Banana" comes before "cherry".
+            In a numeric sort, 9 comes before 80, but because numbers 
+            are converted to strings, "80" comes before "9" in Unicode order. 
+
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
+             target="_blank">see the docs →</a>
+        </pre>
+    </div> 
+    <div> <!-- Copies a sequence of array elements within the array. -->
+        <p onclick="toggle26()"> Copies a sequence of array elements within the array.</p>
+        <pre id="pre29">
+             
+            You can specify either just the ending element 
+            (where begin will default to zero)
+            or both the beginning and the end, comma-separated.
+
+            [1, 2, 3, 4, 5].copyWithin(0, 3, 4)
+            // [4, 2, 3, 4, 5]
+        </pre>
+    </div>   
+
+    <br>
+    
+</body>
+</html>
