@@ -74,11 +74,11 @@
 
     function toggle7(){
         document.querySelector("#pre10").classList.toggle("display");
+        document.querySelector("#pre10a").classList.toggle("display");
     }
 
     function toggle8(){
         document.querySelector("#pre11").classList.toggle("display");
-        document.querySelector("#pre11a").classList.toggle("display");
     }
 
     function toggle9(){
@@ -171,24 +171,9 @@
 </script>
 <body>
 
-    <h1>FUNCTIONS</h1>
-https://opensource.com/article/17/6/functional-javascript
-
-https://www.educative.io/blog/level-up-javascript-coding-challenges
-
-https://www.educative.io/blog/javascript-tips-simplify-code
-
-https://www.youtube.com/watch?v=3sglcKXKbyQ
-
-https://www.youtube.com/watch?v=ImBVutNxEOE
-
-https://www.youtube.com/watch?v=JXG_gQ0OF74
-
-https://github.com/leonardomso/33-js-concepts
-
-https://www.youtube.com/watch?v=xa8lhVwQBw4
+    <h1>FUNCTIONAL PROGRAMING</h1>
     <div>  <!-- Introduction -->
-    <p onclick="toggle()">Introduction to Functional Programming</p>
+        <p onclick="toggle()">Introduction to Functional Programming</p>
 
         <pre id="pre">
 
@@ -389,7 +374,8 @@ https://www.youtube.com/watch?v=xa8lhVwQBw4
             // 1 + 2 + 3 + 4 + 5
             console.log(array1.reduce(reducer, 5));
             output: 15
-            
+
+            <hr>
             let total = [ 0, 1, 2, 3 ].reduce(
               ( accumulator, currentValue ) => accumulator + currentValue, 1
             )
@@ -423,7 +409,8 @@ https://www.youtube.com/watch?v=xa8lhVwQBw4
             console.log(myArrayWithNoDuplicates)
 
             output: Array ["a", "b", "c", "e", "d"]
-
+            
+            <hr>
             or:
             let array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
             let arrayWithNoDuplicates = Array.from(new Set(array))
@@ -434,67 +421,226 @@ https://www.youtube.com/watch?v=xa8lhVwQBw4
     </div>
 
     <br/>
-
-    <div> <!-- callbacks -->
-        <p onclick="toggle6()">callback</p>
-        <pre id="pre9">
+    
+    <div> <!-- composicion -->
+        <p onclick="toggle9()"> Composicion </p>
+        <pre id="pre12">
  
-            let arr = [5, 1, 8];
-            arr.pop();
-            console.log(arr);
 
-            Output
-            [5,1]
-        </pre>
-    </div> 
-    <div> <!-- closures -->
-        <p onclick="toggle7()">closures</p>
-        <pre id="pre10">
- 
-            let arr = [5, 1, 8];
-            let shiftValue = arr.shift();
-            console.log(arr); // [1,8]
-            console.log(wer); // 5 
+          const original = [80, 3, 14, 22, 30];
+
+            let aux = original.filter((value) => value%2 === 0);
+            aux = aux.filter((value) => value > 20);
+            const result = aux.reduce((accumulator, value) => accumulator + value);
+
+            console.log(result); // 132
+       
+            <hr>
+           
+    If we pull ES6 we can apply the chain pattern:
+
+          const original = [80, 3, 14, 22, 30];
+
+            const result = original
+                .filter((value) => value%2 === 0)
+                .filter((value) => value > 20)
+                .reduce((accumulator, value) => accumulator + value);
+
+            console.log(result); // 132 
+
+            <hr>
+
+    Wrap this in functions:
+
+          const original = [80, 3, 14, 22, 30];
+
+            const filterOnlyPairElements = (values) => values.filter((value) => value%2 === 0);
+            const filterGreaterThan = (values) => (max) => values.filter((value) => value > max);
+            const sumAllValues = (values) => values.reduce((accumulator, value) => accumulator + value);
             
-            Output
-            [1, 8]
+            const result = sumAllValues(
+                filterGreaterThan(
+                    filterOnlyPairElements(original)
+                )(20)
+            );
+            
+            console.log(result); // 132   
+
+            <hr>
+            
+    This makes this code unreadable, Ramda to the rescue.
+
+        We are going to use Pipe this function allows us to chain functions,
+        the output of one serves as input for the other.   
+        
+          const original = [80, 3, 14, 22, 30];
+
+            const result = R.pipe(
+              R.filter((value) => value%2 === 0),
+              R.filter((value) => value > 20),  
+              R.sum,
+            )(original);
+        
+            console.log(result); // 132
+
+            <hr>
+        
+    And why do we use things like R.filter and R.sum instead of what ES6 brings for arrays?
+
+          const original = [80, 3, 14, 22, 30];
+
+            const filterOnlyPairElements = (values) => R.filter((value) => value%2 === 0, values);
+            const filterGreaterThan = R.curry((max,values) => R.filter((value) => value > max, values));
+            const sumAllValues = (values) => R.sum(values);
+
+            const result = R.pipe(
+              filterOnlyPairElements,
+              filterGreaterThan(20),  
+              sumAllValues,
+            )(original);
+
+            console.log(result); // 132
+
+        <hr>
+        
+    we can use the filter and reduce from ES6, being as follows:
+
+        const original = [80, 3, 14, 22, 30];
+
+        const filterOnlyPairElements = (values) => values.filter((value) => value%2 === 0);
+        const filterGreaterThan = R.curry((max,values) => values.filter((value) => value > max));
+        // Or const filterGreaterThan = (max) => (values) => values.filter((value) => value > max);
+        const sumAllValues = (values) => values.reduce((accumulator, value) => accumulator + value);
+        
+        const result = R.pipe(
+          filterOnlyPairElements,
+          filterGreaterThan(20),  
+          sumAllValues,
+        )(original);
+        
+        console.log(result); // 132
+
+        <hr>
+
+    The pipe function allows us to pass as many callbacks and input parameters as we want such that:
+
+        const result = R.pipe(
+            callback1,
+            callback2,
+            callback3,
+            callback4,
+            ...
+            )(param1, param2, ...);
+
+            <hr>
+
+    But even so, if we don't want to install Ramda or lodash and we want 
+    to get the same result applied to the previous array, we could do something like:
+
+        const original = [80, 3, 14, 22, 30];
+
+        const filterOnlyPairElements = (values) => values.filter((value) => value%2 === 0);
+        const filterGreaterThan = (max) => (values) => values.filter((value) => value > max);
+        const sumAllValues = (values) => values.reduce((accumulator, value) => accumulator + value);
+        
+        const pipe = (...callbacks) => (array) => (
+          callbacks.reduce((previous, callback) => (
+            callback(previous)
+          ), array)
+        );
+        
+        const result = pipe(
+          filterOnlyPairElements,
+          filterGreaterThan(20),
+          sumAllValues,
+        )(original);
+        
+        console.log(result); // 132
+        </pre>
+    </div>
+    <div> <!-- closures -->
+        <p onclick="toggle7()">Closures</p>
+        <pre id="pre10">
+          
+            
+            function error(str) {
+                console.log(`%c Error: ${str} `, 'background: red; color: white;');
+              }
+              
+            function warning(str) {
+                console.log(`%c Warning: ${str} `, 'background: orange; color: white;');
+              }
+              
+            function success(str) {
+                console.log(`%c success: ${str} `, 'background: green; color: white;');
+              }
+
+              error('error text')
+              warning('warning text')
+              success('success text')  
+        </pre>
+        <pre id="pre10a">
+
+            closure:
+
+            function messages(typeM, styles) {
+                return function message(str) {
+                  console.log(`%c ${typeM}: ${str} `, styles);
+                }
+              }
+              
+              const error = messages('Error', 'background: red;');
+              const warning = messages('Warning', 'background: orange;');
+              const success = messages('Success', 'background: green;');
+              
+              error('error text')
+              warning('warning text')
+              success('success text')
         </pre>
     </div>  
     <div> <!-- currying -->
-        <p onclick="toggle8()">currying</p>
+        <p onclick="toggle8()">Currying</p>
         <pre id="pre11">
  
-            let arr = [5, 1, 8];
-            let slicedArr = arr.slice(1);
-            console.log(arr);
-            console.log(slicedArr);
             
-            Output
-            [5, 1, 8]
-            [1, 8]
-        </pre>
-        <pre id="pre11a">
- 
-            The slice() method returns a shallow copy
-            of a portion of an array into a new array object. 
-            You can specify either just the beginning element 
-            (where end will default to the arrays length) 
-            or both the beginning and the end, 
-            comma-separated. The original array will not be modified.
-        </pre>
-    </div>  
-    <div> <!-- composicion -->
-        <p onclick="toggle9()"> composicion </p>
-        <pre id="pre12">
- 
-            let arr = [5, 1, 8];
-            let inc = arr.includes(1)
-            console.log(inc)
+            const sum = (a, b) => {
+                return a + b
+            }
+
+            sum(2, 2)
+             
+            <hr>
+
+            const sumCurrying = (a) => {
+                return (b) => {
+                return a + b
+              }
+            }
+
+            const res = sumCurrying(1)(2)
+            console.log(res)
+
+            <hr>
+
+            const sumCurryingS = (a) => (b) => (c) => a + b + c;
+
+            sumCurryingS(1)(2)(3)
+
+            <hr>
+
+            const sumCurrying= (a) => (b) => a + b;
+
+            const increment10 = sumCurrying(10)
+
+            const res = increment10(20)
+            
+            console.log(res)
 
             Output
-            true
+            30
+
         </pre>
-    </div> 
+    </div>  
     <div> <!-- Generator -->
         <p onclick="toggle11()">Generator </p>
         <pre id="pre14">
@@ -630,28 +776,59 @@ https://www.youtube.com/watch?v=xa8lhVwQBw4
 
         </pre>
     </div>   
-    <div> <!-- a value by reducing the Array, finish to start-->
-        <p onclick="toggle15()">a value by reducing the Array, finish to start</p>
+
+    <div> <!-- REST PARAMETERS-->
+        <p onclick="toggle15()">REST PARAMETERS</p>
         <pre id="pre18">
 
-            let arr = [5, 1, 8];
-            [arr, [0, 1]].reduceRight((a, b) => {
-            return a.concat(b)
-            }, [])
+            RECEIVE UNLIMITED PARAMETERS IN A FUNCTION
 
-            Output
-            [0, 1, 5, 1, 8]
+            function separarConComa1() {
+                let resultado = ''
+                for (let i = 0; i < arguments.length; i++) {
+                  if (resultado !== '') {
+                    resultado += ' + ';
+                  }
+                  resultado += arguments[i];
+                }
+                return resultado;
+              }
+              separarConComa1('MEME', 'MEME', 'MEME')
+
+              NOTE: YOU CAN NOT USE ARGUMENTS(object) IN A AROW FUNCTION
         </pre>
         <pre id="pre18a">
 
-            Apply a function against an accumulator and 
-            each value of the array (from right-to-left)
-            as to reduce it to a single value.
+
+            const separador = (...strings) => {
+                let res = '';
+                    for(i=0; i < strings.length; i++){
+                        if(res !== ' '){
+                            res += ' + '
+                        }
+                    res += strings[i]
+                }
+                return res
+            }
+
+            separador('ff','ee','dd')
+
+            <hr>
+
+            const separarCon = (separator, ...strings) => 
+                strings.reduce((resultado, str) => {
+
+                if (resultado !== '') {
+                  resultado += separator
+                };
+              
+                return resultado + str;
+            }, '');
+              
+            console.log(separarCon(' + ', 'Pablo', 'Laura', 'Juan'));
+
         </pre>
     </div>  
-
-    <br>
-
     <div> <!--  one or many items values based on a condition i create -->
         <p onclick="toggle16()">one or many items values based on a condition i create</p>
         <pre id="pre19">
@@ -852,7 +1029,7 @@ https://www.youtube.com/watch?v=xa8lhVwQBw4
             arr.reverse();
             console.log(arr);
             
-            Output
+            Output 
             [8, 1, 5]
         </pre>
         <pre id="pre27a">
