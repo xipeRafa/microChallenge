@@ -37,8 +37,15 @@
         display: inline-block;
     }
 
-    section{
-        display: none;
+    #recuadro {
+       background-color:#ffff00;
+       border:1px solid #000000;
+       font-size:10px;
+       padding: 20px;
+    }
+
+    #listapaises {
+       list-style-type:decimal;
     }
 
 </style>
@@ -862,7 +869,6 @@
             }
         </pre>
     </div>    
-    
     <div> <!--  Remove an attribute from an element (removeAttribute) -->
         <p onclick="toggle13()">Remove an attribute from an element (removeAttribute) </p>
         <pre id="pre16">
@@ -885,14 +891,14 @@
         <pre id="pre16a">
  
             function eliminarAtributo(){
-              var puntero=document.getElementById('enlace1');
+              let puntero=document.getElementById('enlace1');
               puntero.removeAttribute('href');
               puntero=document.getElementById('enlace2');
               puntero.removeAttribute('href');
             }
 
             function inicializarAtributo(){
-              var puntero=document.getElementById('enlace1');
+              let puntero=document.getElementById('enlace1');
               puntero.setAttribute('href','http://www.google.com.ar');
               puntero=document.getElementById('enlace2');
               puntero.setAttribute('href','http://www.yahoo.com.ar');
@@ -926,120 +932,707 @@
 
 <hr>
             function definirAtributo(){
-              var reftabla=document.getElementById('tabla1');
+              let reftabla=document.getElementById('tabla1');
               reftabla.setAttribute('border','1');
             }
 
             function borrarAtributo(){
-                var reftabla=document.getElementById('tabla1');
+                let reftabla=document.getElementById('tabla1');
                 reftabla.removeAttribute('border');   
             }
         </pre>
     </div> 
-    
-<hr>
-
-
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle14()">...</p>
+    <div> <!--  Retrieve an attribute from an element (getAttribute) -->
+        <p onclick="toggle14()">Retrieve an attribute from an element (getAttribute)</p>
         <pre id="pre17">
+
+            < a id="enlace" href="http://www.google.com.ar">Google.< /a>
+
+            < input type="button" value="Recuperar atributo href" onClick="recuperarAtributo()">
  
-           17
+            <a id="enlace" href="http://www.google.com.ar">Google.</a>
+
+            <input type="button" value="Recuperar atributo href" onClick="recuperarAtributo()">
+           
 
         </pre>
-        <pre id="pre16a">
- 
+        <pre id="pre17a">
+
+            function recuperarAtributo()
+            {
+              var puntero=document.getElementById('enlace');
+              console.log('href:', puntero.getAttribute('href'));
+            }
            
         </pre>
-        <pre id="pre16b">
+        <pre id="pre17b">
+            
+        <p>Retrieve the href attribute from the first link and copy it to the second</p>
+
+            < a id="enlace1" href="http://www.google.com.ar">Google.< /a>
+            < a id="enlace2" href="http://www.yahoo.com">MSN.< /a>
+            < input type="button" value="Recuperar atributo href del primer 
+            enlace y copiarlo al segundo" onClick="recuperarAtributo()">            
+
+            <a id="enlace1" href="http://www.google.com.ar">Google.</a><br>
+            <a id="enlace2" href="http://www.yahoo.com">MSN.</a><br>
+            <input type="button" value="set & get" onClick="recuperarAtributo()">
+
+            <hr>
+
+            
+              function recuperarAtributo(){
+                
+                var puntero1=document.getElementById('enlace1');
+                var puntero2=document.getElementById('enlace2');
+                
+                console.log('GOOGLE 1:', puntero1.getAttribute('href'))
+                console.log(' YAHOO 1:', puntero2.getAttribute('href'))
+
+                puntero2.setAttribute('href',puntero1.getAttribute('href'));
+
+                console.log('GOOGLE 2:', puntero1.getAttribute('href'))
+                console.log(' YAHOO 2:', puntero2.getAttribute('href'))
+    
+            }
 
         </pre>
     </div>  
-
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle15()">...</p>
+    <div> <!--  Check if an element has an attribute (hasAttribute) -->
+        <p onclick="toggle15()">Check if an element has an attribute (hasAttribute) toggle.</p>
         <pre id="pre18">
- 18
-           
+            
+
+            <input type="button" value="toggle" onClick="cambiarAtributo()">
+
+            <table id="tabla11">
+                <tr>
+                <td>11</td><td>12</td>
+                </tr>
+                <tr>
+                <td>21</td><td>22</td>
+                </tr>
+            </table>
+            
+          
+            < table id="tabla11">
+                < tr>
+                < td>11</ td>   < td>12< /td>
+                < /tr>
+                < tr>
+                < td>21</ td>   < td>22< /td>
+                < /tr>
+            </ table>
+            < input type="button" value="toggle" onClick="cambiarAtributo()">
 
         </pre>
-        <pre id="pre16a">
- 
+        <pre id="pre18a">
+
+
+            function cambiarAtributo()
+            {
+              var reftabla=document.getElementById('tabla11');
+              if (reftabla.hasAttribute('border'))
+                reftabla.removeAttribute('border');
+              else
+                reftabla.setAttribute('border','1');
+            }
            
         </pre>
-        <pre id="pre16b">
+        <pre id="pre18b">
 
+            
+            <input type="button" value="Aumentar Borde" onClick="aumentarBorde()">
+            
+            <table id="tabla12">
+                <tr>
+                <td>11</td><td>12</td>
+                </tr>
+
+                <tr>
+                <td>21</td><td>22</td>
+                </tr>
+            </table>
+
+            < input type="button" value="Aumentar Borde" onClick="aumentarBorde()">
+            
+            < table id="tabla12">
+                < tr>
+                < td>11< /td>   < td>12< /td>
+                < /tr>
+
+                < tr>
+                < td>21< /td>   < td>22< /td>
+                < /tr>
+            < /table>
+
+            <hr>
+
+            function aumentarBorde(){
+
+                var reftabla=document.getElementById('tabla12');
+
+                if (reftabla.hasAttribute('border')){
+                    var valor=reftabla.getAttribute('border');
+                    valor++;
+                    reftabla.setAttribute('border',valor);
+                } else {
+                    reftabla.setAttribute('border','1');
+                  }           
+            }
         </pre>
     </div>
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle16()">...</p>
-        <pre id="pre19">19
- 
-           
+    <div> <!--  Move a node of type element. -->
+        <p onclick="toggle16()">Move a node of type element.</p>
 
-        </pre>
-        <pre id="pre16a">
+        <pre id="pre19">
+
+
+            LISTA 1:
+            < ul id="lista1"> 
+                < li>Opcion 1.< /li>
+                < li>Opcion 2.< /li>
+                < li>Opcion 3.< /li>
+             < /ul>
  
+             < input type="button" value="Mover elemento" onClick="moverItem()">
+
+             LISTA 2:
+             < ul id="lista2">  < /ul>
+
+            <hr>
+           LISTA 1:
+           <ul id="lista1"> 
+               <li>Opcion 1.</li>
+               <li>Opcion 2.</li>
+               <li>Opcion 3.</li>
+            </ul>
+         LISTA 2:
+        <ul id="lista2"> </ul>
+
+        <input type="button" value="Mover elemento" onClick="moverItem()">
+        </pre>
+        <pre id="pre19a">
+         
+            function moverItem(){
+                var ref1=document.getElementById('lista1');
+                var refHijo=ref1.firstElementChild;
+
+                var ref2=document.getElementById('lista2');
+                ref2.appendChild(refHijo);
+            }
            
         </pre>
-        <pre id="pre16b">
+        <pre id="pre19b">
+
+            < div id="region1">
+                < p>Este es el primer párrafo< /p>
+                < p>Este es el segundo párrafo< /p>
+                < p>Este es el tercer párrafo< /p>
+            < /div>
+
+            < input type="button" value="Mover el primer párrafo" 
+                onClick="moverParrafo()">
+
+            < div id="region2"> < /div>
+
+<hr>
+
+            function moverParrafo(){
+                  var puntero1=document.getElementById('region1');
+                  var puntero2=document.getElementById('region2');
+                  puntero2.appendChild(puntero1);
+            }
+        </pre>
+    </div>  
+    <div> <!--  Cloning a node (cloneNode) -->
+        <p onclick="toggle17()">Cloning a node (cloneNode)</p>
+        <pre id="pre20">
+
+            < div id="enlaces">
+                < a href="#">Enlace 1< /a>
+                < a href="#">Enlace 2< /a>
+                < a href="#">Enlace 3< /a>
+            < /div>
+
+                < input type="button" onclick="clonarNodos()" value="Clonar nodos">
+
+                < div id="enlacesnuevos"> < /div>
+        </pre>
+        <pre id="pre20a">
+
+            var orden=1;
+            function clonarNodos()
+            {
+              var id=document.getElementById("enlaces");
+              var nuevos=id.cloneNode(true);
+              nuevos.style.id='enlaces'+orden;
+              orden++;
+              id=document.getElementById("enlacesnuevos");
+              id.appendChild(nuevos);
+            }
+           
+        </pre>
+        <pre id="pre20b">
+
+            <p id="titulo">Titulo Principal</p>
+
+            <input type="button" onclick="javascript:clonarNodo()" 
+            value="Clonar nodo">
+
+            <div id="region"> </div>
+
+                            <hr>
+
+            function clonarNodo(){
+              var id=document.getElementById('titulo');
+              var nuevos=id.cloneNode(true);
+
+              nuevos.style.id=nuevos.style.id + 'b';
+              id=document.getElementById("region");
+
+              id.appendChild(nuevos);
+            }
 
         </pre>
     </div>  
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle17()">...</p>
-        <pre id="pre20">20
- 
-           
-
-        </pre>
-        <pre id="pre16a">
- 
-           
-        </pre>
-        <pre id="pre16b">
-
-        </pre>
-    </div>  
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle18()">...</p>
+    <div> <!--  Query the node type (nodeType) -->
+        <p onclick="toggle18()">Query the node type (nodeType)</p>
         <pre id="pre21">
- 21
+            
+            <div id="grupo"><p>Este es un párrafo</p></div>
+            <input type="button" value="Query the node type" onClick="tipoDeNodos()">
+
+
+            < div id="grupo">  < p>Este es un párrafo< /p>  < /div>
+            < input type="button" value="Query the node type" onClick="tipoDeNodos()">
+
+        </pre>
+        <pre id="pre21a">
+
+
+            function tipoDeNodos()
+            {
+              var puntero=document.getElementById('grupo');
+              alert (puntero.nodeName + " es de tipo " + puntero.nodeType);
+              var hijo=puntero.childNodes[0];
+              alert (hijo.nodeName + " es de tipo " + hijo.nodeType);
+              var nieto=hijo.childNodes[0];
+              alert (nieto.nodeName + " es de tipo " + nieto.nodeType);
+            }
+
+            <hr>
+
+            If it stores a 1 (one) the node is of type element
+            (div, a, p etc.), if it stores a 3 (three) it is a node of type text.
+
+            In turn, the nodeName property stores the HTML mark if it is a node 
+            of type element or the value #text if it is a node of type text.
+            
+            Finally,
+            nodeValue property stores the content of the node if it is a text type node, 
+            in the case of an element type node (that is, an HTML mark) it stores null.
            
 
         </pre>
-        <pre id="pre16a">
- 
+        <pre id="pre21b">
            
-        </pre>
-        <pre id="pre16b">
+            
+                <p id="parrafo">Este es un párrafo con un texto <em>resaltado</em>con la marca em</p>
+
+                <input type="button" value="Query the node type" onClick="tipoDeNodos()">
+
+                < p id="parrafo">Este es un párrafo con un texto < em> resaltado < /em>con la marca em< /p>
+
+                < input type="button" value="Query the node type" onClick="tipoDeNodos()">
+
+                <hr>
+
+            function tipoDeNodos(){
+                  var puntero=document.getElementById('parrafo');
+              for(f=0;f< puntero.childNodes.length;f++){  
+                console.log(puntero.childNodes[f].nodeName + " es de tipo " + puntero.childNodes[f].nodeType);
+              }
+            }           
 
         </pre>
     </div>  
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle19()">...</p>
-        <pre id="pre22">22
- 
+    <div> <!--  Accessing the style of an HTML markup. -->
+        <p onclick="toggle19()">Accessing the style of an HTML markup.</p>
+        <pre id="pre22">
            
+            <p id="recuadro">Quién descubrió América y en que año fue?</p>
+            Color de fondo:
+            <select onChange="cambiarColorFondo()" id="colorfondo">
+            <option value="#ffff00">amarillo</option>
+            <option value="#ff0000">rojo</option>
+            <option value="#00ff00">verde</option>
+            <option value="#0000ff">azul</option>
+            </select>
+            Color de fuente:
+            <select onChange="cambiarColorFuente()" id="colorfuente">
+            <option value="#000000">negro</option>
+            <option value="#ff0000">rojo</option>
+            <option value="#00ff00">verde</option>
+            <option value="#0000ff">azul</option>
+            </select>
+            Cambiar tamaño de fuente:
+            <select onChange="cambiarTamanoFuente()" id="tamanofuente">
+            <option value="10px">10</option>
+            <option value="12px">12</option>
+            <option value="14px">14</option>
+            <option value="16px">16</option>
+            <option value="18px">18</option>
+            <option value="20px">20</option>
+            <option value="22px">22</option>
+            <option value="24px">24</option>
+            </select>
+            Cambiar tipo de fuente:
+            <select onChange="cambiarTipoFuente()" id="tipofuente">
+            <option value="Arial">Arial</option>
+            <option value="Courier">Curier</option>
+            <option value="Verdana">Verdana</option>
+            </select>
+            Cambiar estilo de la fuente:
+            <select onChange="cambiarEstiloFuente()" id="estilofuente">
+            <option value="normal">Normal</option>
+            <option value="Italic">Italic</option>
+            <option value="Oblique">Oblique</option>
+            </select>
+            Peso de la fuente:
+            <select onChange="cambiarPesoFuente()" id="pesofuente">
+            <option value="normal">Normal</option>
+            <option value="bold">Bold</option>
+            </select>
+            Alineación de la fuente:
+            <select onChange="cambiarAlineacionFuente()" id="alineacionfuente">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+            <option value="center">Center</option>
+            </select>
+            Decoración de la fuente:
+            <select onChange="cambiarDecoracionFuente()" id="decoracionfuente">
+            <option value="none">none</option>
+            <option value="underline">underline</option>
+            <option value="overline">overline</option>
+            <option value="line-through">line-through</option>
+            </select>
+            Espacio entre letras:
+            <select onChange="cambiarEspacioLetras()" id="espacioletras">
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            </select>
+            Espacio entre palabras:
+            <select onChange="cambiarEspacioPalabras()" id="espaciopalabras">
+            <option value="3">3</option>
+            <option value="6">6</option>
+            <option value="9">9</option>
+            <option value="12">12</option>
+            <option value="15">15</option>
+            </select>
+            Transformación de texto:
+            <select onChange="cambiarTransformacionTexto()" id="transformaciontexto">
+            <option value="none">none</option>
+            <option value="capitalize">capitalize</option>
+            <option value="lowercase">lowercase</option>
+            <option value="uppercase">uppercase</option>
+            </select>
+            Ancho de borde:
+            <select onChange="cambiarAnchoBorde()" id="anchoborde">
+            <option value="0px">0</option>
+            <option value="1px" selected="selected">1</option>
+            <option value="2px">2</option>
+            <option value="3px">3</option>
+            <option value="4px">4</option>
+            <option value="5px">5</option>
+            </select>
+            Estilo de borde:
+            <select onChange="cambiarEstiloBorde()" id="estiloborde">
+            <option value="none">none</option>
+            <option value="hidden">hidden</option>
+            <option value="dotted">dotted</option>
+            <option value="dashed">dashed</option>
+            <option value="solid">solid</option>
+            <option value="double">double</option>
+            <option value="groove">groove</option>
+            <option value="ridge">ridge</option>
+            <option value="inset">inset</option>
+            <option value="outset">outset</option>
+            </select>
+            Color de borde:
+            <select onChange="cambiarColorBorde()" id="colorborde">
+            <option value="#000000">negro</option>
+            <option value="#ffff00">amarillo</option>
+            <option value="#ff0000">rojo</option>
+            <option value="#00ff00">verde</option>
+            <option value="#0000ff">azul</option>
+            </select>
+            padding:
+            <select onChange="cambiarPadding()" id="padding">
+            <option value="0">0</option>
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+            </select>
+            margin:
+            <select onChange="cambiarMargin()" id="margin">
+            <option value="0">0</option>
+            <option value="4" selected="selected">4</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="16">16</option>
+            <option value="20">20</option>
+            </select>
+ 
+        </pre>
+        <pre id="pre22a">
 
-        </pre>
-        <pre id="pre16a">
- 
+            //CSS
+            #recuadro {   
+                background-color:#ffff00;
+                border:1px solid #000000;
+                font-size:10px;
+              }
+
+            //javascript
+            function cambiarColorFondo(){
+              var pun=document.getElementById('colorfondo');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.backgroundColor=pun.value;
+            }
+            
+            function cambiarColorFuente(){
+              var pun=document.getElementById('colorfuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.color=pun.value;
+            }
+            
+            function cambiarTamanoFuente(){
+              var pun=document.getElementById('tamanofuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.fontSize=pun.value;
+            }
+            
+            function cambiarTipoFuente(){
+              var pun=document.getElementById('tipofuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.fontFamily=pun.value;
+            }
+            
+            function cambiarEstiloFuente(){
+              var pun=document.getElementById('estilofuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.fontStyle=pun.value;
+            }
+            
+            function cambiarPesoFuente(){
+              var pun=document.getElementById('pesofuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.fontWeight=pun.value;
+            }
+            
+            function cambiarAlineacionFuente(){
+              var pun=document.getElementById('alineacionfuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.textAlign=pun.value;
+            }
+            
+            function cambiarDecoracionFuente(){
+              var pun=document.getElementById('decoracionfuente');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.textDecoration=pun.value;
+            }
+            
+            function cambiarEspacioLetras(){
+              var pun=document.getElementById('espacioletras');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.letterSpacing=pun.value;
+            }
+            
+            function cambiarEspacioPalabras(){
+              var pun=document.getElementById('espaciopalabras');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.wordSpacing=pun.value;
+            }
+            
+            function cambiarTransformacionTexto(){
+              var pun=document.getElementById('transformaciontexto');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.textTransform=pun.value;
+            }
+            
+            function cambiarAnchoBorde(){
+              var pun=document.getElementById('anchoborde');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.borderWidth=pun.value;
+            }
+            
+            function cambiarEstiloBorde(){
+              var pun=document.getElementById('estiloborde');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.borderStyle=pun.value;
+            }
+            
+            function cambiarColorBorde(){
+              var pun=document.getElementById('colorborde');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.borderColor=pun.value;
+            }
+            
+            function cambiarPadding(){
+              var pun=document.getElementById('padding');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.padding=pun.value;
+            }
+            
+            function cambiarMargin(){
+              var pun=document.getElementById('margin');
+              var punrec=document.getElementById('recuadro');
+              punrec.style.margin=pun.value;
+            }      
            
         </pre>
-        <pre id="pre16b">
+        <pre id="pre22b">
+
+
+            Color de fuente:
+            < select onChange="cambiarColorFuente()" id="colorfuente">
+                < option value="#ff0000">rojo< /option>
+                < option value="#00ff00">verde< /option>
+                < option value="#0000ff">azul< /option>
+            < /select>
+
+            Cambiar tamaño de fuente:
+            < select onChange="cambiarTamanoFuente()" id="tamanofuente">
+                < option value="10px">10< /option>
+                < option value="12px">12< /option>
+                < option value="14px">14< /option>
+            < /select>
+      
+            Alineación de la fuente:
+            < select onChange="cambiarAlineacionFuente()" id="alineacionfuente">
+              < option value="left">Left< /option>
+              < option value="right">Right< /option>
+              < option value="center">Center< /option>
+            < /select>
+         
+            Espacio entre palabras:
+            < select onChange="cambiarEspacioPalabras()" id="espaciopalabras">
+              < option value="3">3< /option>
+              < option value="6">6< /option>
+              < option value="9">9< /option>
+            </ select>
+          
+            padding:
+            < select onChange="cambiarPadding()" id="padding">
+              < option value="0">0< /option>
+              < option value="4" selected="selected">4< /option>
+              < option value="8">8< /option>
+            < /select>
+
+            <hr>
+            <hr>
+
+            <p>List Style</p>
+
+                <select onChange="cambiarEstiloLista()" id="estilolista">
+                    <option value="none">none</option>
+                    <option value="disc">disc</option>
+                    <option value="circle">circle</option>
+                    <option value="square">square</option>
+                    <option value="decimal" selected="selected">decimal</option>
+                    <option value="decimal-leading-zero">decimal-leading-zero</option>
+                    <option value="lower-roman">lower-roman</option>
+                    <option value="upper-roman">upper-roman</option>
+                    <option value="lower-alpha">lower-alpha</option>
+                    <option value="upper-alpha">upper-alpha</option>
+                </select>
+                <ul id="listapaises">
+                    <li>Brasil</li>
+                    <li>Uruguay</li>
+                    <li>Argentina</li>
+                </ul>
+
+                <hr>
+
+                < ul id="listapaises">
+                    < li>Brasil< /li>
+                    < li>Uruguay< /li>
+                    < li>Argentina< /li>
+                < /ul>
+    
+                    < select onChange="cambiarEstiloLista()" id="estilolista">
+                        < option value="none">none< /option>
+                        < option value="disc">disc< /option>
+                        < option value="circle">circle< /option>
+                        < option value="square">square< /option>
+                        < option value="decimal" selected="selected">decimal< /option>
+                        < option value="decimal-leading-zero">decimal-leading-zero< /option>
+                        < option value="lower-roman">lower-roman< /option>
+                        < option value="upper-roman">upper-roman< /option>
+                        < option value="lower-alpha">lower-alpha< /option>
+                        < option value="upper-alpha">upper-alpha< /option>
+                    < /select>     
+
+                    <hr>
+          
+            #listapaises {
+                list-style-type:decimal;
+              }
+           
+              <hr>
+
+            function cambiarEstiloLista()
+            {
+              var pun=document.getElementById('listapaises');
+              var punselect=document.getElementById('estilolista');
+              pun.style.listStyleType=punselect.value;
+            }
 
         </pre>
     </div>  
-    <div> <!--  Remove an attribute from an element (removeAttribute) -->
-        <p onclick="toggle20()">...</p>
-        <pre id="pre23">23
+
+    <div> <!--  Dynamically creating input type controls. -->
+        <p onclick="toggle20()">Dynamically creating input type controls.</p>
+        <pre id="pre23">
+
+            <form method="post" action="#">
+
+                Ingrese su nombre:
+                <input type="text" name="nombre" id="nombre"><br>
+
+                <fieldset id="fs">
+
+                    <legend>Ingrese los nombres de sus hijos</legend>
+
+                    <input type="button" onclick="agregarHijo()" value="Agregar un hijo.">
+                
+                </fieldset>
+
+                <input type="submit" value="Registrar">
+                
+            </form>
  
            
 
         </pre>
         <pre id="pre16a">
- 
+            var cantidad = 0;
+            function agregarHijo() 
+            {
+              cantidad++;
+              var nuevohijo = document.createElement('input');
+              nuevohijo.type = 'text';
+              nuevohijo.name = 'nombre' + cantidad;
+              nuevohijo.id = 'nombre' + cantidad;
+              document.getElementById('fs').appendChild(nuevohijo);
+              document.getElementById('fs').appendChild(document.createElement('br'));
+            }
            
         </pre>
         <pre id="pre16b">

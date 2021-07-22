@@ -98,11 +98,6 @@
         document.querySelector("#pre14c").classList.toggle("display");
     }
 
-        function toggle12(){
-        document.querySelector("#pre15").classList.toggle("display");
-        document.querySelector("#pre15a").classList.toggle("display");
-    }
-    
     function toggle13(){
         document.querySelector("#pre16").classList.toggle("display");
     }
@@ -814,31 +809,6 @@
               
         </pre>
     </div>   
-    <div> <!--  -->
-        <p onclick="toggle12()">Decorator</p>
-        <pre id="pre15">
-
-            let arr = [5, 1, 8];
-            let isTiny = (el) => el < 2;
-            console.log(arr.find(isTiny));
-            
-            Output
-            1
-        </pre>
-        <pre id="pre15a">
-
-            Returns the found value in the array, 
-            if an element in the array satisfies 
-            the provided testing function or undefined if not found. 
-            Similar to findIndex(), but it returns the item instead of the index.
-
-            const array = [0,1,,,,5,6];
-
-            array.find(function(value, index) {
-                  console.log('Visited index ' + index + ' with value ' + value);
-            });
-        </pre>
-    </div> 
     <div> <!-- IFEE -->
         <p onclick="toggle13()">IFEE</p>
         <pre id="pre16">
