@@ -67,6 +67,12 @@
         document.querySelector("#pre8a").classList.toggle("display");
         document.querySelector("#pre8b").classList.toggle("display");
     }
+    
+    function toggle5a(){
+        document.querySelector("#pre15aa").classList.toggle("display");
+        document.querySelector("#pre15bb").classList.toggle("display");
+        document.querySelector("#pre15cc").classList.toggle("display");
+    }
 
     function toggle6(){
         document.querySelector("#pre9").classList.toggle("display");
@@ -88,6 +94,8 @@
     function toggle11(){
         document.querySelector("#pre14").classList.toggle("display");
         document.querySelector("#pre14a").classList.toggle("display");
+        document.querySelector("#pre14b").classList.toggle("display");
+        document.querySelector("#pre14c").classList.toggle("display");
     }
 
         function toggle12(){
@@ -97,7 +105,6 @@
     
     function toggle13(){
         document.querySelector("#pre16").classList.toggle("display");
-        document.querySelector("#pre16a").classList.toggle("display");
     }
 
     function toggle14(){
@@ -421,7 +428,71 @@
     </div>
 
     <br/>
-    
+    <div> <!-- Loops -->
+        <p onclick="toggle5a()">Loops</p>
+        <pre id="pre15aa">
+
+
+        for ([expresion-inicial]; [condicion]; [expresion-final])sentencia
+
+                let arr = [1,2,3,4,5]; 
+                
+                for(i=0; i < arr.length; i++){
+                    console.log(arr[i])
+                }
+
+            <hr>
+
+            const array1 = ['a', 'b', 'c'];
+
+            array1.forEach(element => console.log(element));
+
+             output:
+
+                     "a"
+                     "b"
+                     "c"
+        </pre>
+        <pre id="pre15bb">
+
+        FOR IN    
+          
+            const object = {
+                name: 'rene',
+                age: 22,
+                country: 'USA'
+            }
+              
+              for (const property in object) {
+                 console.log(`key: ${property}, value: ${object[property]}`)
+              }
+
+              > "key: name, value: rene"
+              > "key: age, value: 22"
+              > "key: country, value: USA"
+
+              // for in is just to objects
+        </pre>
+        <pre id="pre15cc">
+
+        FOR OF
+
+                let iterable = [10, 20, 30];
+
+                for (let value of iterable) {
+                  value += 1;
+                  console.log(value);
+                }
+
+                Output
+
+                // 11
+                // 21
+                // 31
+
+                <a href="https://developer.mozilla.org/es/docs/orphaned/Web/JavaScript/Reference/Statements/for...of" target="_blank">see docs →</a>
+        </pre>
+    </div>  
     <div> <!-- composicion -->
         <p onclick="toggle9()"> Composicion </p>
         <pre id="pre12">
@@ -645,28 +716,105 @@
         <p onclick="toggle11()">Generator </p>
         <pre id="pre14">
 
-            Returns the first index at which a given element 
-            can be found in the array, or -1 if it is not present.
+        convert the code of a function into iterable code
 
-            let arr = [5, 1, 8, 5];
-            console.log(arr.indexOf(5));
+            function* iterable(){
 
-            Output
-            0
+                yield 'hello 1';
+                console.log('hello from log')
+                yield 'hello 2';
+                yield 'hello 3';
+                console.log('hello again from log')
+                yield 'hello 4';
+                yield 'hello 5';
+            }
+             
+            let iterador = iterable()
+
+                console.log(iterador.next());
+                console.log(iterador.next());
+                console.log(iterador.next());
+                console.log(iterador.next());
+                console.log(iterador.next());
+
+                console.log(iterador.next());   //undefined done:true (true. is the end )
+                console.log(iterador.return(1)) // {value: 1, done: true}
+
+                Output
+
+                {value: "hello 1", done: false}
+                hello from log
+                {value: "hello 2", done: false}
+                {value: "hello 3", done: false}
+                hello again from log
+                {value: "hello 4", done: false}
+                {value: "hello 5", done: false}
+                {value: undefined, done: true}
+                {value: 1, done: true}
         </pre>
         <pre id="pre14a">
+            
+            function* iterable(){
 
-            Returns the LAST (greatest) index of an element within the array 
-            equal to the specified value, or -1 if none is found.
- 
-            let arr = [5, 1, 8, 5];
-            console.log(arr.lastIndexOf(5))                     
+                yield 'hello 1';
+                console.log('hello from log')
+                yield 'hello 2';
+                yield 'hello 3';
+                console.log('hello again from log')
+                yield 'hello 4';
+                yield 'hello 5';
+            }
+             
+            let iterator = iterable()
+
+            for(let y of iterator){
+                console.log(y)
+            }
+        </pre>
+        <pre id="pre14b">
+
+            function* iterable(){
+
+                yield 'hello 1';
+                console.log('hello from log')
+                yield 'hello 2';
+                yield 'hello 3';
+                console.log('hello again from log')
+                yield 'hello 4';
+                yield 'hello 5';
+            }
+
+            let arr = [...iterable()]
+            console.log(arr)
 
             Output
-            3
+
+            hello from log
+            hello again from log
+            ["hello 1", "hello 2", "hello 3", "hello 4", "hello 5"]
+        </pre>
+        <pre id="pre14c">
+
+            function* gen() {
+                while(true) {
+                  try {
+                     yield 42;
+                  } catch(e) {
+                    console.log('Error caught!');
+                  }
+                }
+              }
+              
+              var g = gen();
+              g.next();
+              // { value: 42, done: false }
+              g.throw(new Error('Something went wrong'));
+              // "Error caught!"
+              // { value: 42, done: false }
+              
         </pre>
     </div>   
-    <div> <!-- Decorator -->
+    <div> <!--  -->
         <p onclick="toggle12()">Decorator</p>
         <pre id="pre15">
 
@@ -701,13 +849,6 @@
             (function () {
                 statements
               })();
-        </pre>
-        <pre id="pre16a">
-
-            Returns the index of the first element in the array 
-            that satisfies the provided testing function. 
-            Otherwise -1 is returned. Similar to find()
-            but it returns the index instead of the item.
         </pre>
     </div> 
     <div> <!-- Array.from() -->

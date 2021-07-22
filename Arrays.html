@@ -293,7 +293,7 @@
             let arr = [5, 1, 8];
             let shiftValue = arr.shift();
             console.log(arr); // [1,8]
-            console.log(wer); // 5 
+            console.log(shiftValue); // 5 
             
             Output
             [1, 8]
@@ -319,7 +319,27 @@
             You can specify either just the beginning element 
             (where end will default to the arrays length) 
             or both the beginning and the end, 
-            comma-separated. The original array will not be modified.
+            comma-separated.
+            The original array will not be modified.
+
+            <hr>
+
+      const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+            console.log(animals.slice(2));
+                // expected output: Array ["camel", "duck", "elephant"]
+
+            console.log(animals.slice(2, 4));
+                // expected output: Array ["camel", "duck"]
+
+            console.log(animals.slice(1, 5));
+                // expected output: Array ["bison", "camel", "duck", "elephant"]
+
+            console.log(animals.slice(-2));
+                // expected output: Array ["duck", "elephant"]
+
+            console.log(animals.slice(2, -1));
+                // expected output: Array ["camel", "duck"]
         </pre>
     </div>  
 
@@ -501,8 +521,8 @@
 
     <br>
 
-    <div> <!-- walk over items, execuiting a function i will create for each element -->
-        <p onclick="toggle19()">walk over items, execuiting a function i will create for each element</p>
+    <div> <!-- walk over items, executing a function i will create for each element -->
+        <p onclick="toggle19()">walk over items, executing a function i will create for each element</p>
         <pre id="pre22">
 
             let arr = [5, 1, 8];

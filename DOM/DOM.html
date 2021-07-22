@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+</head>
+
+<style>
+
+    body{
+        font-family: sans-serif;
+        background-color: rgb(26, 17, 66);
+        color: cornsilk;
+        padding-left: 40px;
+    }
+
+    pre{
+        background-color:rgb(215, 230, 250);
+        color:rgba(0, 0, 0, 0.521);
+        display: none;
+        padding-right: 40px;
+        margin-left: 40px;
+    }
+
+    p{
+        user-select: none; 
+        padding-left: 20px; 
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    .display{
+        display: inline-block;
+    }
+
+    section{
+        display: none;
+    }
+
+</style>
+<script>
+    function toggle(){
+        document.querySelector("#pre").classList.toggle("display");
+        document.querySelector("#pre2").classList.toggle("display");
+    }
+    
+    function toggle2(){
+        document.querySelector("#pre3").classList.toggle("display");
+    }
+    
+    function toggle3(){
+        document.querySelector("#pre5").classList.toggle("display");
+        document.querySelector("#pre6").classList.toggle("display");
+    }
+    
+       
+    function toggle4(){
+        document.querySelector("#pre7").classList.toggle("display");
+    }
+
+    function toggle5(){
+        document.querySelector("#pre8").classList.toggle("display");
+    }
+
+    function toggle6(){
+        document.querySelector("#pre9").classList.toggle("display");
+        document.querySelector("#pre9a").classList.toggle("display");
+    }
+
+    function toggle6a(){
+        document.querySelector("#pre9b").classList.toggle("display");
+    }
+
+    function toggle7(){
+        document.querySelector("#pre10").classList.toggle("display");
+        document.querySelector("#pre10a").classList.toggle("display");
+    }
+
+    function toggle8(){
+        document.querySelector("#pre11").classList.toggle("display");
+        document.querySelector("#pre11a").classList.toggle("display");
+        document.querySelector("#pre11b").classList.toggle("display");
+    }
+
+    function toggle9(){
+        document.querySelector("#pre12").classList.toggle("display");
+        document.querySelector("#pre12a").classList.toggle("display");
+    }
+
+    function toggle11(){
+        document.querySelector("#pre14").classList.toggle("display");
+        document.querySelector("#pre14a").classList.toggle("display");
+        document.querySelector("#pre14b").classList.toggle("display");
+    }
+
+    function toggle12(){
+        document.querySelector("#pre15").classList.toggle("display");
+        document.querySelector("#pre15a").classList.toggle("display");
+        document.querySelector("#pre15b").classList.toggle("display");
+    }
+
+    function toggle13(){
+        document.querySelector("#pre16").classList.toggle("display");
+        document.querySelector("#pre16a").classList.toggle("display");
+        document.querySelector("#pre16b").classList.toggle("display");
+    }
+
+    function toggle14(){
+        document.querySelector("#pre17").classList.toggle("display");
+        document.querySelector("#pre17a").classList.toggle("display");
+        document.querySelector("#pre17b").classList.toggle("display");
+    }
+
+    function toggle15(){
+        document.querySelector("#pre18").classList.toggle("display");
+        document.querySelector("#pre18a").classList.toggle("display");
+        document.querySelector("#pre18b").classList.toggle("display");
+    }
+
+    function toggle16(){
+        document.querySelector("#pre19").classList.toggle("display");
+        document.querySelector("#pre19a").classList.toggle("display");
+        document.querySelector("#pre19b").classList.toggle("display");
+    }
+
+    function toggle17(){
+        document.querySelector("#pre20").classList.toggle("display");
+        document.querySelector("#pre20a").classList.toggle("display");
+        document.querySelector("#pre20b").classList.toggle("display");
+    }
+
+    function toggle18(){
+        document.querySelector("#pre21").classList.toggle("display");
+        document.querySelector("#pre21a").classList.toggle("display");
+        document.querySelector("#pre21b").classList.toggle("display");
+    }
+
+    function toggle19(){
+        document.querySelector("#pre22").classList.toggle("display");
+        document.querySelector("#pre22a").classList.toggle("display");
+        document.querySelector("#pre22b").classList.toggle("display");
+    }
+
+    function toggle20(){
+        document.querySelector("#pre23").classList.toggle("display");
+        document.querySelector("#pre23a").classList.toggle("display");
+        document.querySelector("#pre23b").classList.toggle("display");
+    }
+
+    function toggle21(){
+        document.querySelector("#pre24").classList.toggle("display");
+        document.querySelector("#pre24a").classList.toggle("display");
+        document.querySelector("#pre24b").classList.toggle("display");
+    }
+
+    function toggle22(){
+        document.querySelector("#pre25").classList.toggle("display");
+        document.querySelector("#pre25a").classList.toggle("display");
+        document.querySelector("#pre25b").classList.toggle("display");
+    }
+
+    function toggle23(){
+        document.querySelector("#pre26").classList.toggle("display");
+        document.querySelector("#pre26a").classList.toggle("display");
+        document.querySelector("#pre26b").classList.toggle("display");
+    }
+
+    function toggle24(){
+        document.querySelector("#pre27").classList.toggle("display");
+        document.querySelector("#pre27a").classList.toggle("display");
+        document.querySelector("#pre27b").classList.toggle("display");
+    }
+
+
+
+
+
+
+    function toggle25(){
+        document.querySelector("#pre28").classList.toggle("display");
+        document.querySelector("#pre28a").classList.toggle("display");
+        document.querySelector("#pre28b").classList.toggle("display");
+    }
+
+    function toggle26(){
+        document.querySelector("#pre29").classList.toggle("display");
+        document.querySelector("#pre29a").classList.toggle("display");
+        document.querySelector("#pre29b").classList.toggle("display");
+    }
+
+    function toggle27(){
+        document.querySelector("#pre30").classList.toggle("display");
+        document.querySelector("#pre30a").classList.toggle("display");
+        document.querySelector("#pre30b").classList.toggle("display");
+    }
+
+    function toggle28(){
+        document.querySelector("#pre31").classList.toggle("display");
+        document.querySelector("#pre31a").classList.toggle("display");
+        document.querySelector("#pre31b").classList.toggle("display");
+    }
+
+    function toggle29(){
+        document.querySelector("#pre32").classList.toggle("display");
+        document.querySelector("#pre32a").classList.toggle("display");
+        document.querySelector("#pre32b").classList.toggle("display");
+    }
+
+    function toggle30(){
+        document.querySelector("#pre33").classList.toggle("display");
+        document.querySelector("#pre33a").classList.toggle("display");
+        document.querySelector("#pre33b").classList.toggle("display");
+    }
+
+    function toggle31(){
+        document.querySelector("#pre34").classList.toggle("display");
+        document.querySelector("#pre34a").classList.toggle("display");
+        document.querySelector("#pre34b").classList.toggle("display");
+    }
+
+    function toggle32(){
+        document.querySelector("#pre35").classList.toggle("display");
+        document.querySelector("#pre35a").classList.toggle("display");
+        document.querySelector("#pre35b").classList.toggle("display");
+    }
+
+    function toggle33(){
+        document.querySelector("#pre36").classList.toggle("display");
+        document.querySelector("#pre36a").classList.toggle("display");
+        document.querySelector("#pre36b").classList.toggle("display");
+    }
+
+    function toggle34(){
+        document.querySelector("#pre37").classList.toggle("display");
+        document.querySelector("#pre37a").classList.toggle("display");
+        document.querySelector("#pre37b").classList.toggle("display");
+    }
+
+    function toggle35(){
+        document.querySelector("#pre38").classList.toggle("display");
+        document.querySelector("#pre38a").classList.toggle("display");
+        document.querySelector("#pre38b").classList.toggle("display");
+    }
+
+    function toggle36(){
+        document.querySelector("#pre39").classList.toggle("display");
+        document.querySelector("#pre39a").classList.toggle("display");
+        document.querySelector("#pre39b").classList.toggle("display");
+    }
+
+    function toggle37(){
+        document.querySelector("#pre40").classList.toggle("display");
+        document.querySelector("#pre40a").classList.toggle("display");
+        document.querySelector("#pre40b").classList.toggle("display");
+    }
+
+    function toggle38(){
+        document.querySelector("#pre41").classList.toggle("display");
+        document.querySelector("#pre41a").classList.toggle("display");
+        document.querySelector("#pre41b").classList.toggle("display");
+    }
+
+    function toggle39(){
+        document.querySelector("#pre42").classList.toggle("display");
+        document.querySelector("#pre42a").classList.toggle("display");
+        document.querySelector("#pre42b").classList.toggle("display");
+    }
+
+    function toggle40(){
+        document.querySelector("#pre43").classList.toggle("display");
+        document.querySelector("#pre43a").classList.toggle("display");
+        document.querySelector("#pre43b").classList.toggle("display");
+    }
+
+    function toggle41(){
+        document.querySelector("#pre44").classList.toggle("display");
+        document.querySelector("#pre44a").classList.toggle("display");
+        document.querySelector("#pre44b").classList.toggle("display");
+    }
+
+    function toggle42(){
+        document.querySelector("#pre45").classList.toggle("display");
+        document.querySelector("#pre45a").classList.toggle("display");
+        document.querySelector("#pre45b").classList.toggle("display");
+    }
+
+    function toggle43(){
+        document.querySelector("#pre46").classList.toggle("display");
+        document.querySelector("#pre46a").classList.toggle("display");
+        document.querySelector("#pre46b").classList.toggle("display");
+    }
+
+    function toggle44(){
+        document.querySelector("#pre47").classList.toggle("display");
+        document.querySelector("#pre47a").classList.toggle("display");
+        document.querySelector("#pre47b").classList.toggle("display");
+    }
+
+    function toggle45(){
+        document.querySelector("#pre48").classList.toggle("display");
+        document.querySelector("#pre48a").classList.toggle("display");
+        document.querySelector("#pre48b").classList.toggle("display");
+    }
+
+    function toggle46(){
+        document.querySelector("#pre49").classList.toggle("display");
+        document.querySelector("#pre49a").classList.toggle("display");
+        document.querySelector("#pre49b").classList.toggle("display");
+    }
+
+    function toggle47(){
+        document.querySelector("#pre50").classList.toggle("display");
+        document.querySelector("#pre50a").classList.toggle("display");
+        document.querySelector("#pre50b").classList.toggle("display");
+    }
+
+    function toggle48(){
+        document.querySelector("#pre51").classList.toggle("display");
+        document.querySelector("#pre51a").classList.toggle("display");
+        document.querySelector("#pre51b").classList.toggle("display");
+    }
+
+    function toggle49(){
+        document.querySelector("#pre52").classList.toggle("display");
+        document.querySelector("#pre52a").classList.toggle("display");
+        document.querySelector("#pre52b").classList.toggle("display");
+    }
+
+    function toggle50(){
+        document.querySelector("#pre53").classList.toggle("display");
+        document.querySelector("#pre53a").classList.toggle("display");
+        document.querySelector("#pre53b").classList.toggle("display");
+    }
+
+    function toggle51(){
+        document.querySelector("#pre54").classList.toggle("display");
+        document.querySelector("#pre54a").classList.toggle("display");
+        document.querySelector("#pre54b").classList.toggle("display");
+    }
+
+    function toggle52(){
+        document.querySelector("#pre55").classList.toggle("display");
+        document.querySelector("#pre55a").classList.toggle("display");
+        document.querySelector("#pre55b").classList.toggle("display");
+    }
+
+    function toggle53(){
+        document.querySelector("#pre56").classList.toggle("display");
+        document.querySelector("#pre56a").classList.toggle("display");
+        document.querySelector("#pre56b").classList.toggle("display");
+    }
+
+    function toggle54(){
+        document.querySelector("#pre57").classList.toggle("display");
+        document.querySelector("#pre57a").classList.toggle("display");
+        document.querySelector("#pre57b").classList.toggle("display");
+    }
+
+    function toggle55(){
+        document.querySelector("#pre58").classList.toggle("display");
+        document.querySelector("#pre58a").classList.toggle("display");
+        document.querySelector("#pre58b").classList.toggle("display");
+    }
+
+    function toggle56(){
+        document.querySelector("#pre59").classList.toggle("display");
+        document.querySelector("#pre59a").classList.toggle("display");
+        document.querySelector("#pre59b").classList.toggle("display");
+    }
+
+    function toggle57(){
+        document.querySelector("#pre60").classList.toggle("display");
+        document.querySelector("#pre60a").classList.toggle("display");
+        document.querySelector("#pre60b").classList.toggle("display");
+    }
+
+    function toggle58(){
+        document.querySelector("#pre61").classList.toggle("display");
+        document.querySelector("#pre61a").classList.toggle("display");
+        document.querySelector("#pre61b").classList.toggle("display");
+    }
+
+
+
+</script>
+<script src="index.js"></script>
+<body>
+
+    <h1>JS DOM</h1>
+
+  
+
+    <div>  <!-- document.getElementById -->
+      <p onclick="toggle()">document.getElementById</p>
+
+        <pre id="pre">
+
+            < p id="comentarios">
+                texto pertenece al párrafo. Este 
+                texto pertenece al párrafo.Este texto pertenece al párrafo.Este 
+                texto pertenece al párrafo.Este texto pertenece al párrafo.Este 
+                texto pertenece al párrafo.Este texto pertenece al párrafo.
+            < /p> 
+                
+            < input type="button" value="Fuente pequeña" onClick="cambiarFuente(10)" >
+            < input type="button" value="Fuente mediana" onClick="cambiarFuente(13)" >
+            < input type="button" value="Fuente grande " onClick="cambiarFuente(20)" >
+
+        <pre id="pre2">
+          
+            function cambiarFuente(tam){
+
+              let tit=document.getElementById('comentarios');
+                  tit.style.fontSize=tam;
+                  console.log('length childrens:', tit.children.length)
+
+            }
+        </pre>
+    </div>  
+    <div>  <!-- childNodes  -->
+        <p onclick="toggle2()">childNodes</p>
+
+        <pre id="pre3">
+            
+
+         < section id="bloque">
+            < p>Este es el primer párrafo< /p>
+            < p>Este es el segundo párrafo< /p>
+            < p>Este es el tercer párrafo< /p>
+         < /section>
+
+         < input type="button" value="tipo de Nodo" onClick="tipoNodo()">
+
+         <section id="bloque">
+            <p>Este es el primer párrafo</p>
+            <p>Este es el segundo párrafo</p>
+            <p>Este es el tercer párrafo</p>
+         </section>
+
+         <input type="button" value="console.log" onClick="tipoNodo()">
+
+         <hr>
+         function tipoNodo() {
+
+            let lista = document.getElementById('bloque')
+          
+            for(let x=0;x< lista.childNodes.length;x++) {
+
+              if (lista.childNodes[x].nodeType==Node.TEXT_NODE){
+                console.log("Nodo tipo Texto")
+              }
+          
+              if (lista.childNodes[x].nodeType==Node.ELEMENT_NODE){
+                console.log("Nodo tipo Elemento")
+              } 
+
+            }
+            
+         }
+        </pre>
+       
+    </div>  
+    <div>  <!--  childNodes - nodeValue   -->
+        <p onclick="toggle3()"> childNodes - nodeValue  </p>
+
+        <pre id="pre5">
+
+
+            < h1 id="contador">1< /h1> 
+            < input type="button" value="Incrementar en uno" onClick="sumarUno()">
+
+            <hr>
+             function sumarUno(){
+                  let obj=document.getElementById('contador');
+                  obj.childNodes[0].nodeValue=parseInt(obj.childNodes[0].nodeValue)+1;
+            }
+
+        </pre>
+        <pre id="pre6">
+
+           
+            < h1 id="titulo">Este es el título original< /h1> 
+            < input type="button" value="Cambiar Texto" onClick="cambiarTexto()">
+            
+              <hr>
+            function cambiarTexto() {
+                   let tit=document.getElementById('titulo');
+                   tit.childNodes[0].nodeValue='Ahora vemos el nuevo título';
+            }
+
+         </pre>    
+    </div> 
+    <div>  <!-- parentNode -->
+        <p onclick="toggle4()">parentNode</p>
+
+        <pre id="pre7">
+
+
+            < div>  // <-- padre
+
+                < p id="parrafo1">Este es el primer párrafo</p>
+                
+                < p>Este es párrafo< /p>
+                < p>Este es párrafo< /p>
+                < p>Este es párrafo< /p>
+                
+            < /div>
+                
+                < h2> h2 párrafo</h2>
+                
+                < input type="button" value="Cambiar tamaño de fuente" 
+                onClick="cambiarTamFuente()">
+
+            <hr>
+            function cambiarTamFuente() {
+
+                let parent = document.getElementById('parrafo1').parentNode;
+
+                let parent.style.fontSize='40px';  
+            
+            }
+        </pre>
+    </div>  
+    <div> <!--  nextElementSibling y previousElementSibling -->
+       <p onclick="toggle5()">nextElementSibling y previousElementSibling</p>
+       <pre id="pre8">
+
+
+        < ul id="list">
+            < li>111< /li>
+            < li>222< /li>
+            < li>333< /li>
+            < li>444< /li>
+          < /ul>
+         
+        <hr>
+        let listx  = document.querySelector('#list > li:first-of-type');
+        const nextItem = listx.nextElementSibling;
+        console.log(listx)
+        console.log(nextItem)
+
+        Output
+          
+        < li>111< /li>
+        < li>222< /li>  
+
+       </pre>
+    </div>
+    <div> <!-- firstChild - lastChild -->
+        <p onclick="toggle6()">firstChild - lastChild</p>
+        <pre id="pre9">
+
+
+            < div id="parrafos">
+            < p>Este es el primer párrafo< /p>
+            < p>Este es el segundo párrafo< /p>
+            < p>Este es el tercer párrafo< /p>
+        < /div>
+            
+        < input type="button" value="accediendo a los tres párrafos" onClick="proximoParrafo()">
+ 
+            <hr>
+        function proximoParrafo(){
+            let puntero1=document.getElementById('parrafos');
+            let puntero2=puntero1.firstChild;
+
+            while (puntero2!=null){
+                if (puntero2.nodeType==Node.ELEMENT_NODE)
+                console.log('log1:', puntero2.childNodes[0].nodeValue)
+                            puntero2=puntero2.nextSibling
+            }
+        }
+            
+        </pre>
+
+       
+        <pre id="pre9a">
+            
+
+            < div id="parrafos">
+                < p>Este es el primer párrafo< /p>
+                < p>Este es el segundo párrafo< /p>
+                < p>Este es el tercer párrafo< /p>
+            < /div>
+                
+            < input type="button" value="accediendo a los tres párrafos" onClick="parrafoAnterior()">
+
+                <hr>
+        function parrafoAnterior(){
+              let puntero1=document.getElementById('parrafos');
+              let puntero2=puntero1.lastChild;
+
+              while (puntero2!=null){
+                if (puntero2.nodeType==Node.ELEMENT_NODE)
+                  console.log(puntero2.childNodes[0].nodeValue);
+                     puntero2=puntero2.previousSibling;
+              }
+        }
+            
+    </pre>
+    </div>
+    <div> <!--  getElementsByTagName -->
+        <p onclick="toggle6a()">getElementsByTagName</p>
+
+        <pre id="pre9b">
+      
+
+            < section id="bloque1">
+                < h1>Primer Bloque de párrafos.< /h1>
+                < p>Este es el primer párrafo< /p>
+                < p>Este es el segundo párrafo< /p>
+                < p>Este es el tercer párrafo< /p>
+            < /section>
+                
+                
+            < section id="bloque2">
+                < h1>Segundo Bloque de párrafos.< /h1>
+                < p>Este es el primer párrafoqwq< /p>
+                < p>Este es el segundo párrafo< /p>
+                < p>Este es el tercer párrafo< /p>
+            < /section>
+                
+                < input type="button" value="Ocultar" onClick="ocultarParrafos()">
+  
+            <hr>
+        function ocultarParrafos(){
+            let obj=document.getElementById("bloque2");
+            let lista=obj.getElementsByTagName('p');
+
+              console.log(lista)
+              for(f=0;f< lista.length;f++) {
+                lista[f].style.display='none';
+              }
+        }
+  
+        </pre>   
+    </div> 
+    <div> <!-- appendChild - createTextNode -->
+        <p onclick="toggle7()">appendChild - createTextNode</p>
+        <pre id="pre10">
+
+
+            < p id="parrafo">Texto inicial:< /p>
+            < input type="button" value="Agregar nodo de texto" onClick="agregar()">
+
+        </pre>
+        <pre id="pre10a">
+
+
+            let contador=1;
+            function agregar(){
+              let nt=document.createTextNode('Nuevo texto '+contador+'-');
+              let nparrafo=document.getElementById('parrafo');
+              nparrafo.appendChild(nt);
+              contador++;
+            }
+
+        </pre>
+    </div> 
+    <div> <!--  Remove a text node (removeChild) and check if it has child nodes (hasChildNodes)-->
+        <p onclick="toggle8()">Remove a text node (removeChild) and check if it has child nodes (hasChildNodes)</p>
+        <pre id="pre11">
+ 
+            < p id="parrafo">Texto inicial:< /p>
+            < input type="button" value="Agregar nodo de texto" onClick="agregar()">
+            < input type="button" value="Eliminar nodo de texto" onClick="eliminar()"> 
+
+        </pre>
+        <pre id="pre11a">
+ 
+            let contador=1;
+
+            function agregar(){
+              let nt=document.createTextNode('Nuevo texto '+contador+'-');
+              let nparrafo=document.getElementById('parrafo');
+              nparrafo.appendChild(nt);
+              contador++;
+            }
+
+            function eliminar(){
+              let nparrafo=document.getElementById('parrafo');
+
+              if (nparrafo.hasChildNodes()){
+                 nparrafo.removeChild(nparrafo.lastChild);
+                 contador--;
+              }
+            }
+        </pre>
+        <pre id="pre11b">
+
+            restrict changes to an object, make sure properties cant be added.
+
+            let obj = {
+                a: 1,
+                b: 2,
+                c: 3
+              };
+              
+              Object.preventExtensions(obj);
+              obj.d = 4;
+              
+              console.log(obj.d);
+              
+              Output
+              undefined
+        </pre>
+    </div>  
+    <div> <!-- insertBefore - createElement -->
+        <p onclick="toggle9()">insertBefore - createElement</p>
+        <pre id="pre12">
+ 
+            
+            < div id="parrafos">
+                < p>Este es el primer párrafo< /p>
+                < p>Este es el segundo párrafo< /p>
+                < p id="p3">Este es el tercer párrafo< /p>
+                < p>Este es el cuarto párrafo< /p>
+                < p>Este es el quinto párrafo< /p>
+            < /div>
+
+            < input type="button" value="Insertar En Medio" onClick="insertarEnMedio()">
+            < input type="button" value="insertar al principio" onClick="insertarAlPrincipio()">
+
+        </pre>
+        <pre id="pre12a">
+
+           
+            function insertarEnMedio(){
+              let elemento=document.createElement('p');
+              let nodotexto=document.createTextNode('Párrafo entre segundo y tercero');
+              elemento.appendChild(nodotexto);
+              let puntero=document.getElementById('p3');
+
+              let pa=document.getElementById('parrafos');
+              pa.insertBefore(elemento,puntero); 
+            }
+
+            function insertarAlPrincipio(){
+              let elemento=document.createElement('p');
+              let nodotexto=document.createTextNode('Ahora este es el primer párrafo');
+              elemento.appendChild(nodotexto);
+              let pa=document.getElementById('parrafos');
+
+              let puntero=pa.firstChild;
+              pa.insertBefore(elemento,puntero); 
+            }
+
+        </pre>
+    </div> 
+    <div>
+    <div><!-- removeChild -->
+        <p onclick="toggle11()">removeChild </p>
+
+        <pre id="pre14">
+
+            < div id="parrafos">< /div>
+            < input type="button" value="Agregar nodo tipo elemento" onClick="agregar()">
+            < input type="button" value="Eliminar primer nodo tipo elemento" onClick="eliminarPrimero()">
+            < input type="button" value="Eliminar último nodo tipo elemento" onClick="eliminarUltimo()">
+
+        </pre>
+        <pre id="pre14a">
+
+             
+            let contador=1;
+
+            function agregar(){
+              let nuevoelemento=document.createElement("p"); 
+              let nuevotexto=document.createTextNode("Hola Mundo " + contador + " - ");
+
+              contador++;
+              nuevoelemento.appendChild(nuevotexto);
+              let puntero=document.getElementById("parrafos");
+              puntero.appendChild(nuevoelemento);
+            }
+
+            function eliminarPrimero(){
+              let puntero=document.getElementById("parrafos");
+              if (puntero.childNodes.length>0) 
+                puntero.removeChild(puntero.childNodes[0]);  
+            }
+
+            function eliminarUltimo(){   
+              let puntero=document.getElementById("parrafos");
+              if (puntero.childNodes.length>0) 
+                puntero.removeChild(puntero.childNodes[puntero.childNodes.length-1]);  
+            }
+
+        </pre>
+        <pre id="pre14b">
+
+            <p>Delete the paragraph from the position entered</p> 
+
+            < div id="parrafos">
+                < p>Parrafo 0< /p>
+                < p>Parrafo 1< /p>
+                < p>Parrafo 2< /p>
+            < /div>
+
+            < input type="text" id="posicion" name="posicion">
+            < input type="button" value="Eliminar" onClick="eliminar()">
+
+            <hr>
+            function eliminar(){
+              let puntero=document.getElementById('parrafos');
+              let valor=document.getElementById('posicion').value;
+              if (valor< puntero.childNodes.length)
+              puntero.removeChild(puntero.childNodes[valor]);
+            }
+
+        </pre>
+    </div>   
+    </div>
+    <div> <!--  Create an attribute and add it to a node of type element (setAttribute) -->
+        <p onclick="toggle12()">Create an attribute and add it to a node of type element (setAttribute) </p>
+        <pre id="pre15">
+ 
+            < input type="button" value="Crear nodo tipo elemento y definir el atributo href" 
+            onClick="crearElementoyAtributo()">
+
+            < div id="direccion"> < /div>
+
+        </pre>
+        <pre id="pre15a">
+ 
+            function crearElementoyAtributo()
+            {
+              let elemento=document.createElement('a');
+              let puntero=document.getElementById('direccion');
+            
+              puntero.appendChild(elemento);
+              nodotexto=document.createTextNode('google');
+              
+              elemento.appendChild(nodotexto);
+              elemento.setAttribute('href','http://www.google.com.ar');
+            }
+        </pre>
+        <pre id="pre15b">
+
+            < table id="tabla1">
+                < tr>
+                < td>11< /td>   < td>12< /td>
+                < /tr>
+
+                < tr>
+                < td>21< /td>   < td>22< /td>
+                < /tr>
+
+            < /table>
+                
+            < input type="button" value="definir" onClick="definirAtributo()">
+
+                <hr>
+          
+            function definirAtributo(){
+              let reftabla=document.getElementById('tabla1');
+              reftabla.setAttribute('border','11');
+            }
+        </pre>
+    </div>    
+    
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle13()">Remove an attribute from an element (removeAttribute) </p>
+        <pre id="pre16">
+ 
+            <a id="enlace1" href="http://www.google.com.ar">Google.</a>
+
+            <a id="enlace2" href="http://www.yahoo.com.ar">Yahoo.</a>
+
+            <input type="button" value="Eliminar atributos" onClick="eliminarAtributo()">
+
+            <input type="button" value="Inicializar atributos" onClick="inicializarAtributo()">
+
+
+            < a id="enlace1" href="http://www.google.com.ar">Google.< /a>
+            < a id="enlace2" href="http://www.yahoo.com.ar">Yahoo.< /a>
+            < input type="button" value="Eliminar atributos" onClick="eliminarAtributo()">
+            < input type="button" value="Inicializar atributos" onClick="inicializarAtributo()">
+
+        </pre>
+        <pre id="pre16a">
+ 
+            function eliminarAtributo(){
+              var puntero=document.getElementById('enlace1');
+              puntero.removeAttribute('href');
+              puntero=document.getElementById('enlace2');
+              puntero.removeAttribute('href');
+            }
+
+            function inicializarAtributo(){
+              var puntero=document.getElementById('enlace1');
+              puntero.setAttribute('href','http://www.google.com.ar');
+              puntero=document.getElementById('enlace2');
+              puntero.setAttribute('href','http://www.yahoo.com.ar');
+            }
+        </pre>
+        <pre id="pre16b">
+
+            < table id="tabla1">
+                < tr>
+                < td>11< /td>  < td>12< /td>
+                < /tr>
+                < tr>
+                < td>21< /td>  < td>22< /td>
+                < /tr>
+            < /table>
+            < input type="button" value="Inicializar borde" onClick="definirAtributo()">
+            < input type="button" value="Borrar borde" onClick="borrarAtributo()">
+
+                <table id="tabla1">
+                    <tr>
+                    <td>11</td><td>12</td>
+                    </tr>
+                    <tr>
+                    <td>21</td><td>22</td>
+                    </tr>
+                </table>
+
+                <input type="button" value="Inicializar borde" onClick="definirAtributo()">
+
+                <input type="button" value="Borrar borde" onClick="borrarAtributo()">
+
+<hr>
+            function definirAtributo(){
+              var reftabla=document.getElementById('tabla1');
+              reftabla.setAttribute('border','1');
+            }
+
+            function borrarAtributo(){
+                var reftabla=document.getElementById('tabla1');
+                reftabla.removeAttribute('border');   
+            }
+        </pre>
+    </div> 
+    
+<hr>
+
+
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle14()">...</p>
+        <pre id="pre17">
+ 
+           17
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle15()">...</p>
+        <pre id="pre18">
+ 18
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle16()">...</p>
+        <pre id="pre19">19
+ 
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle17()">...</p>
+        <pre id="pre20">20
+ 
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle18()">...</p>
+        <pre id="pre21">
+ 21
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle19()">...</p>
+        <pre id="pre22">22
+ 
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle20()">...</p>
+        <pre id="pre23">23
+ 
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle21()">...</p>
+        <pre id="pre24">
+ 
+           24
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle22()">...</p>
+        <pre id="pre25">
+ 
+           25
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle23()">...</p>
+        <pre id="pre26">
+ 26
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle24()">...</p>
+        <pre id="pre27">
+ 27
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle25()">...</p>
+        <pre id="pre28">
+ 28
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle26()">...</p>
+        <pre id="pre29">
+ 
+       29    
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle27()">...</p>
+        <pre id="pre30">
+ 
+         30  
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle28()">...</p>
+        <pre id="pre31">
+ 
+          31 
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle29()">...</p>
+        <pre id="pre32">
+ 
+           32
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle30()">...</p>
+        <pre id="pre33">
+ 
+           33
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle31()">...</p>
+        <pre id="pre34">
+ 
+           34
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle32()">...</p>
+        <pre id="pre35">
+ 35
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle33()">...</p>
+        <pre id="pre36">
+ 
+           36
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle34()">...</p>
+        <pre id="pre37">
+ 37
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle35()">...</p>
+        <pre id="pre38">
+ 
+           38
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle36()">...</p>
+        <pre id="pre39">
+ 
+           39
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle37()">...</p>
+        <pre id="pre40">
+ 40
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle38()">...</p>
+        <pre id="pre41">
+ 
+           41
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle39()">...</p>
+        <pre id="pre42">
+ 42
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle40()">...</p>
+        <pre id="pre43">
+ 
+           43
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle41()">...</p>
+        <pre id="pre44">
+ 44
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle42()">... </p>
+        <pre id="pre45">
+ 45
+           
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute)-->
+        <p onclick="toggle43()">...</p>
+        <pre id="pre46">
+ 
+           46
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute)-->
+        <p onclick="toggle44()">...</p>
+        <pre id="pre47">
+ 
+           47
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute)-->
+        <p onclick="toggle45()">...</p> 
+        <pre id="pre48">
+ 
+           48
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle46()">...</p>
+        <pre id="pre49">
+ 
+           49
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle47()">...</p>
+        <pre id="pre50">
+ 
+           50
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle48()">...</p>
+        <pre id="pre51">
+ 
+           51
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle49()">...</p>
+        <pre id="pre52">
+ 
+           52
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle50()">...</p>
+        <pre id="pre53">
+ 
+           53
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle51()">...</p>
+        <pre id="pre54">
+ 
+           54
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle52()">...</p>
+        <pre id="pre55">
+ 
+           55
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle53()">... </p>
+        <pre id="pre56">
+ 
+           56
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle54()">...</p>
+        <pre id="pre57">
+ 
+           57
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle55()">...</p>
+        <pre id="pre58">
+ 
+           58
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle56()">... </p>
+        <pre id="pre59">
+ 
+           59
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle57()"> ... </p>
+        <pre id="pre60">
+ 
+           60
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+    <div> <!--  Remove an attribute from an element (removeAttribute) -->
+        <p onclick="toggle58()"> ... </p>
+        <pre id="pre61">
+ 
+           61
+
+        </pre>
+        <pre id="pre16a">
+ 
+           
+        </pre>
+        <pre id="pre16b">
+
+        </pre>
+    </div>  
+ 
+
+
+
+</body>
+<script src="index.js"></script>
+</html>
+
+
+
+
+
+
+
+
