@@ -175,6 +175,7 @@
 <body>
 
     <h1>FUNCTIONAL PROGRAMING</h1>
+
     <div>  <!-- Introduction -->
         <p onclick="toggle()">Introduction to Functional Programming</p>
 
@@ -416,7 +417,7 @@
     <div> <!-- reduce -->
         <p onclick="toggle5()">reduce</p>
         <pre id="pre8">
- 
+  
             const array1 = [1, 2, 3, 4];
             const reducer = (accumulator, currentValue) => accumulator + currentValue;
             
@@ -440,12 +441,27 @@
             Sum of values in an object array
 
             let initialValue = 0
-            let sum = [{x: 1}, {x: 2}, {x: 3}].reduce(
-                (accumulator, currentValue) => accumulator + currentValue.x, initialValue
-            )
+            let sum = [{x: 1}, {x: 2}, {x: 3}]
+            let sumReduce = sum.reduce((accumulator, currentValue, position, sum) => accumulator + currentValue.x, initialValue)
+          
+            console.log(sumReduce) 
+            console.log(sum) 
 
-            console.log(sum)
             output: 6
+
+            <hr>
+          
+            const nums = [11, 22, 33, 44, 55, 66, 77];
+
+            const x2 = (accumulator, num) => [...accumulator, num * 2]
+             
+            const double = nums.length > 0 ? nums.reduce(x2, []) : 0;
+
+            console.log('double:', double)
+            console.log('nums:', nums) // no mutation in the original array
+
+
+
         </pre>
         <pre id="pre8b">
 
@@ -1290,6 +1306,36 @@
     
         </pre>
     </div> 
+
+    <!--  const monday = [{'name': 'Write a tutorial','duration' : 180},
+                          {'name': 'Some web development','duration' : 120}];
+ 
+            const tuesday = [{'name': 'Keep writing that tutorial','duration' : 240},
+                           {'name': 'Some more web development','duration' : 180},
+                           {'name': 'A whole lot of nothing','duration'  : 240}];
+     
+            const tasks = [monday, tuesday];
+        
+            const result = tasks.reduce((acc, current) => acc.concat(current))
+
+                              // Extract the task duration, and convert minutes to hours
+                              .map((task) => task.duration / 60)
+
+                              // Filter out any task that took less than two hours
+                              .filter((duration) => duration >= 2)
+
+                              // Multiply each tasks' duration by our hourly rate
+                              .map((duration) => duration * 25)
+
+                              // Combine the sums into a single dollar amount
+                              .reduce((acc, current) => [(+acc) + (+current)])
+
+                              // Convert to a "pretty-printed" dollar amount
+                              .map((amount) => '$' + amount.toFixed(2))
+                              
+                              // Pull out the only element of the array we got from map
+                              .reduce((formatted_amount) =>formatted_amount); -->
     
 </body>
 </html>
+
