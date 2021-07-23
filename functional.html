@@ -39,6 +39,7 @@
 
 </style>
 <script>
+     
     function toggle(){
         document.querySelector("#pre").classList.toggle("display");
         document.querySelector("#pre2").classList.toggle("display");
@@ -259,6 +260,7 @@
 
             const map1 = array1.map((element, index, array) => {
                     console.log('index:', index, 'element:', element, 'array1:', array);
+                    
             });
 
             Output
@@ -267,6 +269,38 @@
             > "index:" 1 "element:" 4 "array1:" Array [1, 4, 9, 16]
             > "index:" 2 "element:" 9 "array1:" Array [1, 4, 9, 16]
             > "index:" 3 "element:" 16 "array1:" Array [1, 4, 9, 16]
+
+            <hr>
+
+            Remove repeating items:
+
+            const array2 = [5, 22, 11, 5, 4, 5, 5, 1];
+
+            const array2X = array2.filter((el, place, array2) => {
+                return place === array2.indexOf(el)
+            })
+
+            console.log(array2X)
+
+            <hr>
+
+            const objects = [{id:'1', name:'aaa', price: 100},
+                             {id:'2', name:'bbb', price: 200},
+                             {id:'3', name:'ccc', price: 300}]
+
+            const idObject = objects.map(object => object.id)
+
+            console.log('ids:', idObject)
+
+            // or you can use:
+
+            const idObject2 = objects.map( ({id}) => id ) 
+            
+            console.log('ids2:', idObject2) 
+
+            <hr>
+
+
         </pre>
 
         <pre id="pre5a">
@@ -333,6 +367,23 @@
             > 3 "exuberant"
             > 4 "destruction"
             > 5 "present"
+
+            <hr>
+
+            const objects = [{id:'1', name:'aaa', price: 100},
+                             {id:'2', name:'bbb', price: 200},
+                             {id:'3', name:'ccc', price: 300}]
+
+            const lowCost = object => object.price < 201
+           const highCost = object => !lowCost(object)                  
+
+            const lowCostObjects = objects.filter(lowCost)
+           const highCostObjects = objects.filter(highCost)
+
+           console.log(lowCostObjects)
+           console.log(highCostObjects)
+
+           
         </pre>
         <pre id="pre7a">
 
@@ -800,7 +851,7 @@
                 }
               }
               
-              var g = gen();
+              let g = gen();
               g.next();
               // { value: 42, done: false }
               g.throw(new Error('Something went wrong'));
@@ -814,7 +865,7 @@
         <pre id="pre16">
 
             An IIFE (Immediately Invoked Function Expression)
-            This prevents accessing variables within the IIFE idiom as well as polluting the global scope.
+            This prevents accessing letiables within the IIFE idiom as well as polluting the global scope.
 
             (function () {
                 statements
@@ -887,9 +938,8 @@
 
         </pre>
     </div>   
-
-    <div> <!-- REST PARAMETERS-->
-        <p onclick="toggle15()">REST PARAMETERS</p>
+    <div> <!-- REST Parameters-->
+        <p onclick="toggle15()">REST Parameters</p>
         <pre id="pre18">
 
             RECEIVE UNLIMITED PARAMETERS IN A FUNCTION
@@ -939,273 +989,307 @@
             console.log(separarCon(' + ', 'Pablo', 'Laura', 'Juan'));
 
         </pre>
-    </div>  
-    <div> <!--  one or many items values based on a condition i create -->
-        <p onclick="toggle16()">one or many items values based on a condition i create</p>
+    </div> 
+    <div> <!-- 	ES6 - Map  -->
+        <p onclick="toggle16()"> ES6 - Map </p>
         <pre id="pre19">
 
-            let arr = [5, 1, 8];
-            let filtered = arr.filter(el => el > 4);
-            console.log(filtered)
+            const mapa1 = new Map([
+            ["casa", "house"],
+            ["rojo", "red"],
+            ["auto", "car"]
+          ]);
+      
+      for(let key of mapa1.keys()) {
+        console.log('key:', key)
+      } 
+      
+      for(let value of mapa1.values()) {
+        console.log('value:', value)
+      } 
+      
+      for(let [clave, value] of mapa1){
+          console.log('c&v:', clave + ' ' + value)
+      }
 
-            Output
-            [5, 8]
+      <hr>
+
+      get()
+
+      const mapa1 = new Map([["casa", "house"],
+                             ["rojo", "red"],
+                             ["auto", "car"]]);
+
+    const palcastellano = prompt("Ingrese una palabra en castellano:", "");
+    console.log(`La traducción de ${palcastellano} es ${mapa1.get(palcastellano)}`)
+       
+    <hr>
+
+    size
+
+    const mapa1 = new Map([
+    ["casa", "house"],
+    ["rojo", "red"],
+    ["auto", "car"]]);
+
+     mapa1.set("ventana","window");
+     console.log(mapa1.size);    // 4
+
+  <hr>
+
+  delete
+
+  const mapa1 = new Map([
+  ["casa", "house"],
+  ["rojo", "red"],
+  ["auto", "car"]]);
+
+    mapa1.delete("casa");
+    console.log(mapa1.size);    // 2
+
+    <hr>
+
+    clear()
+
+    const mapa1 = new Map([
+    ["casa", "house"],
+    ["rojo", "red"],
+    ["auto", "car"]]);
+
+        mapa1.clear();
+        console.log(mapa1.size);
+
+        <hr>
+
+        forEach()
+
+        const mapa1 = new Map([
+        ["casa", "house"],
+        ["rojo", "red"],
+        ["auto", "car"]
+      ]);
+  
+      console.log("Claves y valores del mapa.")
+      mapa1.forEach((valor, clave) => console.log(`${clave}  ${valor}`));
+            
         </pre>
         <pre id="pre19a">
 
-            Creates a new array with all of the elements 
-            of this array for which the provided 
-            filtering function returns true.
+            < div id="paises"> < /div>
+
+
+         addEventListener('DOMContentLoaded', inicio);
+
+         function inicio() {
+           const paises = new Map([
+             ["Argentina", 45000000],
+             ["España", 46000000],
+             ["Brasil", 190000000],
+             ["Urugual", 3400000]
+           ]);
+     
+           let cadena = '';
+           for (let [pais, cantidad] of paises) {
+             cadena += `< li>${pais} => ${cantidad}< /li>`;
+           }
+           document.getElementById("paises").innerHTML = cadena;
+         }
+            
         </pre>
     </div> 
-    <div> <!-- one or many items whether or not every item satisfies a condition -->
-        <p onclick="toggle17()">one or many items whether or not every item satisfies a condition</p>
+    <div> <!-- ES6 - Set -->
+        <p onclick="toggle17()">ES6 - Set</p>
         <pre id="pre20">
 
-            let arr = [5, 1, 8];
-            let isSmall = (el) => el < 10;
-            console.log(arr.every(isSmall));
+            const conjunto1 = new Set();
+            conjunto1.add("C");
+            conjunto1.add("Pascal");
+            conjunto1.add("PHP");
+            conjunto1.add("Python");
+
+            console.log(conjunto1);
+
+        // Set(4) {"C", "Pascal", "PHP", "Python"}
+
+        <hr>
+        const conjunto1 = new Set(["C", "Pascal", "PHP", "Python"]);
+        console.log(conjunto1);
+
+        // Set(4) {"C", "Pascal", "PHP", "Python"}
+
+        <hr>
+
+        const conjunto1 = new Set();
+
+        for (let x = 0; x < 10; x++){
+          conjunto1.add(parseInt(Math.random() * 50) + 1);
+          console.log(x)
+        }  
+
+        console.log(`La cantidad de números aleatorios distintos son ${conjunto1.size}`)
+
+        if (conjunto1.has(12))
+          console.log("Si se generó el número 12")
+        else
+          console.log("No se generó el número 12")  
             
-            Output
-            true
         </pre>
         <pre id="pre20a">
 
-            Returns true if every element in this array
-            satisfies the provided testing function.
-        </pre>
+            delete
+
+            const conjunto1 = new Set(["C", "Pascal", "PHP", "Python"]);
+            console.log(conjunto1.size);  // 4
+            conjunto1.delete("Pascal");
+            console.log(conjunto1.size);  // 3
+
+            <hr>
+            const conjunto1 = new Set(["C", "Pascal", "PHP", "Python"]);
+            for(let elemento of conjunto1)
+              console.log(`${elemento}`);
+
+              <hr>
+
+            forEach    
+
+            const conjunto1 = new Set(["C", "Pascal", "PHP", "Python"]);
+            mapa1.forEach((elemento) => console.log(`${elemento}`));
+
+            <hr>
+
+            const feriados = new Set([ "1/1/2020",
+                                       "25/5/2020",
+                                       "25/12/2020" ]);
+
+              const dia = parseInt(prompt("Ingrese día:", ""));
+              const mes = parseInt(prompt("Ingrese mes:", ""));
+              const año = parseInt(prompt("Ingrese año:", ""));
+
+              if (feriados.has(`${dia}/${mes}/${año}`))
+                console.log("La fecha corresponde a un feriado");
+                  else
+                console.log("La fecha no corresponde a un feriado");
+
+            </pre>
     </div>   
-    <div> <!-- one or many items whether or not at least one item satisfies a condition -->
-        <p onclick="toggle18()">one or many items whether or not at least one item satisfies a condition</p>
+    <div> <!-- ES6 - WeakMap y WeakSet -->
+        <p onclick="toggle18()"> ES6 - WeakMap y WeakSet </p>
         <pre id="pre21">
 
-            let arr = [5, 1, 8];
-            let biggerThan4 = (el) => el > 4;
-            console.log(arr.some(biggerThan4));
+            They are two objects with similar functionalities to Map and Set but with the ability for the JavaScript garbage collector to remove elements from them when it deems appropriate.
 
-            Output
-            true
+            WeakSet: They can only store data of type object (this is logical because primitive data types cannot have the reference of more than one variable)
+            The references to objects in the WeakSet collection are weakly held, this means that if at some point during the execution of the algorithm the object references are lost, then the JavaScript garbage collector frees space from the WeakSet collection.
+            
+                const set1 = new WeakSet ();
+                let user1 = {
+                  name: "juan",
+                  points: 200
+                };
+                set1.add (user1);
+                console.log (set1.has (user1)); // true
+                user1 = null;
+                ....
+       
         </pre>
         <pre id="pre21a">
 
-            Returns true if at least one element in this array 
-            satisfies the provided testing function.
+            Once the variable 'user1' is removed by setting null, the JavaScript "garbage collector" takes care of removing the item from the set1 object.
+            
+            WeakMap Only a value of type object can be stored in the map key. JavaScript takes care of removing elements from the map when they no longer have references to the object that acts as a key within the WeakMap.
+            
+            Annotations
+            WeakMap and WeakSet objects do not have the ability to go through their elements through the for of structure, nor can we know the number of elements.
+            
+            We can delete an element from the collection using the 'delete' method, but it does not have a method to delete all the elements.
+            
+            The use of these objects makes sense when we know that many objects that act as keys will be eliminated during the execution of the algorithm, otherwise it is convenient to use the Map and Set objects.
+
         </pre>
     </div>
-
-    <br>
-
-    <div> <!-- walk over items, execuiting a function i will create for each element -->
-        <p onclick="toggle19()">walk over items, execuiting a function i will create for each element</p>
+    <div> <!-- window.addEventListener -->
+        <p onclick="toggle19()">window.addEventListener</p>
         <pre id="pre22">
 
-            let arr = [5, 1, 8];
-            arr.forEach((element) => {
-              console.log(element)
-            });
-            
-            Output
 
-            5
-            1
-            8
+        document.addEventListener(event, function, useCapture) 
+
+          <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" target="_blanck">DOM EVENTS >>></a>
+
+<hr>
+        window.onload = load; 
+
+            function handleClick(){
+                console.log('a click')
+                document.removeEventListener('click', handleClick)
+            }
+
+            function load(){
+                console.log('window load')
+                document.addEventListener('click', handleClick)
+            }
+
+            <hr>
+            const element = document.querySelector(".class__name");
+
+            element.addEventListener("click", () => {
+	            console.log("clicked element");
+            });
+           
         </pre>
         <pre id="pre22a">
 
-            The forEach() method executes a provided function once for each array element.
+            
+            < input type="button" id="boton0" name="boton0" value="0" class="boton">
+            < input type="button" id="boton1" name="boton1" value="1" class="boton">
+            < input type="button" id="boton2" name="boton2" value="2" class="boton">
+            < input type="button" id="boton3" name="boton3" value="3" class="boton">
+            < input type="button" id="boton4" name="boton4" value="4" class="boton">
+            < input type="button" id="boton5" name="boton5" value="5" class="boton">
+            < input type="button" id="boton6" name="boton6" value="6" class="boton">
+            < input type="button" id="boton7" name="boton7" value="7" class="boton">
+            < input type="button" id="boton8" name="boton8" value="8" class="boton">
+            < input type="button" id="boton9" name="boton9" value="9" class="boton">
 
-            const array1 = ['a', 'b', 'c'];
+            < div id="resultado"></ div>
 
-            array1.forEach((element, index,  array) => console.log(index, element, array));
+            <hr>
+
+            const inicio = () => {
+
+                for (let x = 0; x <= 9; x++) {
+                    
+                   let b = document.getElementById('boton' + x)
              
-            Output
+                    b.addEventListener('click', presion, false); 
+                }
+            
+              }
+              
+              window.addEventListener('DOMContentLoaded', inicio, false);
+              
+              const presion = evt => {
+                  
+                  let r = document.getElementById('resultado')
+            
+                  r.innerHTML = r.innerHTML + evt.target.value + ' ';
+            
+                  console.log('id:', evt.target.id)
+                  console.log('name:', evt.target.name)
+                  console.log('value:', evt.target.value)
+                  console.log('className:', evt.target.className)
+            
+              }
 
-            > 0 "a" Array ["a", "b", "c"]
-            > 1 "b" Array ["a", "b", "c"]
-            > 2 "c" Array ["a", "b", "c"]
-        </pre>
-    </div> 
+              Output
+
+              id: boton1
+              name: boton1
+              value: 1
+              className: boton
     
-    <div> <!-- walk over items, creating new array from each element with a function i crerate -->
-        <p onclick="toggle20()">walk over items, creating new array from each element with a function i crerate</p>
-        <pre id="pre23">
-
-            let arr = [5, 1, 8];
-            let map = arr.map(x => x + 1);
-            console.log(map);
-
-            Output
-
-            [6, 2, 9]
-        </pre>
-        <pre id="pre23a">
-
-            Creates a new array with the results of calling a 
-            provided function on every element in this array.
-
-            let string = Array.from('hello')
-
-            console.log(string)  
-            console.log(Array.from([1, 2, 3], x => x * 3 ));
-
-            Output
- 
-            > Array ["h", "e", "l", "l", "o"]
-            > Array [3, 6, 9]
         </pre>
     </div> 
-    <div> <!--  creating an iterator object    -->
-        <p onclick="toggle21()">creating an iterator object</p>
-        <pre id="pre24">
-
-            let arr = [5, 1, 8];
-            let iterator = arr.entries();
-            console.log(iterator.next().value);
-            console.log(iterator.next().value);
-
-            Output
-            [0, 5]
-            // the 0 is the index,
-            // the 5 is the first number
-
-            [1, 1]
-        </pre>
-        <pre id="pre24a">
-
-            Returns a new Array Iterator object that contains the key/value 
-            pairs for each index in the array. There are a lot of uses for iterators, 
-            as well as other methods used with it in conjuction, like values and keys
-        </pre>
-    </div>  
-   
-    <br>
-
-    <div> <!-- return a string, join all Elements of the array into a string -->
-        <p onclick="toggle22()">return a string, join all Elements of the array into a string</p>
-        <pre id="pre25">
-
-            let arr = [5, 1, 8];
-            console.log(arr.join(' '));
-
-            Output
-
-            5 1 8
-
-            let arr = [5, 1, 8];
-            console.log(arr.join('-'));
-
-            Output
-
-            5-1-8
-        </pre>
-        <pre id="pre25a">
-
-            Returns a string representing the array and its elements.
-
-            let arr = [5, 1, 8];
-            console.log(arr.toString());
-            
-            Output
-            "5,1,8" 
-        </pre>
-    </div>
-    <div> <!-- order an array, reverse the order of the array -->
-        <p onclick="toggle23()"> order an array, reverse the order of the array</p>
-        <pre id="pre26">
-
-            let arr = [5, 1, 8];
-            arr.reverse();
-            console.log(arr);
-            
-            Output
-            [8, 1, 5]
-        </pre>
-        <pre id="pre26a">
-
-            Reverses the order of the elements of an array in place
-          — the first becomes the last, and the last becomes the first.
-
-          const points = [40, 100, 1, 5, 25, 10];
-
-          points.sort(function(a, b){return b - a});
-          points.reverse()
-          console.log(points)
-        </pre>
-    </div> 
-    <div> <!-- sort the items of the array -->
-        <p onclick="toggle24()"> sort the items of the array</p>
-        <pre id="pre27">
-
-            let arr = [5, 1, 8];
-            arr.reverse();
-            console.log(arr);
-            
-            Output 
-            [8, 1, 5]
-        </pre>
-        <pre id="pre27a">
-
-            Sorts the elements of an array in place and returns the array.
-
-            Important note: If compareFunction is not supplied, 
-            elements are sorted by converting them to strings and
-            comparing strings in Unicode code point order. 
-
-            For example, "Banana" comes before "cherry".
-            In a numeric sort, 9 comes before 80, but because numbers 
-            are converted to strings, "80" comes before "9" in Unicode order. 
-
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-             target="_blank">see the docs →</a>
-        </pre>
-    </div>  
-    <div> <!-- Fills all the elements of an array  -->
-        <p onclick="toggle25()"> Fills all the elements of an array </p>
-        <pre id="pre28">
-
-            const array1 = [1, 2, 3, 4];
-
-            // fill with 0 from position 2 until position 4
-            console.log(array1.fill(0, 2, 4));
-            // expected output: [1, 2, 0, 0]
-            
-            // fill with 5 from position 1
-            console.log(array1.fill(5, 1));
-            // expected output: [1, 5, 5, 5]
-            
-            console.log(array1.fill(6));
-            // expected output: [6, 6, 6, 6]
-        </pre>
-        <pre id="pre28a">
-
-            Sorts the elements of an array in place and returns the array.
-
-            Important note: If compareFunction is not supplied, 
-            elements are sorted by converting them to strings and
-            comparing strings in Unicode code point order. 
-
-            For example, "Banana" comes before "cherry".
-            In a numeric sort, 9 comes before 80, but because numbers 
-            are converted to strings, "80" comes before "9" in Unicode order. 
-
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-             target="_blank">see the docs →</a>
-        </pre>
-    </div> 
-    <div> <!-- Copies a sequence of array elements within the array. -->
-        <p onclick="toggle26()"> Copies a sequence of array elements within the array.</p>
-        <pre id="pre29">
-             
-            You can specify either just the ending element 
-            (where begin will default to zero)
-            or both the beginning and the end, comma-separated.
-
-            [1, 2, 3, 4, 5].copyWithin(0, 3, 4)
-            // [4, 2, 3, 4, 5]
-        </pre>
-    </div>   
-
-    <br>
     
 </body>
 </html>
