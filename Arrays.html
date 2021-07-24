@@ -356,8 +356,8 @@
 
     <br>
 
-    <div> <!-- find items. out if a certain element exist-->
-        <p onclick="toggle9()">find items. out if a certain element exist</p>
+    <div> <!-- find item. out if a certain element exist-->
+        <p onclick="toggle9()">find item. out if a certain element exist</p>
         <pre id="pre12">
  
             let arr = [5, 1, 8];
@@ -366,10 +366,11 @@
 
             Output
             true
+
         </pre>
     </div> 
-    <div> <!-- find items index -->
-        <p onclick="toggle11()">find items. first or last index </p>
+    <div> <!-- find item index -->
+        <p onclick="toggle11()">find item. first or last index </p>
         <pre id="pre14">
 
             Returns the first index at which a given element 
@@ -393,8 +394,8 @@
             3
         </pre>
     </div>   
-    <div> <!-- the first element that satisfies a condition -->
-        <p onclick="toggle12()">the first element that satisfies a condition</p>
+    <div> <!-- the first element value that satisfies a condition -->
+        <p onclick="toggle12()">the first element value that satisfies a condition</p>
         <pre id="pre15">
 
             let arr = [5, 1, 8];
@@ -403,6 +404,18 @@
             
             Output
             1
+
+            <hr>
+            let arr = [1,1,2,2,3,3,4,4,5,5]
+            let isTiny = el => el > 4
+            
+            let tiny = arr.find(isTiny)
+            let positionTiny = arr.findIndex(isTiny)
+            
+            console.log(arr)
+            console.log(tiny)
+            console.log(positionTiny)
+
         </pre>
         <pre id="pre15a">
 
@@ -495,8 +508,8 @@
             filtering function returns true.
         </pre>
     </div> 
-    <div> <!-- one or many items whether or not every item satisfies a condition -->
-        <p onclick="toggle17()">one or many items whether or not every item satisfies a condition</p>
+    <div> <!-- whether or not every item satisfies a condition -->
+        <p onclick="toggle17()">whether or not every item satisfies a condition</p>
         <pre id="pre20">
 
             let arr = [5, 1, 8];
@@ -512,8 +525,8 @@
             satisfies the provided testing function.
         </pre>
     </div>   
-    <div> <!-- one or many items whether or not at least one item satisfies a condition -->
-        <p onclick="toggle18()">one or many items whether or not at least one item satisfies a condition</p>
+    <div> <!-- whether or not at least one item satisfies a condition -->
+        <p onclick="toggle18()"> whether or not at least one item satisfies a condition</p>
         <pre id="pre21">
 
             let arr = [5, 1, 8];
@@ -674,11 +687,13 @@
         <pre id="pre27">
 
             let arr = [5, 1, 8];
-            arr.reverse();
+            arr.sort();
             console.log(arr);
             
             Output
-            [8, 1, 5]
+
+            [1, 5, 8]
+
         </pre>
         <pre id="pre27a">
 
