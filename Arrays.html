@@ -172,7 +172,7 @@
 
         <pre id="pre">
 
-            let arr = [5, 1, 8]
+            const arr = [5, 1, 8]
             arr.splice(2, 0, 'tacos') // (index start, delete, what add)
             console.log(arr)
 
@@ -182,8 +182,8 @@
             <hr>
             without modify the original array:
             
-            let arr = [1,2,3];
-            let arr2 = [...arr]
+            const arr = [1,2,3];
+            const arr2 = [...arr]
             arr2.splice(1,0,'jiji')
             
             console.log(arr2)
@@ -191,8 +191,8 @@
         </pre>
         <pre id="pre2">
           
-            let vec1 = [0,7,2,3,4,2,6,8,2]
-            let vec = [...vec1]
+            const vec1 = [0,7,2,3,4,2,6,8,2]
+            const vec = [...vec1]
             
                 for(i = 0; i < vec.length; i++){  
                     if (vec[i]==2){     //if a item == 2
@@ -208,6 +208,19 @@
             [0, 7, 2, 3, 4, 2, 6, 8, 2]
             [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu"]
 
+            <hr>
+            const vec1 = [0,7,2,3,4,2,6,8,2]
+            const vec = [...vec1]
+
+            vec.map((el, i)=> {
+                if (vec[i]==2){     
+                    vec.splice(i,1,'huhu')   
+                }
+            })
+
+            console.log(vec) 
+            console.log(vec1) 
+
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
@@ -215,7 +228,7 @@
 
         <pre id="pre3">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.push(2);
             console.log(arr);
 
@@ -227,7 +240,7 @@
             The reverse method called pop extracts the last element of the Array 
             and decrements the length attribute by one
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.pop();
             console.log(arr);
 
@@ -240,7 +253,7 @@
 
         <pre id="pre5">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.unshift(2, 7);
             console.log(arr);
             
@@ -252,7 +265,7 @@
             The shift method extracts the first element of the vector 
             and shifts the rest of the vector elements forward.
             
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.shift();
             console.log(arr);
 
@@ -265,9 +278,9 @@
 
         <pre id="pre7">
 
-            let arr = [5, 1, 8];
-            let arr2 = ['a', 'b', 'c'];
-            let arr3 = arr.concat(arr2);
+            const arr = [5, 1, 8];
+            const arr2 = ['a', 'b', 'c'];
+            const arr3 = arr.concat(arr2);
             console.log(arr3);
             
             Output
@@ -282,7 +295,7 @@
        <p onclick="toggle5()">Removes elements from an array.</p>
        <pre id="pre8">
 
-           let arr = [5, 1, 8];
+           const arr = [5, 1, 8];
            arr.splice(2, 1); // (index start, how much)
            console.log(arr);
         
@@ -294,7 +307,7 @@
         <p onclick="toggle6()">Removes the last element from an array and returns that element.</p>
         <pre id="pre9">
  
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.pop();
             console.log(arr);
 
@@ -306,8 +319,8 @@
         <p onclick="toggle7()">Removes the first element from an array and returns that element.</p>
         <pre id="pre10">
  
-            let arr = [5, 1, 8];
-            let shiftValue = arr.shift();
+            const arr = [5, 1, 8];
+            const shiftValue = arr.shift();
             console.log(arr); // [1,8]
             console.log(shiftValue); // 5 
             
@@ -319,8 +332,8 @@
         <p onclick="toggle8()">one or more elements in order for use</p>
         <pre id="pre11">
  
-            let arr = [5, 1, 8];
-            let slicedArr = arr.slice(1);
+            const arr = [5, 1, 8];
+            const slicedArr = arr.slice(1);
             console.log(arr);
             console.log(slicedArr);
             
@@ -365,8 +378,8 @@
         <p onclick="toggle9()">find item. out if a certain element exist</p>
         <pre id="pre12">
  
-            let arr = [5, 1, 8];
-            let inc = arr.includes(1)
+            const arr = [5, 1, 8];
+            const inc = arr.includes(1)
             console.log(inc)
 
             Output
@@ -381,7 +394,7 @@
             Returns the first index at which a given element 
             can be found in the array, or -1 if it is not present.
 
-            let arr = [5, 1, 8, 5];
+            const arr = [5, 1, 8, 5];
             console.log(arr.indexOf(5));
 
             Output
@@ -392,7 +405,7 @@
             Returns the LAST (greatest) index of an element within the array 
             equal to the specified value, or -1 if none is found.
  
-            let arr = [5, 1, 8, 5];
+            const arr = [5, 1, 8, 5];
             console.log(arr.lastIndexOf(5))                     
 
             Output
@@ -403,19 +416,19 @@
         <p onclick="toggle12()">the first element value that satisfies a condition</p>
         <pre id="pre15">
 
-            let arr = [5, 1, 8];
-            let isTiny = (el) => el < 2;
+            const arr = [5, 1, 8];
+            const isTiny = (el) => el < 2;
             console.log(arr.find(isTiny));
             
             Output
             1
 
             <hr>
-            let arr = [1,1,2,2,3,3,4,4,5,5]
-            let isTiny = el => el > 4
+            const arr = [1,1,2,2,3,3,4,4,5,5]
+            const isTiny = el => el > 4
             
-            let tiny = arr.find(isTiny)
-            let positionTiny = arr.findIndex(isTiny)
+            const tiny = arr.find(isTiny)
+            const positionTiny = arr.findIndex(isTiny)
             
             console.log(arr)
             console.log(tiny)
@@ -440,8 +453,8 @@
         <p onclick="toggle13()">the first index of an item that satisfies a condition</p>
         <pre id="pre16">
 
-            let arr = [5, 1, 8];
-            let isBig = (el) => el > 6;
+            const arr = [5, 1, 8];
+            const isBig = (el) => el > 6;
             console.log(arr.findIndex(isBig));
 
             Output
@@ -459,8 +472,8 @@
         <p onclick="toggle14()">a value by reducing the Array, start to finish</p>
         <pre id="pre17">
 
-            let arr = [5, 1, 8];
-            let reducer = (a, b) => a + b;
+            const arr = [5, 1, 8];
+            const reducer = (a, b) => a + b;
             console.log(arr.reduce(reducer));
             
             Output
@@ -477,7 +490,7 @@
         <p onclick="toggle15()">a value by reducing the Array, finish to start</p>
         <pre id="pre18">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             [arr, [0, 1]].reduceRight((a, b) => {
             return a.concat(b)
             }, [])
@@ -499,8 +512,8 @@
         <p onclick="toggle16()">one or many items values based on a condition i create</p>
         <pre id="pre19">
 
-            let arr = [5, 1, 8];
-            let filtered = arr.filter(el => el > 4);
+            const arr = [5, 1, 8];
+            const filtered = arr.filter(el => el > 4);
             console.log(filtered)
 
             Output
@@ -517,8 +530,8 @@
         <p onclick="toggle17()">whether or not every item satisfies a condition</p>
         <pre id="pre20">
 
-            let arr = [5, 1, 8];
-            let isSmall = (el) => el < 10;
+            const arr = [5, 1, 8];
+            const isSmall = (el) => el < 10;
             console.log(arr.every(isSmall));
             
             Output
@@ -534,8 +547,8 @@
         <p onclick="toggle18()"> whether or not at least one item satisfies a condition</p>
         <pre id="pre21">
 
-            let arr = [5, 1, 8];
-            let biggerThan4 = (el) => el > 4;
+            const arr = [5, 1, 8];
+            const biggerThan4 = (el) => el > 4;
             console.log(arr.some(biggerThan4));
 
             Output
@@ -554,7 +567,7 @@
         <p onclick="toggle19()">walk over items, executing a function i will create for each element</p>
         <pre id="pre22">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.forEach((element) => {
               console.log(element)
             });
@@ -585,8 +598,8 @@
         <p onclick="toggle20()">walk over items, creating new array from each element with a function i crerate</p>
         <pre id="pre23">
 
-            let arr = [5, 1, 8];
-            let map = arr.map(x => x + 1);
+            const arr = [5, 1, 8];
+            const map = arr.map(x => x + 1);
             console.log(map);
 
             Output
@@ -598,7 +611,7 @@
             Creates a new array with the results of calling a 
             provided function on every element in this array.
 
-            let string = Array.from('hello')
+            const string = Array.from('hello')
 
             console.log(string)  
             console.log(Array.from([1, 2, 3], x => x * 3 ));
@@ -613,8 +626,8 @@
         <p onclick="toggle21()">creating an iterator object</p>
         <pre id="pre24">
 
-            let arr = [5, 1, 8];
-            let iterator = arr.entries();
+            const arr = [5, 1, 8];
+            const iterator = arr.entries();
             console.log(iterator.next().value);
             console.log(iterator.next().value);
 
@@ -639,14 +652,14 @@
         <p onclick="toggle22()">return a string, join all Elements of the array into a string</p>
         <pre id="pre25">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             console.log(arr.join(' '));
 
             Output
 
             5 1 8
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             console.log(arr.join('-'));
 
             Output
@@ -657,7 +670,7 @@
 
             Returns a string representing the array and its elements.
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             console.log(arr.toString());
             
             Output
@@ -668,7 +681,7 @@
         <p onclick="toggle23()"> order an array, reverse the order of the array</p>
         <pre id="pre26">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.reverse();
             console.log(arr);
             
@@ -691,7 +704,7 @@
         <p onclick="toggle24()"> sort the items of the array</p>
         <pre id="pre27">
 
-            let arr = [5, 1, 8];
+            const arr = [5, 1, 8];
             arr.sort();
             console.log(arr);
             
