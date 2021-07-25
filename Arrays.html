@@ -180,7 +180,6 @@
             [5, 1, 'tacos', 8]
 
             <hr>
-
             without modify the original array:
             
             let arr = [1,2,3];
@@ -192,17 +191,23 @@
         </pre>
         <pre id="pre2">
           
-            let vec=[0,7,2,3,4,2,6,8,2]
-
-            for(i = 0; i < vec.length; i++){  
-                if (vec[i]==2){   //if a item == 2 
-                    vec.splice(i,1,'huhu') //replace with a string
+            let vec1 = [0,7,2,3,4,2,6,8,2]
+            let vec = [...vec1]
+            
+                for(i = 0; i < vec.length; i++){  
+                    if (vec[i]==2){     //if a item == 2
+                        vec.splice(i,1,'huhu')   //replace with a string
+                    }
                 }
-                console.log(vec[i])
-            }
+
+             console.log(vec1)
+             console.log(vec)
 
             Output
-            0 7 huhu 3 4 huhu 6 8 huhu
+
+            [0, 7, 2, 3, 4, 2, 6, 8, 2]
+            [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu"]
+
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
