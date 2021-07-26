@@ -223,3 +223,152 @@ function cambiarEstiloLista()
 }
 
 
+
+function crearText() 
+{
+  var actuales=document.getElementById('seccion');
+  var cant=actuales.childNodes.length;
+  for(f=0;f< cant;f++)
+  {
+    actuales.removeChild(actuales.childNodes[0]);
+  }
+  var se=document.getElementById('seleccion');
+  var cantidad=0;
+  for(f=0;f< se.value;f++)
+  {
+    cantidad++;
+    var nuevohijo = document.createElement('input');
+    nuevohijo.type = 'text';
+    nuevohijo.name = 'nombre' + cantidad;
+    nuevohijo.id = 'nombre' + cantidad;
+    document.getElementById('seccion').appendChild(nuevohijo);
+    document.getElementById('seccion').appendChild(document.createElement('br'));
+  }
+}
+
+ 
+function mostrarAtributos(objeto)
+{
+  var ref=document.getElementById('titulo11');
+  ref.firstChild.nodeValue='Name:'+objeto.name+' Id:'+objeto.id+' Value:'+objeto.value;
+}
+
+window.addEventListener('load',inicializarEventos,false);
+
+function inicializarEventos()
+{
+  var ob1=document.getElementById('boton1');
+  ob1.addEventListener('click',crearEnlaces,false);
+}
+
+function crearEnlaces(e)
+{
+  //Utilizando el innerHTML
+  var ob1=document.getElementById("enlaces1");
+  ob1.innerHTML='<a href="'+document.getElementById('text1').value+'">Enlace 1</a><br>'+'<a href="'+document.getElementById('text2').value+'">Enlace 2</a>';
+
+  //Utilizando los métodos para crear nodos de elemento y texto
+  var elemento=document.createElement('a');
+  var puntero=document.getElementById('enlaces2');
+  puntero.appendChild(elemento);
+  var nodotexto=document.createTextNode('Enlace 1');
+  elemento.appendChild(nodotexto);
+  elemento.setAttribute('href',document.getElementById('text1').value);
+  puntero.appendChild(document.createElement('br'));  
+  elemento=document.createElement('a');
+  puntero.appendChild(elemento);
+  nodotexto=document.createTextNode('Enlace 2');
+  elemento.appendChild(nodotexto);
+  elemento.setAttribute('href',document.getElementById('text2').value);
+}
+
+window.addEventListener('load',inicializarEventos2,false);
+
+function inicializarEventos2()
+{
+  var enlaces=document.getElementsByTagName('a');
+  for(f=0;f< enlaces.length;f++)
+  {
+    enlaces[f].addEventListener('click',enlaceSeleccionado,false);
+  }
+}
+
+function enlaceSeleccionado(e)
+{
+  var check=document.getElementById('check1');
+  if (check.checked)
+  {
+    var enlace;
+    enlace=e.target;
+    e.preventDefault();        
+    window.open(enlace.getAttribute('href'));
+  }
+}
+
+
+ /*  window.addEventListener('load',inicializarEventos3,false);
+
+function inicializarEventos3(e)
+{
+  var ob=document.createElement('div');
+  ob.style.left='0px';
+  ob.style.top='0px';
+  ob.style.width='100px';
+  ob.style.height='100px';
+  ob.style.background='#ff0';
+  ob.style.position='relative';
+  var x=document.getElementsByTagName('body');
+  x[0].appendChild(ob);
+  var recu1=new Recuadro(ob);
+}
+
+
+Recuadro=function(div)
+{
+    var tX=0;
+    var tY=0;
+    var difX=0;
+    var difY=0;
+
+    div.addEventListener('mousedown',inicioDrag,false);
+
+
+    function coordenadaX(e)
+    {
+      return e.pageX;
+    }
+
+    function coordenadaY(e)
+    {
+      return e.pageY;
+    }
+
+    function inicioDrag(e) 
+    {
+      var eX=coordenadaX(e);
+      var eY=coordenadaY(e);
+      var oX=parseInt(div.style.left);
+      var oY=parseInt(div.style.top);
+      difX=oX-eX;
+      difY=oY-eY;
+      document.addEventListener('mousemove',drag,false);
+      document.addEventListener('mouseup',soltar,false);
+
+    }
+
+    function drag(e) 
+    { 
+      tX=coordenadaY(e)+difY+'px';
+      tY=coordenadaX(e)+difX+'px'
+      div.style.top=tX; 
+      div.style.left=tY; 
+    }
+  
+
+    function soltar(e)
+    { 
+      document.removeEventListener('mousemove',drag,false);
+      document.removeEventListener('mouseup',soltar,false);
+    }
+}
+ */

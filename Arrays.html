@@ -168,7 +168,7 @@
     <h1>Arrays</h1>
 
     <div>  <!-- Adds and/or removes elements from an array -->
-    <p onclick="toggle()">Adds and/or removes elements from an array</p>
+    <p onclick="toggle()">Adds and or removes elements from an array</p>
 
         <pre id="pre">
 
@@ -195,9 +195,11 @@
             const vec = [...vec1]
             
                 for(i = 0; i < vec.length; i++){  
+
                     if (vec[i]==2){     //if a item == 2
                         vec.splice(i,1,'huhu')   //replace with a string
                     }
+
                 }
 
              console.log(vec1)
@@ -212,10 +214,12 @@
             const vec1 = [0,7,2,3,4,2,6,8,2]
             const vec = [...vec1]
 
-            vec.map((el, i)=> {
+            vec.map((_, i)=> {
+
                 if (vec[i]==2){     
                     vec.splice(i,1,'huhu')   
                 }
+
             })
 
             console.log(vec) 
