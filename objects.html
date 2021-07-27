@@ -104,6 +104,30 @@
         document.querySelector("#pre15b").classList.toggle("display");
     }
 
+    function toggle13(){
+        document.querySelector("#pre16").classList.toggle("display");
+        document.querySelector("#pre16a").classList.toggle("display");
+        document.querySelector("#pre16b").classList.toggle("display");
+    }
+
+    function toggle133(){
+        document.querySelector("#pre166").classList.toggle("display");
+        document.querySelector("#pre16aa").classList.toggle("display");
+        document.querySelector("#pre16bb").classList.toggle("display");
+    }
+
+    function toggle14(){
+        document.querySelector("#pre17").classList.toggle("display");
+        document.querySelector("#pre17a").classList.toggle("display");
+        document.querySelector("#pre17b").classList.toggle("display");
+    }
+
+    function toggle15(){
+        document.querySelector("#pre18").classList.toggle("display");
+        document.querySelector("#pre18a").classList.toggle("display");
+        document.querySelector("#pre18b").classList.toggle("display");
+    }
+
 </script>
 <body>
 
@@ -749,8 +773,8 @@
     <br>
 
 
-    <div> <!-- manage prototypes, GET a prototype of the object -->
-        <p onclick="toggle12()">manage prototypes, GET a prototype of the object </p>
+    <div> <!-- Proxy -->
+        <p onclick="toggle12()">Proxy </p>
 
         <pre id="pre15">
 
@@ -794,15 +818,450 @@
 
            
         </pre>
-    </div>  
+    </div> 
+    
+    <br>
+    
+    <div> <!-- class -->
+        <p onclick="toggle13()"> class </p>
 
+        <pre id="pre16">
+
+
+            class Cliente {
+                constructor(nombre, saldo) {
+                  this.nombre=nombre;
+                  this.saldo=saldo;      
+                }
+            
+                depositar(dinero)
+                {
+                  this.saldo=this.saldo+dinero;
+                }    
+            
+                extraer(dinero)
+                {
+                  this.saldo=this.saldo-dinero;
+                }    
+              }
+            
+              const cliente1=new Cliente('diego',1200);
+
+              console.log('Nombre del cliente:'+cliente1.nombre+'');
+              console.log('Saldo actual:'+cliente1.saldo+'');
+              cliente1.depositar(120);
+              console.log('Saldo luego de depositar $120---->'+cliente1.saldo+'');
+              cliente1.extraer(1000);
+              console.log('Saldo luego de extraer $1000---->'+cliente1.saldo+''); 
+            
+              const cliente2=new Cliente('ana',100);
+
+              console.log('Nombre del cliente:'+cliente2.nombre+'');
+              console.log('Saldo actual:'+cliente2.saldo+'');
+              cliente2.depositar(200);
+              console.log('Saldo luego de depositar $200---->'+cliente2.saldo+''); 
+               
+          
+        </pre>
+        <pre id="pre16a">
+        
+            const jugador1 = {
+                nombre: 'ana',
+                puntos: 0,
+                imprimir() {
+                  console.log('Nombre:'+this.nombre');
+                  console.log('Puntos:'+this.puntos');
+                },
+                aumentarpuntos(cant) {
+                  this.puntos=this.puntos+cant;
+                },
+                verificarsigano() {
+                  if (this.puntos>1000)
+                    console.log('Gano');
+                  else
+                    console.log('No gano');
+                }
+              };
+            
+              jugador1.imprimir();
+              jugador1.aumentarpuntos(500);
+              jugador1.verificarsigano();
+              jugador1.aumentarpuntos(501);
+              jugador1.verificarsigano();  
+              jugador1.imprimir();
+           
+        </pre>
+        <pre id="pre16b">
+
+            class ListaOrdenada {
+                constructor() {
+                  this.opciones=[];
+                }
+            
+                agregar(elemento) {
+                  this.opciones.push(elemento);
+                }
+            
+                imprimir() {
+                  let lista='< ol>';
+                  for(let x=0;x< this.opciones.length;x++) 
+                    lista += `< li>${this.opciones[x]}< /li>`;
+                  lista += '< /ol>';
+                  console.log(lista);
+                }
+              }
+            
+              const lista1 =new ListaOrdenada();
+              lista1.agregar('Opcion a');
+              lista1.agregar('Opcion b');
+              lista1.agregar('Opcion c');
+              lista1.agregar('Opcion d');      
+              lista1.imprimir();
+
+              <hr>
+
+              shortcut names:
+
+              const cliente1 = {
+                nombre: 'Juan',
+                saldo: 0,
+                imprimir()
+                {
+                  console.log(this.nombre);
+                  console.log(this.saldo);
+                },
+                depositar(monto) {
+                  this.saldo=this.saldo+monto;
+                },
+                extraer(monto) {
+                  this.saldo=this.saldo-monto;
+                }                  
+             };
+           
+             cliente1.imprimir();
+             cliente1.depositar(1000);
+             console.log('Estado luego de depositar 1000 pesos);
+             cliente1.imprimir();
+             cliente1.extraer(200);
+             console.log('Estado luego de extraer 200 pesos);
+             cliente1.imprimir();
+        </pre>
+    </div>
+    
+        
+    <div> <!-- Inheritance -->
+        <p onclick="toggle133()"> Inheritance </p>
+
+        <pre id="pre166">
+
+  
+            With ES6 syntax has also been added to the JavaScript language to 
+            facilitate the concept of inheritance between classes.
+            
+            If we want one class to inherit from another we must indicate at the time 
+            that we declare it using the keyword 'extends' the name of the parent class:
+            
+            class Square extends Figure {
+            
+            }
+                
+        </pre>
+        <pre id="pre16aa">
+       
+
+    class Calculadora {
+      constructor(x1, x2) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.resultado = null;
+      }
+  
+      sumar() {
+        this.resultado = this.x1 + this.x2;
+        console.log(`La suma de ${this.x1} y ${this.x2} es `);
+        this.imprimir();
+      }
+  
+      restar() {
+        this.resultado = this.x1 - this.x2;
+        console.log(`La resta de ${this.x1} y ${this.x2} es `);
+        this.imprimir();      
+      }
+  
+      multiplicar() {
+        this.resultado = this.x1 * this.x2;
+        console.log(`La multiplicación de ${this.x1} y ${this.x2} es `);
+        this.imprimir();      
+      }
+   
+      dividir() {
+        this.resultado = this.x1 / this.x2;
+        console.log(`La división de ${this.x1} y ${this.x2} es `);
+        this.imprimir();      
+      }
+  
+      imprimir() {
+        console.log(this.resultado);
+      }
+    }
+  
+    class CalculadoraCientifica extends Calculadora {
+      cuadrado() {
+        this.resultado = this.x1 * this.x1;
+        console.log(`${this.x1} elevado al cuadrado es `);
+        this.imprimir();
+      }
+  
+      raizCuadrada() {
+        this.resultado = Math.sqrt(this.x1);
+        console.log(`La raiz cuadrada de ${this.x1}  es `);
+        this.imprimir();
+      }
+    }
+  
+    const calculadora1=new Calculadora(100, 20);
+    calculadora1.sumar();
+    calculadora1.restar();
+    calculadora1.multiplicar();
+    calculadora1.dividir();  
+  
+    const calculadoraCientifica1=new CalculadoraCientifica(6, 2);
+    calculadoraCientifica1.sumar();
+    calculadoraCientifica1.restar();
+    calculadoraCientifica1.cuadrado();
+    calculadoraCientifica1.raizCuadrada();
+           
+        </pre>
+        <pre id="pre16bb">
+
+            class Persona {
+                constructor(nombre, edad) {
+                  this.nombre = nombre;
+                  this.edad = edad;
+                }
+            
+                imprimir() {
+                  console.log(`Nombre: ${this.nombre}`);
+                  console.log(`Edad: ${this.edad}`);
+                }    
+              }
+            
+              class Empleado extends Persona {
+                constructor(nombre, edad, sueldo) {
+                  super(nombre, edad);
+                  this.sueldo = sueldo;
+                }
+            
+                imprimir() {
+                  super.imprimir();
+                  console.log(`Sueldo: ${this.sueldo}`);      
+                }
+            
+                pagaImpuestos() {
+                  if (this.sueldo>5000)
+                    console.log(`${this.nombre} debe pagar impuestos`);
+                  else
+                    console.log(`${this.nombre} no debe pagar impuestos`);      
+                }
+              }     
+              
+              const persona1=new Persona('Juan', 44);
+              persona1.imprimir();
+
+            
+              const empleado1=new Empleado('Juan', 44, 7000);
+              empleado1.imprimir();
+              empleado1.pagaImpuestos();
+          
+        </pre>
+    </div> 
+
+       
+    <div> <!--  getters & setters -->
+        <p onclick="toggle14()">  getters & setters </p>
+
+        <pre id="pre17">
+
+            In JavaScript we now have the possibility of defining setters that are methods
+            that establish a value to a property and getters that are methods that retrieve a value.
+
+            For the definition of setters and getters we have the set and get keywords.
+            
+            Defining properties with set and get allow us to better encapsulate our class.
+            
+            We will see with a simple example the syntax to define a property defining its setter and getter.
+
+            <hr>
+           
+            class Dado {
+                constructor() {
+                  this._valor=1;
+                }
+                
+                get valor() {
+                  return this._valor;
+                }
+                
+                set valor(v) {
+                  this._valor=v;
+                }
+                
+                imprimir() {
+                  console.log(this.valor);
+                }
+              }
+              
+              const dado1=new Dado();
+              dado1.imprimir();
+              dado1.valor=6;
+              dado1.imprimir(); 
+            
+        </pre>
+        <pre id="pre17a">
+        
+            class Persona {
+                constructor(nom,ed) {
+                  this._nombre=null;
+                  this._edad=0;
+                }
+                
+                get nombre() {
+                  return this._nombre;
+                }
+                
+                set nombre(n) {
+                  this._nombre=n;
+                }
+            
+                get edad() {
+                  return this._edad;
+                }
+                
+                set edad(e) {
+                  if (e>=0)
+                    this._edad=e;
+                  else
+                  throw "La edad no puede ser negativa";
+                }
+                
+                imprimir() {
+                  console.log(`Nombre:${this.nombre} y Edad:${this.edad}`);
+                }
+              }
+              
+              const persona1=new Persona();
+              persona1.nombre='Pablo Rodriguez';
+              persona1.edad=-43;
+              persona1.imprimir();
+        </pre>
+        <pre id="pre17b">
+
+            class Dado {
+                constructor() {
+                  this._valor=1;
+                }
+                
+                get valor() {
+                  return this._valor;
+                }
+                
+                set valor(v) {
+                  if (v>=1 && v<=6 && v%1===0)
+                    this._valor=v;
+                  else
+                    throw "Error en asignación de valor del dado"; 
+                }
+                
+                imprimir() {
+                  console.log(this.valor);
+                }
+              }
+              
+              const dado1=new Dado();
+              dado1.imprimir();
+              dado1.valor=5;
+              dado1.imprimir();
+              
+        </pre>
+    </div> 
+
+    <div> <!--  static methods -->
+        <p onclick="toggle15()">  static methods </p>
+
+        <pre id="pre18">
+
+            With this new JavaScript update we have the ability to define static methods in a class.
+
+            A static method belongs to the class and not to an instance or object of a class. 
+            To call a static method later, we do it directly by preceding the name of the class.
+            
+            They are used to define functionalities that belong to a class but do not depend 
+            on instances of that class.
+            
+            Static methods cannot access class attributes using this.
+            
+        </pre>
+        <pre id="pre18a">
+        
+            class Matematica {
+                static mayor(v1,v2) {
+                  if (v1>v2)
+                    return v1;
+                  else
+                    return v2;
+                }
+            
+                static menor(v1,v2) {
+                  if (v1< v2)
+                    return v1;
+                  else
+                    return v2;
+                }
+            
+                static aleatorio(inicio, fin) {
+                  return Math.trunc((Math.random()*(fin+1-inicio))+inicio);
+                }
+              }
+              
+              let x1=Matematica.aleatorio(1,10);
+              let x2=Matematica.aleatorio(1,10);
+              console.log(`El mayor entre ${x1} y ${x2} es ${Matematica.mayor(x1,x2)}`);
+              console.log(`El menor entre ${x1} y ${x2} es ${Matematica.menor(x1,x2)}`);
+               
+        </pre>
+        <pre id="pre18b">
+
+            class Fecha {
+                static retornarMes(mes) {
+                  switch (mes) {
+                    case 1: return 'Enero';
+                    case 2: return 'Febrero';
+                    case 3: return 'Marzo';
+                    case 4: return 'Abril';
+                    case 5: return 'Mayo';
+                    case 6: return 'Junio';
+                    case 7: return 'Julio';
+                    case 8: return 'Agosto';
+                    case 9: return 'Septiembre';
+                    case 10: return 'Octubre';
+                    case 11: return 'Noviembre';
+                    case 12: return 'Diciembre';        
+                  }
+                }
+            
+                static fechaCompleta() {
+                  const fecha=new Date();
+                  return `${fecha.getDate()}-${fecha.getMonth()+1}-${fecha.getFullYear()}`;
+                }
+              }
+            
+              console.log(`La fecha actual es ${Fecha.fechaCompleta()}`);
+              console.log(Fecha.retornarMes(12));
+              
+        </pre>
+    </div> 
 </body>
 </html>
-
-
-
-
-
 
 
 
