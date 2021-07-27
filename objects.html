@@ -98,6 +98,12 @@
         document.querySelector("#pre14b").classList.toggle("display");
     }
 
+    function toggle12(){
+        document.querySelector("#pre15").classList.toggle("display");
+        document.querySelector("#pre15a").classList.toggle("display");
+        document.querySelector("#pre15b").classList.toggle("display");
+    }
+
 </script>
 <body>
 
@@ -234,6 +240,13 @@
 
         <pre id="pre5">
 
+            .freeze : freezing an object prevents new properties from being added to it
+
+            The Object.isExtensible() method determines if an object is extensible 
+            (whether it can have new properties added to it).
+
+            <hr>
+
             let obj = {
                 a: 1,
                 b: 2,
@@ -249,6 +262,8 @@
               false
         </pre>
         <pre id="pre6">
+
+
             if two references point to the same object
 
             Object.is()
@@ -283,6 +298,9 @@
         <p onclick="toggle4()">get information about an object, if an object and its properties cant be modified</p>
 
         <pre id="pre7">
+
+            <a target="_blanck"
+             href="https://medium.com/@nlfernando11/object-freeze-vs-object-seal-vs-object-preventextensions-251ee99d0c47">vs >>></a>
 
             Object.isFrozen()
             
@@ -727,8 +745,56 @@
             true
         </pre>
     </div>   
-
+    
     <br>
+
+
+    <div> <!-- manage prototypes, GET a prototype of the object -->
+        <p onclick="toggle12()">manage prototypes, GET a prototype of the object </p>
+
+        <pre id="pre15">
+
+            let handler = {
+                set (target, key, value){
+                    console.log(`property "${key}
+                             set on object "${target}" with
+                                a value of "${value}"`);
+                    }
+            }
+        
+        let target = {}
+        
+        let proxy = new Proxy(target, handler)
+        
+        proxy.a = 'a' //outputs  property "a set on object "[object Object]" with a value of "a"
+
+        proxy.b = 'b' //outputs property "b set on object "[object Object]" with a value of "b"
+
+        proxy.c = 'c' //outputs  property "c set on object "[object Object]" with a value of "c"
+
+        <hr>
+
+        function trapMessage() {
+            return "It's a Trap!!!"
+        }
+        var handler = {
+            apply: function(target, thisArg) {
+                 return target.apply(thisArg);
+            }
+        };
+        var proxy = new Proxy(trapMessage, handler);
+        console.log(proxy());  //returns It's a Trap!!
+
+        </pre>
+        <pre id="pre15a">
+
+           
+        </pre>
+        <pre id="pre15b">
+
+           
+        </pre>
+    </div>  
 
 </body>
 </html>

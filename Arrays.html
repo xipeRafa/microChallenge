@@ -152,7 +152,6 @@
 
     function toggle25(){
         document.querySelector("#pre28").classList.toggle("display");
-        document.querySelector("#pre28a").classList.toggle("display");
     }
 
     function toggle26(){
@@ -166,9 +165,11 @@
 <body>
 
     <h1>Arrays</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+             target="_blank">MDN →</a>
 
     <div>  <!-- Adds and/or removes elements from an array -->
-    <p onclick="toggle()">Adds and or removes elements from an array</p>
+    <p onclick="toggle()">1.- Adds and or removes elements from an array</p>
 
         <pre id="pre">
 
@@ -181,13 +182,15 @@
 
             <hr>
             without modify the original array:
-            
+
             const arr = [1,2,3];
             const arr2 = [...arr]
             arr2.splice(1,0,'jiji')
             
             console.log(arr2)
             console.log(arr)
+
+            // .splice modifies the original Array
         </pre>
         <pre id="pre2">
           
@@ -214,7 +217,7 @@
             const vec1 = [0,7,2,3,4,2,6,8,2]
             const vec = [...vec1]
 
-            vec.map((_, i)=> {
+            vec.forEach((_, i)=> {
 
                 if (vec[i]==2){     
                     vec.splice(i,1,'huhu')   
@@ -225,10 +228,27 @@
             console.log(vec) 
             console.log(vec1) 
 
+            <hr>
+
+            let arr1 = [1,2,3,4,5,2]
+            let arr = [...arr1]
+            
+            arr.forEach(()=>{
+            
+                let a = arr.indexOf(2)
+            
+                arr.splice(a,1,'jiji')
+            
+            
+            })
+            
+            console.log(arr)
+            console.log(arr1)
+
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
-        <p onclick="toggle2()">Adds one or more elements to the end of an array</p>
+        <p onclick="toggle2()">2.- Adds one or more elements to the end of an array</p>
 
         <pre id="pre3">
 
@@ -253,7 +273,7 @@
          </pre>    
     </div>  
     <div>  <!-- Adds one or more elements to the front of an array -->
-        <p onclick="toggle3()">Adds one or more elements to the FRONT of an array</p>
+        <p onclick="toggle3()">3.- Adds one or more elements to the FRONT of an array</p>
 
         <pre id="pre5">
 
@@ -278,7 +298,7 @@
          </pre>    
     </div> 
     <div>  <!-- Returns a new array comprised of this array joined with other array(s) and/or value(s) -->
-        <p onclick="toggle4()">New array comprised of this array joined with other array(s) and/or value(s)</p>
+        <p onclick="toggle4()">4.- New array comprised of this array joined with other array(s) and/or value(s)</p>
 
         <pre id="pre7">
 
@@ -296,7 +316,7 @@
     <br/>
 
     <div> <!--Removes elements from an array. -->
-       <p onclick="toggle5()">Removes elements from an array.</p>
+       <p onclick="toggle5()">5.- Removes elements from an array.</p>
        <pre id="pre8">
 
            const arr = [5, 1, 8];
@@ -307,8 +327,8 @@
            [5, 1] 
        </pre>
     </div>
-    <div> <!-- Removes the last element from an array and returns that element. -->
-        <p onclick="toggle6()">Removes the last element from an array and returns that element.</p>
+    <div> <!-- Remove the last element from an array and returns that element. -->
+        <p onclick="toggle6()">6.- Remove the last element from an array and returns that element.</p>
         <pre id="pre9">
  
             const arr = [5, 1, 8];
@@ -319,8 +339,8 @@
             [5,1]
         </pre>
     </div> 
-    <div> <!-- Removes the first element from an array and returns that element. -->
-        <p onclick="toggle7()">Removes the first element from an array and returns that element.</p>
+    <div> <!-- Remove the first element from an array and returns that element. -->
+        <p onclick="toggle7()">7.- Remove the first element from an array and returns that element.</p>
         <pre id="pre10">
  
             const arr = [5, 1, 8];
@@ -332,8 +352,8 @@
             [1, 8]
         </pre>
     </div>  
-    <div> <!-- one or more elements in order for use -->
-        <p onclick="toggle8()">one or more elements in order for use</p>
+    <div> <!-- Remove one or more elements in order for use -->
+        <p onclick="toggle8()">8.- Remove one or more elements in order for use</p>
         <pre id="pre11">
  
             const arr = [5, 1, 8];
@@ -381,7 +401,7 @@
     <br>
 
     <div> <!-- find item. out if a certain element exist-->
-        <p onclick="toggle9()">find item. out if a certain element exist</p>
+        <p onclick="toggle9()">9.- find item. out if a certain element exist</p>
         <pre id="pre12">
  
             const arr = [5, 1, 8];
@@ -393,8 +413,8 @@
 
         </pre>
     </div> 
-    <div> <!-- find item index -->
-        <p onclick="toggle11()">find item. first or last index </p>
+    <div> <!-- find item. first or last index number position -->
+        <p onclick="toggle11()">10.- find item. first or last index number position</p>
         <pre id="pre14">
 
             Returns the first index at which a given element 
@@ -419,7 +439,7 @@
         </pre>
     </div>   
     <div> <!-- the first element value that satisfies a condition -->
-        <p onclick="toggle12()">the first element value that satisfies a condition</p>
+        <p onclick="toggle12()">11.- the first element value that satisfies a condition</p>
         <pre id="pre15">
 
             const arr = [5, 1, 8];
@@ -431,14 +451,15 @@
 
             <hr>
             const arr = [1,1,2,2,3,3,4,4,5,5]
+
             const isTiny = el => el > 4
             
             const tiny = arr.find(isTiny)
             const positionTiny = arr.findIndex(isTiny)
             
-            console.log(arr)
-            console.log(tiny)
-            console.log(positionTiny)
+            console.log('original:', arr)
+            console.log('value:', tiny)
+            console.log('index', positionTiny)
 
         </pre>
         <pre id="pre15a">
@@ -456,7 +477,7 @@
         </pre>
     </div> 
     <div> <!-- the first index of an item that satisfies a condition -->
-        <p onclick="toggle13()">the first index of an item that satisfies a condition</p>
+        <p onclick="toggle13()">12.- the first index of an item that satisfies a condition</p>
         <pre id="pre16">
 
             const arr = [5, 1, 8];
@@ -475,7 +496,7 @@
         </pre>
     </div> 
     <div> <!-- a value by reducing the Array, start to finish -->
-        <p onclick="toggle14()">a value by reducing the Array, start to finish</p>
+        <p onclick="toggle14()">13.- a value by reducing the Array, start to finish</p>
         <pre id="pre17">
 
             const arr = [5, 1, 8];
@@ -493,7 +514,7 @@
         </pre>
     </div>   
     <div> <!-- a value by reducing the Array, finish to start-->
-        <p onclick="toggle15()">a value by reducing the Array, finish to start</p>
+        <p onclick="toggle15()">14.- a value by reducing the Array, finish to start</p>
         <pre id="pre18">
 
             const arr = [5, 1, 8];
@@ -514,8 +535,8 @@
 
     <br>
 
-    <div> <!--  one or many items values based on a condition i create -->
-        <p onclick="toggle16()">one or many items values based on a condition i create</p>
+    <div> <!--  one or many items values based on a condition  -->
+        <p onclick="toggle16()">15.- one or many items values based on a condition </p>
         <pre id="pre19">
 
             const arr = [5, 1, 8];
@@ -533,7 +554,7 @@
         </pre>
     </div> 
     <div> <!-- whether or not every item satisfies a condition -->
-        <p onclick="toggle17()">whether or not every item satisfies a condition</p>
+        <p onclick="toggle17()">16.- whether or not every item satisfies a condition</p>
         <pre id="pre20">
 
             const arr = [5, 1, 8];
@@ -550,7 +571,7 @@
         </pre>
     </div>   
     <div> <!-- whether or not at least one item satisfies a condition -->
-        <p onclick="toggle18()"> whether or not at least one item satisfies a condition</p>
+        <p onclick="toggle18()">17.- whether or not at least one item satisfies a condition</p>
         <pre id="pre21">
 
             const arr = [5, 1, 8];
@@ -570,8 +591,10 @@
     <br>
 
     <div> <!-- walk over items, executing a function i will create for each element -->
-        <p onclick="toggle19()">walk over items, executing a function i will create for each element</p>
-        <pre id="pre22">
+        <p onclick="toggle19()">18.- walk over items, executing a function i will create for each element</p>
+        <pre id="pre22">    
+
+            // YOU CAN NOT SAVE .forEach IN A VARIABLE
 
             const arr = [5, 1, 8];
             arr.forEach((element) => {
@@ -600,8 +623,8 @@
         </pre>
     </div> 
     
-    <div> <!-- walk over items, creating new array from each element with a function i crerate -->
-        <p onclick="toggle20()">walk over items, creating new array from each element with a function i crerate</p>
+    <div> <!-- walk over items, creating new array from each element with a function -->
+        <p onclick="toggle20()">19.- walk over items, creating new array from each element with a function </p>
         <pre id="pre23">
 
             const arr = [5, 1, 8];
@@ -629,7 +652,7 @@
         </pre>
     </div> 
     <div> <!--  creating an iterator object    -->
-        <p onclick="toggle21()">creating an iterator object</p>
+        <p onclick="toggle21()">20.- creating an iterator object</p>
         <pre id="pre24">
 
             const arr = [5, 1, 8];
@@ -655,7 +678,7 @@
     <br>
 
     <div> <!-- return a string, join all Elements of the array into a string -->
-        <p onclick="toggle22()">return a string, join all Elements of the array into a string</p>
+        <p onclick="toggle22()">21.- return a string, join all Elements of the array into a string</p>
         <pre id="pre25">
 
             const arr = [5, 1, 8];
@@ -684,7 +707,7 @@
         </pre>
     </div>
     <div> <!-- order an array, reverse the order of the array -->
-        <p onclick="toggle23()"> order an array, reverse the order of the array</p>
+        <p onclick="toggle23()">22.- order an array, reverse the order of the array</p>
         <pre id="pre26">
 
             const arr = [5, 1, 8];
@@ -707,7 +730,7 @@
         </pre>
     </div> 
     <div> <!-- sort the items of the array -->
-        <p onclick="toggle24()"> sort the items of the array</p>
+        <p onclick="toggle24()">23.- sort the items of the array</p>
         <pre id="pre27">
 
             const arr = [5, 1, 8];
@@ -736,7 +759,7 @@
         </pre>
     </div>  
     <div> <!-- Fills all the elements of an array  -->
-        <p onclick="toggle25()"> Fills all the elements of an array </p>
+        <p onclick="toggle25()">24.- Fills all the elements of an array </p>
         <pre id="pre28">
 
             const array1 = [1, 2, 3, 4];
@@ -752,24 +775,10 @@
             console.log(array1.fill(6));
             // expected output: [6, 6, 6, 6]
         </pre>
-        <pre id="pre28a">
-
-            Sorts the elements of an array in place and returns the array.
-
-            Important note: If compareFunction is not supplied, 
-            elements are sorted by converting them to strings and
-            comparing strings in Unicode code point order. 
-
-            For example, "Banana" comes before "cherry".
-            In a numeric sort, 9 comes before 80, but because numbers 
-            are converted to strings, "80" comes before "9" in Unicode order. 
-
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort"
-             target="_blank">see the docs →</a>
-        </pre>
+    
     </div> 
     <div> <!-- Copies a sequence of array elements within the array. -->
-        <p onclick="toggle26()"> Copies a sequence of array elements within the array.</p>
+        <p onclick="toggle26()">25.- Copies a sequence of array elements within the array.</p>
         <pre id="pre29">
 
 

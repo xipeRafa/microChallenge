@@ -68,6 +68,12 @@
         document.querySelector("#pre8a").classList.toggle("display");
         document.querySelector("#pre8b").classList.toggle("display");
     }
+
+    function toggle55(){
+        document.querySelector("#pre88").classList.toggle("display");
+        document.querySelector("#pre8aa").classList.toggle("display");
+        document.querySelector("#pre8bb").classList.toggle("display");
+    }
     
     function toggle5a(){
         document.querySelector("#pre15aa").classList.toggle("display");
@@ -273,18 +279,6 @@
 
             <hr>
 
-            Remove repeating items:
-
-            const array2 = [5, 22, 11, 5, 4, 5, 5, 1];
-
-            const array2X = array2.filter((el, place, array2) => {
-                return place === array2.indexOf(el)
-            })
-
-            console.log(array2X)
-
-            <hr>
-
             const objects = [{id:'1', name:'aaa', price: 100},
                              {id:'2', name:'bbb', price: 200},
                              {id:'3', name:'ccc', price: 300}]
@@ -356,6 +350,8 @@
             output: 
             Array ["exuberant", "destruction", "present"]
 
+            <hr>
+
             const result2 = words.filter((word, index) => {
                 console.log(index, word)
             })
@@ -382,6 +378,18 @@
 
            console.log(lowCostObjects)
            console.log(highCostObjects)
+
+           <hr>
+
+           Remove repeating items:
+
+           const array2 = [5, 22, 11, 5, 4, 5, 5, 1];
+
+           const array2X = array2.filter((el, place, array2) => {
+               return place === array2.indexOf(el)
+           })
+
+           console.log(array2X)
 
            
         </pre>
@@ -487,6 +495,81 @@
             output: Array ["a", "b", "c", "e", "d"]
         </pre>
     </div>
+    <div> <!-- Mix high order functions -->
+        <p onclick="toggle55()">Mix high order functions</p>
+        <pre id="pre88">
+  
+            const array1 = [1, 2, 3, 4];
+            const reducer = (accumulator, currentValue) => accumulator + currentValue;
+            
+            // 1 + 2 + 3 + 4
+            console.log(array1.reduce(reducer));
+            output: 10
+            
+            // 1 + 2 + 3 + 4 + 5
+            console.log(array1.reduce(reducer, 5));
+            output: 15
+
+            <hr>
+            let total = [ 0, 1, 2, 3 ].reduce(
+              ( accumulator, currentValue ) => accumulator + currentValue, 1
+            )
+            console.log(total)
+            output: 7
+        </pre>
+        <pre id="pre8aa">
+
+            Sum of values in an object array
+
+            let initialValue = 0
+            let sum = [{x: 1}, {x: 2}, {x: 3}]
+            let sumReduce = sum.reduce((accumulator, currentValue, position, sum) => accumulator + currentValue.x, initialValue)
+          
+            console.log(sumReduce) 
+            console.log(sum) 
+
+            output: 6
+
+            <hr>
+          
+            const nums = [11, 22, 33, 44, 55, 66, 77];
+
+            const x2 = (accumulator, num) => [...accumulator, num * 2]
+             
+            const double = nums.length > 0 ? nums.reduce(x2, []) : 0;
+
+            console.log('double:', double)
+            console.log('nums:', nums) // no mutation in the original array
+
+
+
+        </pre>
+        <pre id="pre8bb">
+
+            Remove duplicate items in an array (reduce)
+
+            let myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+            let myArrayWithNoDuplicates = myArray.reduce(function (accumulator, currentValue) {
+              if (accumulator.indexOf(currentValue) === -1) {
+                accumulator.push(currentValue)
+              }
+              return accumulator
+            }, [])
+
+            console.log(myArrayWithNoDuplicates)
+
+            output: Array ["a", "b", "c", "e", "d"]
+            
+            <hr>
+            or:
+            let array = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+            let arrayWithNoDuplicates = Array.from(new Set(array))
+            console.log(arrayWithNoDuplicates)
+
+            output: Array ["a", "b", "c", "e", "d"]
+        </pre>
+    </div>
+
 
     <br/>
     <div> <!-- forEach -->
@@ -1321,7 +1404,7 @@
 
             Global Objects
 
-          <a href="" target="_blanck">Global Objects >>></a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blanck">Global Objects >>></a>
 
           <hr>
 
