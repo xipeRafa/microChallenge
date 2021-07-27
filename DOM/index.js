@@ -226,18 +226,18 @@ function cambiarEstiloLista()
 
 function crearText() 
 {
-  var actuales=document.getElementById('seccion');
-  var cant=actuales.childNodes.length;
+  let actuales=document.getElementById('seccion');
+  let cant=actuales.childNodes.length;
   for(f=0;f< cant;f++)
   {
     actuales.removeChild(actuales.childNodes[0]);
   }
-  var se=document.getElementById('seleccion');
-  var cantidad=0;
+  let se=document.getElementById('seleccion');
+  let cantidad=0;
   for(f=0;f< se.value;f++)
   {
     cantidad++;
-    var nuevohijo = document.createElement('input');
+    let nuevohijo = document.createElement('input');
     nuevohijo.type = 'text';
     nuevohijo.name = 'nombre' + cantidad;
     nuevohijo.id = 'nombre' + cantidad;
@@ -249,7 +249,7 @@ function crearText()
  
 function mostrarAtributos(objeto)
 {
-  var ref=document.getElementById('titulo11');
+  let ref=document.getElementById('titulo11');
   ref.firstChild.nodeValue='Name:'+objeto.name+' Id:'+objeto.id+' Value:'+objeto.value;
 }
 
@@ -257,21 +257,21 @@ window.addEventListener('load',inicializarEventos,false);
 
 function inicializarEventos()
 {
-  var ob1=document.getElementById('boton1');
+  let ob1=document.getElementById('boton1');
   ob1.addEventListener('click',crearEnlaces,false);
 }
 
 function crearEnlaces(e)
 {
   //Utilizando el innerHTML
-  var ob1=document.getElementById("enlaces1");
+  let ob1=document.getElementById("enlaces1");
   ob1.innerHTML='<a href="'+document.getElementById('text1').value+'">Enlace 1</a><br>'+'<a href="'+document.getElementById('text2').value+'">Enlace 2</a>';
 
   //Utilizando los métodos para crear nodos de elemento y texto
-  var elemento=document.createElement('a');
-  var puntero=document.getElementById('enlaces2');
+  let elemento=document.createElement('a');
+  let puntero=document.getElementById('enlaces2');
   puntero.appendChild(elemento);
-  var nodotexto=document.createTextNode('Enlace 1');
+  let nodotexto=document.createTextNode('Enlace 1');
   elemento.appendChild(nodotexto);
   elemento.setAttribute('href',document.getElementById('text1').value);
   puntero.appendChild(document.createElement('br'));  
@@ -286,7 +286,7 @@ window.addEventListener('load',inicializarEventos2,false);
 
 function inicializarEventos2()
 {
-  var enlaces=document.getElementsByTagName('a');
+  let enlaces=document.getElementsByTagName('a');
   for(f=0;f< enlaces.length;f++)
   {
     enlaces[f].addEventListener('click',enlaceSeleccionado,false);
@@ -295,10 +295,10 @@ function inicializarEventos2()
 
 function enlaceSeleccionado(e)
 {
-  var check=document.getElementById('check1');
+  let check=document.getElementById('check1');
   if (check.checked)
   {
-    var enlace;
+    let enlace;
     enlace=e.target;
     e.preventDefault();        
     window.open(enlace.getAttribute('href'));
@@ -310,25 +310,25 @@ function enlaceSeleccionado(e)
 
 function inicializarEventos3(e)
 {
-  var ob=document.createElement('div');
+  let ob=document.createElement('div');
   ob.style.left='0px';
   ob.style.top='0px';
   ob.style.width='100px';
   ob.style.height='100px';
   ob.style.background='#ff0';
   ob.style.position='relative';
-  var x=document.getElementsByTagName('body');
+  let x=document.getElementsByTagName('body');
   x[0].appendChild(ob);
-  var recu1=new Recuadro(ob);
+  let recu1=new Recuadro(ob);
 }
 
 
 Recuadro=function(div)
 {
-    var tX=0;
-    var tY=0;
-    var difX=0;
-    var difY=0;
+    let tX=0;
+    let tY=0;
+    let difX=0;
+    let difY=0;
 
     div.addEventListener('mousedown',inicioDrag,false);
 
@@ -345,10 +345,10 @@ Recuadro=function(div)
 
     function inicioDrag(e) 
     {
-      var eX=coordenadaX(e);
-      var eY=coordenadaY(e);
-      var oX=parseInt(div.style.left);
-      var oY=parseInt(div.style.top);
+      let eX=coordenadaX(e);
+      let eY=coordenadaY(e);
+      let oX=parseInt(div.style.left);
+      let oY=parseInt(div.style.top);
       difX=oX-eX;
       difY=oY-eY;
       document.addEventListener('mousemove',drag,false);

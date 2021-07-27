@@ -801,12 +801,12 @@
         function trapMessage() {
             return "It's a Trap!!!"
         }
-        var handler = {
+        let handler = {
             apply: function(target, thisArg) {
                  return target.apply(thisArg);
             }
         };
-        var proxy = new Proxy(trapMessage, handler);
+        let proxy = new Proxy(trapMessage, handler);
         console.log(proxy());  //returns It's a Trap!!
 
         </pre>
@@ -859,8 +859,62 @@
               console.log('Nombre del cliente:'+cliente2.nombre+'');
               console.log('Saldo actual:'+cliente2.saldo+'');
               cliente2.depositar(200);
-              console.log('Saldo luego de depositar $200---->'+cliente2.saldo+''); 
-               
+              console.log('Saldo luego de depositar $200---->'+cliente2.saldo+'');
+              
+              <hr>
+
+              //clase Numeroquiniela *********************************
+              function Numeroquiniela(nombre){
+                this.nombre=nombre;
+                this.cargarnumero=cargarnumero;
+                this.verificarsigano=verificarsigano;
+              }
+              
+              function cargarnumero(){
+                this.numero=prompt("Que número de quiniela quiere?","");
+              }
+              
+              function verificarsigano(num){
+                if (this.numero==num)
+                  return true;
+                else
+                  return false;
+              }
+              
+              //clase Bolillero **************************************
+              function Bolillero(){
+                this.numero=-1;
+                this.sortear=sortear;
+              }
+              
+              function sortear(){
+                this.numero=parseInt(Math.random()*10)+1;
+              }
+              
+              // bloque principal
+              let numeroquiniela1;
+              numeroquiniela1=new Numeroquiniela("juan");
+              numeroquiniela1.cargarnumero();
+              
+              let numeroquiniela2;
+              numeroquiniela2=new Numeroquiniela("ana");
+              numeroquiniela2.cargarnumero();
+              
+              let bolillero;
+              bolillero=new Bolillero();
+              bolillero.sortear();
+              
+              console.log('Numero sorteado:' + bolillero.numero);
+              console.log(numeroquiniela1.nombre + ' eligió ' + numeroquiniela1.numero);
+              console.log(numeroquiniela2.nombre + ' eligió ' + numeroquiniela2.numero);
+              
+              if (numeroquiniela1.verificarsigano(bolillero.numero)){
+                console.log(numeroquiniela1.nombre + ' ha ganado ');
+              }
+              
+              if (numeroquiniela2.verificarsigano(bolillero.numero)){
+                console.log(numeroquiniela2.nombre + ' ha ganado');
+              }  
           
         </pre>
         <pre id="pre16a">
@@ -1262,6 +1316,4 @@
     </div> 
 </body>
 </html>
-
-
 
