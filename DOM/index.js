@@ -1,3 +1,102 @@
+function tipoNodo() {
+
+  let lista = document.getElementById('bloque')
+
+  for(let x=0; x < lista.childNodes.length-1; x++) {
+
+    if (lista.childNodes[x].nodeType==Node.TEXT_NODE){
+      console.log("Nodo tipo Texto")
+    }
+
+    if (lista.childNodes[x].nodeType==Node.ELEMENT_NODE){
+      console.log("Nodo tipo Elemento")
+    } 
+
+  }
+  
+}
+
+function sumarUno(){
+  let obj=document.getElementById('contador');
+  let sum = obj.childNodes[0].nodeValue 
+  obj.childNodes[0].nodeValue = parseInt(sum)+1;
+}
+
+function cambiarTexto() {
+  let tit=document.getElementById('titulo');
+  tit.childNodes[0].nodeValue='Ahora vemos el nuevo título';
+}
+
+function cambiarTamFuente() {
+
+  let parent = document.getElementById('parrafo1').parentNode;
+
+   parent.style.fontSize='8px';  
+
+}
+
+function proximoParrafo(){
+  let puntero1=document.getElementById('parrafos');
+  let puntero2=puntero1.firstChild;
+
+  while (puntero2!=null){
+      if (puntero2.nodeType==Node.ELEMENT_NODE)
+      console.log('log1:', puntero2.childNodes[0].nodeValue)
+                  puntero2=puntero2.nextSibling
+  }
+}
+
+function parrafoAnterior(){
+  let puntero1=document.getElementById('parrafos');
+  let puntero2=puntero1.lastChild;
+
+  while (puntero2!=null){
+    if (puntero2.nodeType==Node.ELEMENT_NODE)
+      console.log(puntero2.childNodes[0].nodeValue);
+         puntero2=puntero2.previousSibling;
+  }
+}
+
+function ocultarParrafos(){
+  let obj=document.getElementById("bloque2");
+  let lista=obj.getElementsByTagName('p');
+
+    for(f=0;f< lista.length;f++) {
+      lista[f].style.display='none';
+    }
+}
+
+
+            let contadorx = 0;
+
+            function agregar(){
+              contadorx++;
+                let nt=document.createTextNode(' Nuevo texto '+contadorx+' - ');
+                let nparrafo=document.getElementById('parrafo');
+
+                nparrafo.appendChild(nt);
+
+                
+            }
+
+            let contadora=1;
+
+            function agregar(){
+              let nt=document.createTextNode('Nuevo texto ' + contadora + ' - ');
+              let nparrafo=document.getElementById('parrafoa');
+              nparrafo.appendChild(nt);
+              contadora++;
+            }
+
+            function eliminar(){
+              let nparrafo=document.getElementById('parrafoa');
+
+              if (nparrafo.hasChildNodes()){
+                 nparrafo.removeChild(nparrafo.lastChild);
+                 contadora--;
+              }
+            }            
+
 function eliminarAtributo(){
     let puntero=document.getElementById('enlace1');
     puntero.removeAttribute('href');

@@ -55,10 +55,6 @@
 
 </style>
 <script>
-    function toggle(){
-        document.querySelector("#pre").classList.toggle("display");
-        document.querySelector("#pre2").classList.toggle("display");
-    }
     
     function toggle2(){
         document.querySelector("#pre3").classList.toggle("display");
@@ -95,7 +91,6 @@
     function toggle8(){
         document.querySelector("#pre11").classList.toggle("display");
         document.querySelector("#pre11a").classList.toggle("display");
-        document.querySelector("#pre11b").classList.toggle("display");
     }
 
     function toggle9(){
@@ -202,41 +197,22 @@
 <body>
 
     <h1>JS DOM</h1>
+    <a href="https://jsbin.com/?html,js,console,output" target="_blank" >jsbin.com</a>
 
-  <br>
-
-    <div>  <!-- document.getElementById -->
-      <p onclick="toggle()">document.getElementById</p>
-
-        <pre id="pre">
-
-            < p id="comentarios">
-                texto pertenece al párrafo. Este 
-                texto pertenece al párrafo.Este texto pertenece al párrafo.Este 
-                texto pertenece al párrafo.Este texto pertenece al párrafo.Este 
-                texto pertenece al párrafo.Este texto pertenece al párrafo.
-            < /p> 
-                
-            < input type="button" value="Fuente pequeña" onClick="cambiarFuente(10)" >
-            < input type="button" value="Fuente mediana" onClick="cambiarFuente(13)" >
-            < input type="button" value="Fuente grande " onClick="cambiarFuente(20)" >
-
-        <pre id="pre2">
-          
-            function cambiarFuente(tam){
-
-              let tit=document.getElementById('comentarios');
-                  tit.style.fontSize=tam;
-                  console.log('length childrens:', tit.children.length)
-
-            }
-        </pre>
-    </div>  
+   
     <div>  <!-- childNodes  -->
         <p onclick="toggle2()">childNodes</p>
 
+       
         <pre id="pre3">
-            
+
+         <section id="bloque">
+            <p>Este es el primer párrafo</p>
+            <p>Este es el segundo párrafo</p>
+            <p>Este es el tercer párrafo</p>
+         </section>
+
+         <input type="button" value="console" onClick="tipoNodo()"> 
 
          < section id="bloque">
             < p>Este es el primer párrafo< /p>
@@ -246,20 +222,12 @@
 
          < input type="button" value="tipo de Nodo" onClick="tipoNodo()">
 
-         <section id="bloque">
-            <p>Este es el primer párrafo</p>
-            <p>Este es el segundo párrafo</p>
-            <p>Este es el tercer párrafo</p>
-         </section>
-
-         <input type="button" value="console.log" onClick="tipoNodo()">
-
          <hr>
          function tipoNodo() {
 
             let lista = document.getElementById('bloque')
           
-            for(let x=0;x< lista.childNodes.length;x++) {
+            for(let x=0;x< lista.childNodes.length-1 ;x++) {
 
               if (lista.childNodes[x].nodeType==Node.TEXT_NODE){
                 console.log("Nodo tipo Texto")
@@ -270,8 +238,9 @@
               } 
 
             }
-            
          }
+
+         <a href="https://developer.mozilla.org/es/docs/Web/API/Node/nodeType" target="_blank">nodeType >>></a>
         </pre>
        
     </div>  
@@ -280,20 +249,31 @@
 
         <pre id="pre5">
 
+                        <h1 id="contador">1</h1> 
+                       
+            <input type="button" value="Incrementar en uno" onClick="sumarUno()">
+
+
+           <hr>
 
             < h1 id="contador">1< /h1> 
             < input type="button" value="Incrementar en uno" onClick="sumarUno()">
 
             <hr>
-             function sumarUno(){
-                  let obj=document.getElementById('contador');
-                  obj.childNodes[0].nodeValue=parseInt(obj.childNodes[0].nodeValue)+1;
+            function sumarUno(){
+                let obj=document.getElementById('contador');
+                let sum = obj.childNodes[0].nodeValue 
+                obj.childNodes[0].nodeValue = parseInt(sum)+1;
             }
 
         </pre>
         <pre id="pre6">
 
-           
+                    <h1 id="titulo">Este es el título original</h1> 
+            <input type="button" value="Cambiar Texto" onClick="cambiarTexto()">
+
+           <hr>
+
             < h1 id="titulo">Este es el título original< /h1> 
             < input type="button" value="Cambiar Texto" onClick="cambiarTexto()">
             
@@ -310,28 +290,43 @@
 
         <pre id="pre7">
 
+        <div>  // <-- contenedor padre
 
-            < div>  // <-- padre
+            <p id="parrafo1">Este es el primer párrafo hijo con el id</p>
+            <p>Este es párrafo</p>
+            <p>Este es párrafo</p>
+            <p>Este es párrafo</p>
+            
+        </div>
+            
+            <h2> h2 párrafo fuera de el padre</h2>
+            
+            <input type="button" 
+                   value="Cambiar tamaño de fuente" 
+                   onClick="cambiarTamFuente()">
+<hr>
 
-                < p id="parrafo1">Este es el primer párrafo</p>
-                
+            < div>  // <-- contenedor padre
+
+                < p id="parrafo1">Este es el primer párrafo< /p>
                 < p>Este es párrafo< /p>
                 < p>Este es párrafo< /p>
                 < p>Este es párrafo< /p>
                 
             < /div>
                 
-                < h2> h2 párrafo</h2>
+                < h2> h2 párrafo< /h2>
                 
-                < input type="button" value="Cambiar tamaño de fuente" 
-                onClick="cambiarTamFuente()">
+                < input type="button" 
+                        value="Cambiar tamaño de fuente" 
+                        onClick="cambiarTamFuente()">
 
             <hr>
             function cambiarTamFuente() {
 
                 let parent = document.getElementById('parrafo1').parentNode;
 
-                let parent.style.fontSize='40px';  
+                parent.style.fontSize='8px';  
             
             }
         </pre>
@@ -342,15 +337,18 @@
 
 
         < ul id="list">
+
             < li>111< /li>
             < li>222< /li>
             < li>333< /li>
             < li>444< /li>
-          < /ul>
+
+        < /ul>
          
         <hr>
         let listx  = document.querySelector('#list > li:first-of-type');
         const nextItem = listx.nextElementSibling;
+
         console.log(listx)
         console.log(nextItem)
 
@@ -368,8 +366,17 @@
         <p onclick="toggle6()">firstChild - lastChild</p>
         <pre id="pre9">
 
+        <div id="parrafos">
+            <p>Este es el primer párrafo</p>
+            <p>Este es el segundo párrafo</p>
+            <p>Este es el tercer párrafo</p>
+        </div>
+            
+        <input type="button" value="accediendo a los tres párrafos" onClick="proximoParrafo()">
 
-            < div id="parrafos">
+        <hr>
+
+        < div id="parrafos">
             < p>Este es el primer párrafo< /p>
             < p>Este es el segundo párrafo< /p>
             < p>Este es el tercer párrafo< /p>
@@ -393,7 +400,16 @@
 
        
         <pre id="pre9a">
+
+        <div id="parrafos">
+            <p>Este es el primer párrafo</p>
+            <p>Este es el segundo párrafo</p>
+            <p>Este es el tercer párrafo</p>
+        </div>
             
+        <input type="button" value="accediendo a los tres párrafos" onClick="parrafoAnterior()">
+            
+<hr>
 
             < div id="parrafos">
                 < p>Este es el primer párrafo< /p>
@@ -421,7 +437,26 @@
         <p onclick="toggle6a()">getElementsByTagName</p>
 
         <pre id="pre9b">
-      
+
+
+            <section id="bloque1">
+                <h1>Primer Bloque de párrafos.</h1>
+                <p>Este es el primer párrafo</p>
+                <p>Este es el segundo párrafo</p>
+                <p>Este es el tercer párrafo</p>
+            </section>
+                
+                
+            <section id="bloque2">
+                <h1>Segundo Bloque de párrafos.</h1>
+                <p>Este es el primer párrafoqwq</p>
+                <p>Este es el segundo párrafo</p>
+                <p>Este es el tercer párrafo</p>
+            </section>
+                
+                <input type="button" value="Ocultar" onClick="ocultarParrafos()">
+
+      <hr>
 
             < section id="bloque1">
                 < h1>Primer Bloque de párrafos.< /h1>
@@ -445,7 +480,6 @@
             let obj=document.getElementById("bloque2");
             let lista=obj.getElementsByTagName('p');
 
-              console.log(lista)
               for(f=0;f< lista.length;f++) {
                 lista[f].style.display='none';
               }
@@ -457,20 +491,28 @@
         <p onclick="toggle7()">appendChild - createTextNode</p>
         <pre id="pre10">
 
+            <p id="parrafo">Texto inicial:</p>
+            <input type="button" value="Agregar nodo de texto" onClick="agregar()">
+
+<hr>
 
             < p id="parrafo">Texto inicial:< /p>
+
             < input type="button" value="Agregar nodo de texto" onClick="agregar()">
 
         </pre>
         <pre id="pre10a">
 
+            let contadorx = 1;
 
-            let contador=1;
             function agregar(){
-              let nt=document.createTextNode('Nuevo texto '+contador+'-');
-              let nparrafo=document.getElementById('parrafo');
-              nparrafo.appendChild(nt);
-              contador++;
+
+                let nt = document.createTextNode(' Nuevo texto ' + contadorx + '-');
+                let nparrafo = document.getElementById('parrafo');
+
+                nparrafo.appendChild(nt);
+
+                contadorx++;
             }
 
         </pre>
@@ -478,49 +520,39 @@
     <div> <!--  Remove a text node (removeChild) and check if it has child nodes (hasChildNodes)-->
         <p onclick="toggle8()">Remove a text node (removeChild) and check if it has child nodes (hasChildNodes)</p>
         <pre id="pre11">
+
+            <p id="parrafoa"> Texto inicial: </p>
+
+            <input type="button" value="Agregar nodo de texto" onClick="agregar()">
+            <input type="button" value="Eliminar nodo de texto" onClick="eliminar()">  
+
+            <hr>
  
-            < p id="parrafo">Texto inicial:< /p>
+            < p id="parrafoa">Texto inicial:< /p>
+
             < input type="button" value="Agregar nodo de texto" onClick="agregar()">
             < input type="button" value="Eliminar nodo de texto" onClick="eliminar()"> 
 
         </pre>
         <pre id="pre11a">
  
-            let contador=1;
+            let contadora=1;
 
             function agregar(){
-              let nt=document.createTextNode('Nuevo texto '+contador+'-');
+              let nt=document.createTextNode('Nuevo texto '+contadora+'-');
               let nparrafo=document.getElementById('parrafo');
               nparrafo.appendChild(nt);
-              contador++;
+              contadora++;
             }
 
             function eliminar(){
-              let nparrafo=document.getElementById('parrafo');
+              let nparrafo=document.getElementById('parrafoa');
 
               if (nparrafo.hasChildNodes()){
                  nparrafo.removeChild(nparrafo.lastChild);
-                 contador--;
+                 contadora--;
               }
             }
-        </pre>
-        <pre id="pre11b">
-
-            restrict changes to an object, make sure properties cant be added.
-
-            let obj = {
-                a: 1,
-                b: 2,
-                c: 3
-              };
-              
-              Object.preventExtensions(obj);
-              obj.d = 4;
-              
-              console.log(obj.d);
-              
-              Output
-              undefined
         </pre>
     </div>  
     <div> <!-- insertBefore - createElement -->
