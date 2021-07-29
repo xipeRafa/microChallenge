@@ -25,137 +25,153 @@
     }
 
     p{
-        user-select: none; 
-        padding-left: 20px; 
+        user-select: none ;
+        padding-left: 20px ;
     }
 
     a{
         text-decoration: none;
     }
 
+    hr{
+        
+        border:1px solid rgba(0, 162, 255, 0.144)
+    }
+
     .display{
         display: inline-block;
+    }
+
+    #recuadro {
+       background-color:#ffff00;
+       border:1px solid #000000;
+       font-size:10px;
+       padding: 20px;
+    }
+
+    #listapaises {
+       list-style-type:decimal;
     }
 
 </style>
 <script>
     function toggle(){
-        document.querySelector("#pre").classList.toggle("display");
-        document.querySelector("#pre2").classList.toggle("display");
+        document.querySelector("#pre").classList.toggle("display")
+        document.querySelector("#pre2").classList.toggle("display")
     }
     
     function toggle2(){
-        document.querySelector("#pre3").classList.toggle("display");
-        document.querySelector("#pre4").classList.toggle("display");
+        document.querySelector("#pre3").classList.toggle("display")
+        document.querySelector("#pre4").classList.toggle("display")
     }
     
     function toggle3(){
-        document.querySelector("#pre5").classList.toggle("display");
-        document.querySelector("#pre6").classList.toggle("display");
+        document.querySelector("#pre5").classList.toggle("display")
+        document.querySelector("#pre6").classList.toggle("display")
     }
     
        
     function toggle4(){
-        document.querySelector("#pre7").classList.toggle("display");
+        document.querySelector("#pre7").classList.toggle("display")
     }
 
     function toggle5(){
-        document.querySelector("#pre8").classList.toggle("display");
+        document.querySelector("#pre8").classList.toggle("display")
     }
 
     function toggle6(){
-        document.querySelector("#pre9").classList.toggle("display");
+        document.querySelector("#pre9").classList.toggle("display")
     }
 
     function toggle7(){
-        document.querySelector("#pre10").classList.toggle("display");
+        document.querySelector("#pre10").classList.toggle("display")
     }
 
     function toggle8(){
-        document.querySelector("#pre11").classList.toggle("display");
-        document.querySelector("#pre11a").classList.toggle("display");
+        document.querySelector("#pre11").classList.toggle("display")
+        document.querySelector("#pre11a").classList.toggle("display")
     }
 
     function toggle9(){
-        document.querySelector("#pre12").classList.toggle("display");
+        document.querySelector("#pre12").classList.toggle("display")
     }
 
     function toggle11(){
-        document.querySelector("#pre14").classList.toggle("display");
-        document.querySelector("#pre14a").classList.toggle("display");
+        document.querySelector("#pre14").classList.toggle("display")
+        document.querySelector("#pre14a").classList.toggle("display")
     }
 
         function toggle12(){
-        document.querySelector("#pre15").classList.toggle("display");
-        document.querySelector("#pre15a").classList.toggle("display");
+        document.querySelector("#pre15").classList.toggle("display")
+        document.querySelector("#pre15a").classList.toggle("display")
     }
     
     function toggle13(){
-        document.querySelector("#pre16").classList.toggle("display");
-        document.querySelector("#pre16a").classList.toggle("display");
+        document.querySelector("#pre16").classList.toggle("display")
+        document.querySelector("#pre16a").classList.toggle("display")
     }
 
     function toggle14(){
-        document.querySelector("#pre17").classList.toggle("display");
-        document.querySelector("#pre17a").classList.toggle("display");
+        document.querySelector("#pre17").classList.toggle("display")
+        document.querySelector("#pre17a").classList.toggle("display")
     }
 
     function toggle15(){
-        document.querySelector("#pre18").classList.toggle("display");
-        document.querySelector("#pre18a").classList.toggle("display");
+        document.querySelector("#pre18").classList.toggle("display")
+        document.querySelector("#pre18a").classList.toggle("display")
     }
 
     function toggle16(){
-        document.querySelector("#pre19").classList.toggle("display");
-        document.querySelector("#pre19a").classList.toggle("display");
+        document.querySelector("#pre19").classList.toggle("display")
+        document.querySelector("#pre19a").classList.toggle("display")
     }
 
     function toggle17(){
-        document.querySelector("#pre20").classList.toggle("display");
-        document.querySelector("#pre20a").classList.toggle("display");
+        document.querySelector("#pre20").classList.toggle("display")
+        document.querySelector("#pre20a").classList.toggle("display")
     }
      
     function toggle18(){
-        document.querySelector("#pre21").classList.toggle("display");
-        document.querySelector("#pre21a").classList.toggle("display");
+        document.querySelector("#pre21").classList.toggle("display")
+        document.querySelector("#pre21a").classList.toggle("display")
     }
 
     function toggle19(){
-        document.querySelector("#pre22").classList.toggle("display");
-        document.querySelector("#pre22a").classList.toggle("display");
+        document.querySelector("#pre22").classList.toggle("display")
+        document.querySelector("#pre22a").classList.toggle("display")
     }
 
     function toggle20(){
-        document.querySelector("#pre23").classList.toggle("display");
-        document.querySelector("#pre23a").classList.toggle("display");
+        document.querySelector("#pre23").classList.toggle("display")
+        document.querySelector("#pre23a").classList.toggle("display")
     }
 
     function toggle21(){
-        document.querySelector("#pre24").classList.toggle("display");
-        document.querySelector("#pre24a").classList.toggle("display");
+        document.querySelector("#pre24").classList.toggle("display")
+        document.querySelector("#pre24a").classList.toggle("display")
     }
 
     function toggle22(){
-        document.querySelector("#pre25").classList.toggle("display");
-        document.querySelector("#pre25a").classList.toggle("display");
+        document.querySelector("#pre25").classList.toggle("display")
+        document.querySelector("#pre25a").classList.toggle("display")
     }
 
     function toggle23(){
-        document.querySelector("#pre26").classList.toggle("display");
-        document.querySelector("#pre26a").classList.toggle("display");
+        document.querySelector("#pre26").classList.toggle("display")
+        document.querySelector("#pre26a").classList.toggle("display")
     }
 
     function toggle24(){
-        document.querySelector("#pre27").classList.toggle("display");
-        document.querySelector("#pre27a").classList.toggle("display");
+        document.querySelector("#pre27").classList.toggle("display")
+        document.querySelector("#pre27a").classList.toggle("display")
     }
 
     function toggle25(){
-        document.querySelector("#pre28").classList.toggle("display");
+        document.querySelector("#pre28").classList.toggle("display")
     }
 
     function toggle26(){
-        document.querySelector("#pre29").classList.toggle("display");
+        document.querySelector("#pre29").classList.toggle("display")
     }
 
   
@@ -183,7 +199,7 @@
             <hr>
             without modify the original array:
 
-            const arr = [1,2,3];
+            const arr = [1,2,3]
             const arr2 = [...arr]
             arr2.splice(1,0,'jiji')
             
@@ -252,9 +268,9 @@
 
         <pre id="pre3">
 
-            const arr = [5, 1, 8];
-            arr.push(2);
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.push(2)
+            console.log(arr)
 
             Output
             [5, 1, 8, 2]
@@ -264,9 +280,9 @@
             The reverse method called pop extracts the last element of the Array 
             and decrements the length attribute by one
 
-            const arr = [5, 1, 8];
-            arr.pop();
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.pop()
+            console.log(arr)
 
             Output
             [5, 1]
@@ -277,21 +293,21 @@
 
         <pre id="pre5">
 
-            const arr = [5, 1, 8];
-            arr.unshift(2, 7);
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.unshift(2, 7)
+            console.log(arr)
             
             Output
             [2, 7, 5, 1, 8]
         </pre>
         <pre id="pre6">
 
-            The shift method extracts the first element of the vector 
+            The shift method extracts(remove) the first element of the vector 
             and shifts the rest of the vector elements forward.
             
-            const arr = [5, 1, 8];
-            arr.shift();
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.shift()
+            console.log(arr)
 
             Output
             [1, 8]
@@ -302,10 +318,10 @@
 
         <pre id="pre7">
 
-            const arr = [5, 1, 8];
-            const arr2 = ['a', 'b', 'c'];
-            const arr3 = arr.concat(arr2);
-            console.log(arr3);
+            const arr = [5, 1, 8]
+            const arr2 = ['a', 'b', 'c']
+            const arr3 = arr.concat(arr2)
+            console.log(arr3)
             
             Output
             [5, 1, 8, 'a', 'b', 'c']
@@ -319,9 +335,9 @@
        <p onclick="toggle5()">5.- Removes elements from an array.</p>
        <pre id="pre8">
 
-           const arr = [5, 1, 8];
-           arr.splice(2, 1); // (index start, how much)
-           console.log(arr);
+           const arr = [5, 1, 8]
+           arr.splice(2, 1) // (index start, how much)
+           console.log(arr)
         
            Output
            [5, 1] 
@@ -331,9 +347,9 @@
         <p onclick="toggle6()">6.- Remove the last element from an array and returns that element.</p>
         <pre id="pre9">
  
-            const arr = [5, 1, 8];
-            arr.pop();
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.pop()
+            console.log(arr)
 
             Output
             [5,1]
@@ -343,10 +359,10 @@
         <p onclick="toggle7()">7.- Remove the first element from an array and returns that element.</p>
         <pre id="pre10">
  
-            const arr = [5, 1, 8];
-            const shiftValue = arr.shift();
-            console.log(arr); // [1,8]
-            console.log(shiftValue); // 5 
+            const arr = [5, 1, 8]
+            const shiftValue = arr.shift()
+            console.log(arr) // [1,8]
+            console.log(shiftValue) // 5 
             
             Output
             [1, 8]
@@ -356,10 +372,10 @@
         <p onclick="toggle8()">8.- Remove one or more elements in order for use</p>
         <pre id="pre11">
  
-            const arr = [5, 1, 8];
-            const slicedArr = arr.slice(1);
-            console.log(arr);
-            console.log(slicedArr);
+            const arr = [5, 1, 8]
+            const slicedArr = arr.slice(1)
+            console.log(arr)
+            console.log(slicedArr)
             
             Output
             [5, 1, 8]
@@ -378,7 +394,7 @@
 
             <hr>
 
-      const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+      const animals = ['ant', 'bison', 'camel', 'duck', 'elephant']
 
             animals.slice(2)
                 output: Array ["camel", "duck", "elephant"]
@@ -404,7 +420,7 @@
         <p onclick="toggle9()">9.- find item. out if a certain element exist</p>
         <pre id="pre12">
  
-            const arr = [5, 1, 8];
+            const arr = [5, 1, 8]
             const inc = arr.includes(1)
             console.log(inc)
 
@@ -420,8 +436,8 @@
             Returns the first index at which a given element 
             can be found in the array, or -1 if it is not present.
 
-            const arr = [5, 1, 8, 5];
-            console.log(arr.indexOf(5));
+            const arr = [5, 1, 8, 5]
+            console.log(arr.indexOf(5))
 
             Output
             0
@@ -431,7 +447,7 @@
             Returns the LAST (greatest) index of an element within the array 
             equal to the specified value, or -1 if none is found.
  
-            const arr = [5, 1, 8, 5];
+            const arr = [5, 1, 8, 5]
             console.log(arr.lastIndexOf(5))                     
 
             Output
@@ -442,9 +458,9 @@
         <p onclick="toggle12()">11.- the first element value that satisfies a condition</p>
         <pre id="pre15">
 
-            const arr = [5, 1, 8];
-            const isTiny = (el) => el < 2;
-            console.log(arr.find(isTiny));
+            const arr = [5, 1, 8]
+            const isTiny = (el) => el < 2
+            console.log(arr.find(isTiny))
             
             Output
             1
@@ -469,20 +485,20 @@
             the provided testing function or undefined if not found. 
             Similar to findIndex(), but it returns the item instead of the index.
 
-            const array = [0,1,,,,5,6];
+            const array = [0,1,,,,5,6]
 
             array.find(function(value, index) {
-                  console.log('Visited index ' + index + ' with value ' + value);
-            });
+                  console.log('Visited index ' + index + ' with value ' + value)
+            })
         </pre>
     </div> 
     <div> <!-- the first index of an item that satisfies a condition -->
         <p onclick="toggle13()">12.- the first index of an item that satisfies a condition</p>
         <pre id="pre16">
 
-            const arr = [5, 1, 8];
-            const isBig = (el) => el > 6;
-            console.log(arr.findIndex(isBig));
+            const arr = [5, 1, 8]
+            const isBig = (el) => el > 6
+            console.log(arr.findIndex(isBig))
 
             Output
             2
@@ -499,9 +515,9 @@
         <p onclick="toggle14()">13.- a value by reducing the Array, start to finish</p>
         <pre id="pre17">
 
-            const arr = [5, 1, 8];
-            const reducer = (a, b) => a + b;
-            console.log(arr.reduce(reducer));
+            const arr = [5, 1, 8]
+            const reducer = (a, b) => a + b
+            console.log(arr.reduce(reducer))
             
             Output
             14
@@ -517,7 +533,7 @@
         <p onclick="toggle15()">14.- a value by reducing the Array, finish to start</p>
         <pre id="pre18">
 
-            const arr = [5, 1, 8];
+            const arr = [5, 1, 8]
             [arr, [0, 1]].reduceRight((a, b) => {
             return a.concat(b)
             }, [])
@@ -539,8 +555,8 @@
         <p onclick="toggle16()">15.- one or many items values based on a condition </p>
         <pre id="pre19">
 
-            const arr = [5, 1, 8];
-            const filtered = arr.filter(el => el > 4);
+            const arr = [5, 1, 8]
+            const filtered = arr.filter(el => el > 4)
             console.log(filtered)
 
             Output
@@ -557,9 +573,9 @@
         <p onclick="toggle17()">16.- whether or not every item satisfies a condition</p>
         <pre id="pre20">
 
-            const arr = [5, 1, 8];
-            const isSmall = (el) => el < 10;
-            console.log(arr.every(isSmall));
+            const arr = [5, 1, 8]
+            const isSmall = (el) => el < 10
+            console.log(arr.every(isSmall))
             
             Output
             true
@@ -574,9 +590,9 @@
         <p onclick="toggle18()">17.- whether or not at least one item satisfies a condition</p>
         <pre id="pre21">
 
-            const arr = [5, 1, 8];
-            const biggerThan4 = (el) => el > 4;
-            console.log(arr.some(biggerThan4));
+            const arr = [5, 1, 8]
+            const biggerThan4 = (el) => el > 4
+            console.log(arr.some(biggerThan4))
 
             Output
             true
@@ -596,10 +612,10 @@
 
             // YOU CAN NOT SAVE .forEach IN A VARIABLE
 
-            const arr = [5, 1, 8];
+            const arr = [5, 1, 8]
             arr.forEach((element) => {
               console.log(element)
-            });
+            })
             
             Output
 
@@ -611,9 +627,9 @@
 
             The forEach() method executes a provided function once for each array element.
 
-            const array1 = ['a', 'b', 'c'];
+            const array1 = ['a', 'b', 'c']
 
-            array1.forEach((element, index,  array) => console.log(index, element, array));
+            array1.forEach((element, index,  array) => console.log(index, element, array))
              
             Output
 
@@ -627,9 +643,9 @@
         <p onclick="toggle20()">19.- walk over items, creating new array from each element with a function </p>
         <pre id="pre23">
 
-            const arr = [5, 1, 8];
-            const map = arr.map(x => x + 1);
-            console.log(map);
+            const arr = [5, 1, 8]
+            const map = arr.map(x => x + 1)
+            console.log(map)
 
             Output
 
@@ -642,12 +658,18 @@
 
             const string = Array.from('hello')
 
-            console.log(string)  
-            console.log(Array.from([1, 2, 3], x => x * 3 ));
-
+            console.log(string) 
+            
             Output
  
             > Array ["h", "e", "l", "l", "o"]
+
+            <hr>
+
+            console.log(Array.from([1, 2, 3], x => x * 3 ))
+
+            Output
+ 
             > Array [3, 6, 9]
         </pre>
     </div> 
@@ -655,10 +677,10 @@
         <p onclick="toggle21()">20.- creating an iterator object</p>
         <pre id="pre24">
 
-            const arr = [5, 1, 8];
-            const iterator = arr.entries();
-            console.log(iterator.next().value);
-            console.log(iterator.next().value);
+            const arr = [5, 1, 8]
+            const iterator = arr.entries()
+            console.log(iterator.next().value)
+            console.log(iterator.next().value)
 
             Output
             [0, 5]
@@ -681,15 +703,15 @@
         <p onclick="toggle22()">21.- return a string, join all Elements of the array into a string</p>
         <pre id="pre25">
 
-            const arr = [5, 1, 8];
-            console.log(arr.join(' '));
+            const arr = [5, 1, 8]
+            console.log(arr.join(' '))
 
             Output
 
             5 1 8
 
-            const arr = [5, 1, 8];
-            console.log(arr.join('-'));
+            const arr = [5, 1, 8]
+            console.log(arr.join('-'))
 
             Output
 
@@ -699,8 +721,8 @@
 
             Returns a string representing the array and its elements.
 
-            const arr = [5, 1, 8];
-            console.log(arr.toString());
+            const arr = [5, 1, 8]
+            console.log(arr.toString())
             
             Output
             "5,1,8" 
@@ -710,9 +732,9 @@
         <p onclick="toggle23()">22.- order an array, reverse the order of the array</p>
         <pre id="pre26">
 
-            const arr = [5, 1, 8];
-            arr.reverse();
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.reverse()
+            console.log(arr)
             
             Output
             [8, 1, 5]
@@ -722,9 +744,9 @@
             Reverses the order of the elements of an array in place
           — the first becomes the last, and the last becomes the first.
 
-          const points = [40, 100, 1, 5, 25, 10];
+          const points = [40, 100, 1, 5, 25, 10]
 
-          points.sort(function(a, b){return b - a});
+          points.sort(function(a, b){return b - a})
           points.reverse()
           console.log(points)
         </pre>
@@ -733,9 +755,9 @@
         <p onclick="toggle24()">23.- sort the items of the array</p>
         <pre id="pre27">
 
-            const arr = [5, 1, 8];
-            arr.sort();
-            console.log(arr);
+            const arr = [5, 1, 8]
+            arr.sort()
+            console.log(arr)
             
             Output
 
@@ -762,17 +784,17 @@
         <p onclick="toggle25()">24.- Fills all the elements of an array </p>
         <pre id="pre28">
 
-            const array1 = [1, 2, 3, 4];
+            const array1 = [1, 2, 3, 4]
 
             // fill with 0 from position 2 until position 4
-            console.log(array1.fill(0, 2, 4));
+            console.log(array1.fill(0, 2, 4))
             // expected output: [1, 2, 0, 0]
             
             // fill with 5 from position 1
-            console.log(array1.fill(5, 1));
+            console.log(array1.fill(5, 1))
             // expected output: [1, 5, 5, 5]
             
-            console.log(array1.fill(6));
+            console.log(array1.fill(6))
             // expected output: [6, 6, 6, 6]
         </pre>
     
@@ -794,14 +816,14 @@
 
             <hr>
 
-            const array1 = ['a', 'b', 'c', 'd', 'e'];
+            const array1 = ['a', 'b', 'c', 'd', 'e']
 
             // copy to index 0 the element at index 3
-            console.log(array1.copyWithin(0, 3, 4));
+            console.log(array1.copyWithin(0, 3, 4))
             // expected output: Array ["d", "b", "c", "d", "e"]
 
             // copy to index 1 all elements From index 3 to the end
-            console.log(array1.copyWithin(1, 3));
+            console.log(array1.copyWithin(1, 3))
             // expected output: Array ["d", "d", "e", "d", "e"]
 
             <hr>
