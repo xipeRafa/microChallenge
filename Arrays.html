@@ -189,6 +189,7 @@
 
         <pre id="pre">
 
+
             const arr = [5, 1, 8]
             arr.splice(2, 0, 'tacos') // (index start, delete, what add)
             console.log(arr)
@@ -207,6 +208,34 @@
             console.log(arr)
 
             // .splice modifies the original Array
+
+            <hr>
+            const arr = [5, 1, 8,3,4,2,3,4,5,6]
+            arr.splice(arr.length-1, 1, 'tacos') // Replace the last item
+            console.log(arr)
+            
+            [5, 1, 8, 3, 4, 2, 3, 4, 5, "tacos"]
+            <hr>
+
+            const arr = [5, 1, 8, 4, 3, 5, 6, 7, 7]
+            let val = 4
+            
+            let valueArr = arr.slice(val, val + 1) //give index & get value
+            let valueNum = Number(arr.slice(val, val + 1)) 
+            let valueString = String(arr.slice(val, val + 1)) 
+  
+            console.log(arr)
+            console.log(valueArr)
+            console.log(valueNum)
+            console.log(valueString)
+
+            output:
+
+            [5, 1, 8, 4, 3, 5, 6, 7, 7]
+            [3]
+            3
+            3 
+
         </pre>
         <pre id="pre2">
           
@@ -260,6 +289,27 @@
             
             console.log(arr)
             console.log(arr1)
+
+            <hr>
+            let arr1 = [1,2,3,4,5,2]
+            let arr = [...arr1]
+            let val = 2
+
+            arr.forEach(()=>{
+
+                let startIndex = arr.indexOf(val)
+            
+                arr.splice(startIndex, 1, val.toString())
+            
+            })
+            
+            console.log(arr)
+            console.log(arr1)
+
+            Output
+
+            [1, "2", 3, 4, 5, "2"]
+            [1, 2, 3, 4, 5, 2]
 
         </pre>
     </div>  
@@ -410,6 +460,19 @@
 
             animals.slice(2, -1)
                 output: Array ["camel", "duck"]
+
+                <hr>
+
+                .slice(< indexToGet>< indexToGet + 1>)  //give index & get value
+
+            const arr = [5, 1, 8]
+            const slicedArr = arr.slice(2,3)
+
+            console.log(arr)
+            console.log(slicedArr)
+
+            [5, 1, 8]
+            [8]
 
         </pre>
     </div>  
@@ -622,6 +685,37 @@
             5
             1
             8
+
+            <hr>
+            const vec11 = [0,7,2,3,4,2,6,8,2]
+            const vec2 = [...vec11]
+
+            vec2.forEach((_, i)=> {
+
+                if (vec2[i]==2){     
+                    vec2.splice(i,1,vec2[i].toString())   
+                }
+
+            })
+
+            console.log(vec2)
+
+            [0, 7, "2", 3, 4, "2", 6, 8, "2"]
+
+            <hr>
+            const vec11 = [0,7,4,3,4,2,6,8,2]
+            const vec2 = [...vec11]
+
+            vec2.forEach((_, i)=> {
+
+                if ([i]==2){     
+                    vec2[i]='jijji'   
+                }
+
+            })
+
+            console.log(vec2)
+            [0, 7, "jijji", 3, 4, 2, 6, 8, 2]
         </pre>
         <pre id="pre22a">
 
@@ -650,6 +744,25 @@
             Output
 
             [6, 2, 9]
+
+            <hr>
+            const arr = [5, 1, 8]
+            const map = arr.map(x => x.toString())
+            console.log(map)
+            
+            ["5", "1", "8"]
+
+            <hr>
+            const arr = ['a', 'b', 'c']
+
+            const filtered = arr.map(el => el.toUpperCase())
+           
+            console.log(filtered)
+
+
+            Output
+            ["A", "B", "C"]
+
         </pre>
         <pre id="pre23a">
 
