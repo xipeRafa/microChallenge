@@ -55,6 +55,7 @@
 
 </style>
 <script>
+
     function toggle(){
         document.querySelector("#pre").classList.toggle("display")
         document.querySelector("#pre2").classList.toggle("display")
@@ -174,21 +175,21 @@
         document.querySelector("#pre29").classList.toggle("display")
     }
 
-  
-
 
 </script>
 <body>
+ 
+      
+    <h1>STRINGS</h1>
+
+    <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp"
+             target="_blank"> Strings →</a>
+<br>
+    <a href="https://jsbin.com/yikebexoko/edit?html,js,console,output"
+             target="_blank"> JS bin →</a>
 
 
-
-
-
-    <h1>Arrays</h1>
-    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String"
-             target="_blank">MDN Strings →</a>
-
-    <div>  <!-- Intro -->
+    <div>  <!-- 1.- Intro -->
     <p onclick="toggle()">1.- Intro</p>
 
         <pre id="pre">
@@ -268,56 +269,113 @@
 
         </pre>
     </div>  
-    <div>  <!-- Adds one or more elements to the end of an array -->
-        <p onclick="toggle2()">2.- Adds one or more elements to the end of an array</p>
+    <div>  <!-- 2.- shortcuts -->
+        <p onclick="toggle2()">2.- shortcuts</p>
 
         <pre id="pre3">
 
-            const arr = [5, 1, 8]
-            arr.push(2)
-            console.log(arr)
 
-            Output
-            [5, 1, 8, 2]
+            const id = document.getElementById.bind(document)
+
+            const qs = document.querySelector.bind(document)
+            const all = document.querySelectorAll.bind(document)
+
+            const cl = console.log
+
+<hr>
+            const fontSize = (word) => {
+                let str = word.fontsize(12)
+                id('demo').innerHTML = str; 
+                cl(word)
+            }
+         
+            fontSize('jijji'); 
+
         </pre>
         <pre id="pre4">
           
-            The reverse method called pop extracts the last element of the Array 
-            and decrements the length attribute by one
-
-            const arr = [5, 1, 8]
-            arr.pop()
-            console.log(arr)
-
-            Output
-            [5, 1]
+            const cl = console.log 
+            
+            cl('hello')  // hello
          </pre>    
     </div>  
-    <div>  <!-- Adds one or more elements to the front of an array -->
-        <p onclick="toggle3()">3.- Adds one or more elements to the FRONT of an array</p>
+    <div>  <!-- 3.- String Methods -->
+        <p onclick="toggle3()">3.- String Methods </p>
 
         <pre id="pre5">
 
-            const arr = [5, 1, 8]
-            arr.unshift(2, 7)
-            console.log(arr)
-            
-            Output
-            [2, 7, 5, 1, 8]
-        </pre>
-        <pre id="pre6">
+    All string methods return a new value. They do not change the original variable.
 
-            The shift method extracts(remove) the first element of the vector 
-            and shifts the rest of the vector elements forward.
             
-            const arr = [5, 1, 8]
-            arr.shift()
-            console.log(arr)
+    Method	        Description
+<hr>
+    charAt()	   Returns the character at the specified index (position)
 
-            Output
-            [1, 8]
-         </pre>    
+    charCodeAt()   Returns the Unicode of the character. String.charCodeAt()
+
+    concat()       Joins two or more strings, and returns a new joined strings
+
+    endsWith()	   Checks whether a string ends with specified string/characters
+
+    fromCharCode() let text = String.fromCharCode(72, 69, 76, 76, 79) // "HELLO"
+
+    includes()	   Checks whether a string contains the specified string/characters
+<hr>
+    indexOf()	   Returns the position of the first found occurrence of a specified value in a string
+
+    lastIndexOf()  Returns the position of the last found occurrence of a specified value in a string
+
+    localeCompare() Compares two strings in the current locale 
+                    
+                    -1 if the reference string is sorted before the compareString
+                     0 if the two strings are equal
+                     1 if the reference string is sorted after the compareString
+
+    match()  Searches a string for a match against a regular expression, and returns the matches
+
+                    let str = "The rain in SPAIN stays mainly in the plain";
+                    str.match(/ain/g)   // ain,ain,ain
+
+    repeat()  Returns a new string with a specified number of copies that you need
+
+   </pre>
+   <pre id="pre6">
+
+
+    replace()	    Searches a string for a specified value, or a regular expression,
+                    var.replace([replace it],[add this one])
+
+    search()	    Searches a string for a specified value, or regular expression, returns the position
+        
+    slice()         Extracts a part of a string and returns a new string
+        
+    split()         Splits a string into an array of substrings
+        
+    startsWith()    Checks whether a string begins with specified characters
+        <hr>
+    substr()	    Extracts the characters from a string, beginning at a specified start position, 
+                    and through the specified number of character (no recomended)
+        
+    substring()	    Extracts the characters from a string, between two specified indices (no recomended)
+        
+    toLowerCase()   Converts a string to lowercase letters
+        
+    toString()	    Returns the value of a String object
+        
+    toUpperCase()   Converts a string to uppercase letters
+        <hr>
+    trim()	    Removes whitespace from both ends of a string
+        
+    valueOf()	    Returns the primitive value of a String object
+        
+    toLocaleUpperCase()	Converts a string to uppercase letters, according to the host's locale
+        
+    toLocaleLowerCase() Converts a string to lowercase letters, according to the host's locale
+
+    </pre>    
     </div> 
+
+
     <div>  <!-- Returns a new array comprised of this array joined with other array(s) and/or value(s) -->
         <p onclick="toggle4()">4.- New array comprised of this array joined with other array(s) and/or value(s)</p>
 
@@ -847,6 +905,5 @@
     </div>   
 
     <br>
-    
 </body>
 </html>
