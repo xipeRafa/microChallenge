@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS FUNCTIONAL</title>
+
 </head>
+
 <style>
 
     body{
@@ -52,155 +54,15 @@
        list-style-type:decimal;
     }
 
-</style>>
-<script>
-     
-    function toggle(){
-        document.querySelector("#pre").classList.toggle("display")
-        document.querySelector("#pre2").classList.toggle("display")
-    }
-    
-    function toggle2(){
-        document.querySelector("#pre4").classList.toggle("display")
-        document.querySelector("#pre4a").classList.toggle("display")
-        document.querySelector("#pre4b").classList.toggle("display")
-    }
-    
-    function toggle3(){
-        document.querySelector("#pre5").classList.toggle("display")
-        document.querySelector("#pre5a").classList.toggle("display")
-        document.querySelector("#pre6a").classList.toggle("display")
-    }
-    
-       
-    function toggle4(){
-        document.querySelector("#pre7").classList.toggle("display")
-        document.querySelector("#pre7a").classList.toggle("display")
-    }
-
-    function toggle5(){
-        document.querySelector("#pre8").classList.toggle("display")
-        document.querySelector("#pre8a").classList.toggle("display")
-        document.querySelector("#pre8b").classList.toggle("display")
-    }
-
-    function toggle55(){
-        document.querySelector("#pre88").classList.toggle("display")
-        document.querySelector("#pre8aa").classList.toggle("display")
-        document.querySelector("#pre8bb").classList.toggle("display")
-    }
-    
-    function toggle5a(){
-        document.querySelector("#pre15aa").classList.toggle("display")
-        document.querySelector("#pre15bb").classList.toggle("display")
-        document.querySelector("#pre15cc").classList.toggle("display")
-    }
-
-    function toggle6(){
-        document.querySelector("#pre9").classList.toggle("display")
-    }
-
-    function toggle7(){
-        document.querySelector("#pre10").classList.toggle("display")
-        document.querySelector("#pre10a").classList.toggle("display")
-    }
-
-    function toggle8(){
-        document.querySelector("#pre11").classList.toggle("display")
-    }
-
-    function toggle9(){
-        document.querySelector("#pre12").classList.toggle("display")
-    }
-
-    function toggle11(){
-        document.querySelector("#pre14").classList.toggle("display")
-        document.querySelector("#pre14a").classList.toggle("display")
-        document.querySelector("#pre14b").classList.toggle("display")
-        document.querySelector("#pre14c").classList.toggle("display")
-    }
-
-    function toggle13(){
-        document.querySelector("#pre16").classList.toggle("display")
-    }
-
-    function toggle14(){
-        document.querySelector("#pre17").classList.toggle("display")
-        document.querySelector("#pre17a").classList.toggle("display")
-        document.querySelector("#pre17b").classList.toggle("display")
-    }
-
-    function toggle15(){
-        document.querySelector("#pre18").classList.toggle("display")
-        document.querySelector("#pre18a").classList.toggle("display")
-    }
-
-    function toggle16(){
-        document.querySelector("#pre19").classList.toggle("display")
-        document.querySelector("#pre19a").classList.toggle("display")
-    }
-
-    function toggle17(){
-        document.querySelector("#pre20").classList.toggle("display")
-        document.querySelector("#pre20a").classList.toggle("display")
-    }
-     
-    function toggle18(){
-        document.querySelector("#pre21").classList.toggle("display")
-        document.querySelector("#pre21a").classList.toggle("display")
-    }
-
-    function toggle19(){
-        document.querySelector("#pre22").classList.toggle("display")
-        document.querySelector("#pre22a").classList.toggle("display")
-    }
-
-    function toggle20(){
-        document.querySelector("#pre23").classList.toggle("display")
-        document.querySelector("#pre23a").classList.toggle("display")
-    }
-
-    function toggle21(){
-        document.querySelector("#pre24").classList.toggle("display")
-        document.querySelector("#pre24a").classList.toggle("display")
-    }
-
-    function toggle22(){
-        document.querySelector("#pre25").classList.toggle("display")
-        document.querySelector("#pre25a").classList.toggle("display")
-    }
-
-    function toggle23(){
-        document.querySelector("#pre26").classList.toggle("display")
-        document.querySelector("#pre26a").classList.toggle("display")
-    }
-
-    function toggle24(){
-        document.querySelector("#pre27").classList.toggle("display")
-        document.querySelector("#pre27a").classList.toggle("display")
-    }
-
-    function toggle25(){
-        document.querySelector("#pre28").classList.toggle("display")
-        document.querySelector("#pre28a").classList.toggle("display")
-    }
-
-    function toggle26(){
-        document.querySelector("#pre29").classList.toggle("display")
-    }
-
-  
-
-
-</script>
+</style>
 <body>
 
     <h1>FUNCTIONAL PROGRAMING</h1>
 
     <div>  <!-- Introduction -->
-        <p onclick="toggle()">Introduction to Functional Programming</p>
+        <p id="div0">Introduction to Functional Programming</p>
 
-        <pre id="pre">
+        <pre>
 
             This is how most of us were taught to program by default (imperatively):
 
@@ -217,7 +79,7 @@
             
             [2, 4, 6, 8]
         </pre>
-        <pre id="pre2">
+        <pre>
 
             This is how it would be done declaratively (using functional programming):
           
@@ -232,9 +94,9 @@
         </pre>
     </div>  
     <div>  <!-- JavaScript tools -->
-        <p onclick="toggle2()">JavaScript tools</p>
+        <p id="div1">JavaScript tools</p>
 
-        <pre id="pre4">
+        <pre>
 
             - Immutability
             - Use pure functions.
@@ -242,7 +104,7 @@
             - Use of currying.
             - Composition of functions.
         </pre>   
-        <pre id="pre4a">
+        <pre>
 
             map: Result preserves the shape of the input argument, probably with a different type.
 
@@ -261,7 +123,7 @@
             // 3 + 3 => 6
             // => 6  
         </pre>
-        <pre id="pre4b">
+        <pre>
 
             Higher-order functions are those that take one or more functions as
             an argument or return functions as a result. They interest us 
@@ -275,8 +137,8 @@
         </pre> 
     </div>  
     <div>  <!-- map -->
-        <p onclick="toggle3()">map</p>
-        <pre id="pre5">
+        <p id="div2">map</p>
+        <pre>
 
             const array1 = [1, 4, 9, 16]
 
@@ -312,7 +174,7 @@
 
         </pre>
 
-        <pre id="pre5a">
+        <pre>
 
               function returnInt(element) {
                 return parseInt(element, 10)
@@ -332,8 +194,8 @@
               
               // For comparison, if we use parseInt() on the array above:
               ['1.1', '2.2e2', '3e300'].map( str => parseInt(str) ) // [1, 2, 3]
-        </pre>
-        <pre id="pre6a">
+        
+              <hr>
            
             When not to use map()
 
@@ -353,9 +215,9 @@
         </pre>    
     </div> 
     <div>  <!-- filter -->
-        <p onclick="toggle4()">filter</p>
+        <p id="div3">filter</p>
 
-        <pre id="pre7">
+        <pre>
 
         const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
 
@@ -408,7 +270,7 @@
 
            
         </pre>
-        <pre id="pre7a">
+        <pre>
 
         Filtering out all small values
 
@@ -437,8 +299,8 @@
        
     </div>  
     <div> <!-- reduce -->
-        <p onclick="toggle5()">reduce</p>
-        <pre id="pre8">
+        <p id="div4">reduce</p>
+        <pre>
   
             const array1 = [1, 2, 3, 4]
             const reducer = (accumulator, currentValue) => accumulator + currentValue
@@ -458,7 +320,7 @@
             console.log(total)
             output: 7
         </pre>
-        <pre id="pre8a">
+        <pre>
 
             Sum of values in an object array
 
@@ -484,8 +346,7 @@
 
 
 
-        </pre>
-        <pre id="pre8b">
+        <hr>
 
             Remove duplicate items in an array (reduce)
 
@@ -511,8 +372,8 @@
         </pre>
     </div>
     <div> <!-- Mix high order functions -->
-        <p onclick="toggle55()">Mix high order functions</p>
-        <pre id="pre88">
+        <p id="div5">Mix high order functions</p>
+        <pre>
   
             const array1 = [1, 2, 3, 4]
             const reducer = (accumulator, currentValue) => accumulator + currentValue
@@ -531,8 +392,7 @@
             )
             console.log(total)
             output: 7
-        </pre>
-        <pre id="pre8aa">
+    <hr>
 
             Sum of values in an object array
 
@@ -559,7 +419,7 @@
 
 
         </pre>
-        <pre id="pre8bb">
+        <pre>
 
             Remove duplicate items in an array (reduce)
 
@@ -588,8 +448,8 @@
 
     <br/>
     <div> <!-- forEach -->
-        <p onclick="toggle5a()">forEach</p>
-        <pre id="pre15aa">
+        <p id="div6">forEach</p>
+        <pre>
 
          forEach()
 
@@ -619,7 +479,7 @@
                      "b"
                      "c"
         </pre>
-        <pre id="pre15bb">
+        <pre>
 
         FOR IN    
           
@@ -638,8 +498,8 @@
               > "key: country, value: USA"
 
               // for in is just to objects
-        </pre>
-        <pre id="pre15cc">
+      
+              <hr>
 
         FOR OF
 
@@ -660,8 +520,8 @@
         </pre>
     </div>  
     <div> <!-- composicion -->
-        <p onclick="toggle9()"> Composicion </p>
-        <pre id="pre12">
+        <p id="div7"> Composicion </p>
+        <pre>
  
 
           const original = [80, 3, 14, 22, 30]
@@ -738,7 +598,8 @@
 
             console.log(result) // 132
 
-        <hr>
+        </pre>
+        <pre> 
         
     we can use the filter and reduce from ES6, being as follows:
 
@@ -796,8 +657,8 @@
         </pre>
     </div>
     <div> <!-- closures -->
-        <p onclick="toggle7()">Closures</p>
-        <pre id="pre10">
+        <p id="div8">Closures</p>
+        <pre>
           
             
             function error(str) {
@@ -816,7 +677,7 @@
               warning('warning text')
               success('success text')  
         </pre>
-        <pre id="pre10a">
+        <pre>
 
             closure:
 
@@ -836,8 +697,8 @@
         </pre>
     </div>  
     <div> <!-- currying -->
-        <p onclick="toggle8()">Currying</p>
-        <pre id="pre11">
+        <p id="div9">Currying</p>
+        <pre>
  
             
             const sum = (a, b) => {
@@ -857,7 +718,8 @@
             const res = sumCurrying(1)(2)
             console.log(res)
 
-            <hr>
+        </pre>
+        <pre> 
 
             const sumCurryingS = (a) => (b) => (c) => a + b + c
 
@@ -879,8 +741,8 @@
         </pre>
     </div>  
     <div> <!-- Generator -->
-        <p onclick="toggle11()">Generator </p>
-        <pre id="pre14">
+        <p id="div10">Generator </p>
+        <pre>
 
         convert the code of a function into iterable code
 
@@ -918,7 +780,7 @@
                 {value: undefined, done: true}
                 {value: 1, done: true}
         </pre>
-        <pre id="pre14a">
+        <pre>
             
             function* iterable(){
 
@@ -936,8 +798,8 @@
             for(let y of iterator){
                 console.log(y)
             }
-        </pre>
-        <pre id="pre14b">
+
+       <hr>
 
             function* iterable(){
 
@@ -958,8 +820,7 @@
             hello from log
             hello again from log
             ["hello 1", "hello 2", "hello 3", "hello 4", "hello 5"]
-        </pre>
-        <pre id="pre14c">
+  <hr>
 
             function* gen() {
                 while(true) {
@@ -981,8 +842,18 @@
         </pre>
     </div>   
     <div> <!-- IFEE -->
-        <p onclick="toggle13()">IFEE</p>
-        <pre id="pre16">
+        <p id="div11">IFEE</p>
+        <pre>
+
+            An IIFE (Immediately Invoked Function Expression)
+            This prevents accessing letiables within the IIFE idiom 
+            as well as polluting the global scope.
+
+            (function () {
+                statements
+              })()
+        </pre>
+        <pre>
 
             An IIFE (Immediately Invoked Function Expression)
             This prevents accessing letiables within the IIFE idiom 
@@ -994,8 +865,8 @@
         </pre>
     </div> 
     <div> <!-- Array.from() -->
-        <p onclick="toggle14()">Array.from()</p>
-        <pre id="pre17">
+        <p id="div12">Array.from()</p>
+        <pre>
           
             console.log(Array.from('foo')) 
             
@@ -1018,7 +889,7 @@
             index: 3 l -
             index: 4 o -
         </pre>
-        <pre id="pre17a">
+        <pre>
 
             Array from a Map
             const map = new Map([[1, 2], [2, 4], [4, 8]])
@@ -1034,8 +905,7 @@
 
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from"
             target="_blank">see the docs →</a>
-        </pre>
-        <pre id="pre17b">
+    <hr>
 
             Sequence generator (range)
 
@@ -1060,8 +930,8 @@
         </pre>
     </div>   
     <div> <!-- REST Parameters-->
-        <p onclick="toggle15()">REST Parameters</p>
-        <pre id="pre18">
+        <p id="div13">REST Parameters</p>
+        <pre>
 
             RECEIVE UNLIMITED PARAMETERS IN A FUNCTION
 
@@ -1079,7 +949,7 @@
 
               NOTE: YOU CAN NOT USE ARGUMENTS(object) IN A AROW FUNCTION
         </pre>
-        <pre id="pre18a">
+        <pre>
 
 
             const separador = (...strings) => {
@@ -1112,8 +982,8 @@
         </pre>
     </div> 
     <div> <!-- 	ES6 - Map  -->
-        <p onclick="toggle16()"> ES6 - Map </p>
-        <pre id="pre19">
+        <p id="div14"> ES6 - Map </p>
+        <pre>
 
             const mapa1 = new Map([
             ["casa", "house"],
@@ -1219,8 +1089,8 @@
         </pre>
     </div> 
     <div> <!-- ES6 - Set -->
-        <p onclick="toggle17()">ES6 - Set</p>
-        <pre id="pre20">
+        <p id="div15">ES6 - Set</p>
+        <pre>
 
             const conjunto1 = new Set()
             conjunto1.add("C")
@@ -1255,7 +1125,7 @@
           console.log("No se generó el número 12")  
             
         </pre>
-        <pre id="pre20a">
+        <pre >
 
             delete
 
@@ -1294,8 +1164,8 @@
             </pre>
     </div>   
     <div> <!-- ES6 - WeakMap y WeakSet -->
-        <p onclick="toggle18()"> ES6 - WeakMap y WeakSet </p>
-        <pre id="pre21">
+        <p id="div16"> ES6 - WeakMap y WeakSet </p>
+        <pre>
 
             They are two objects with similar functionalities to Map and Set but with the ability for the JavaScript garbage collector to remove elements from them when it deems appropriate.
 
@@ -1313,7 +1183,7 @@
                 ....
        
         </pre>
-        <pre id="pre21a">
+        <pre>
 
             Once the variable 'user1' is removed by setting null, the JavaScript "garbage collector" takes care of removing the item from the set1 object.
             
@@ -1329,8 +1199,8 @@
         </pre>
     </div>
     <div> <!-- window.addEventListener -->
-        <p onclick="toggle19()">window.addEventListener</p>
-        <pre id="pre22">
+        <p id="div17">window.addEventListener</p>
+        <pre>
 
 
         document.addEventListener(event, function, useCapture) 
@@ -1358,7 +1228,7 @@
             })
            
         </pre>
-        <pre id="pre22a">
+        <pre>
 
             
             < input type="button" id="boton0" name="boton0" value="0" class="boton">
@@ -1413,8 +1283,8 @@
     </div>
     
     <div> <!-- Global Objects -->
-        <p onclick="toggle20()">Global Objects</p>
-        <pre id="pre23">
+        <p id="div18">Global Objects</p>
+        <pre>
 
 
             Global Objects
@@ -1430,7 +1300,7 @@
           console.log(Object.entries(arr))
                      
         </pre>
-        <pre id="pre23a">
+        <pre>
 
             
            
@@ -1445,5 +1315,20 @@
 
     
 </body>
+<script>
+    let divs = document.body.querySelectorAll('div').length; 
+    
+    const presion = (evt) => {
+        let iidd = evt.target.id;
+        let son = document.getElementById(iidd)
+        son.nextElementSibling.classList.toggle("display")
+        son.nextElementSibling.nextElementSibling.classList.toggle("display")
+    }
+    
+    for (i = 0; i < divs; i++) {
+        document.getElementById('div' + i ).addEventListener('click', presion);
+    }
+    
+    </script>
 </html>
 
