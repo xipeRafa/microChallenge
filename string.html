@@ -19,7 +19,7 @@
     pre{
         background-color:rgb(215, 230, 250);
         color:rgba(0, 0, 0, 0.521);
-        display: none;
+         display: none;  
         padding-right: 40px;
         margin-left: 40px;
     }
@@ -41,7 +41,7 @@
     .display{
         display: inline-block;
     }
-
+   
     #recuadro {
        background-color:#ffff00;
        border:1px solid #000000;
@@ -55,6 +55,9 @@
 
 </style>
 <script>
+
+
+
 
     function toggle(){
         document.querySelector("#pre").classList.toggle("display")
@@ -175,10 +178,13 @@
         document.querySelector("#pre29").classList.toggle("display")
     }
 
+   
+
 
 </script>
 <body>
- 
+
+
       
     <h1>STRINGS</h1>
 
@@ -414,18 +420,15 @@
 
     <br/>
 
-    <div> <!--Removes elements from an array. -->
-       <p onclick="toggle5()">5.- Removes elements from an array.</p>
-       <pre id="pre8">
 
-           const arr = [5, 1, 8]
-           arr.splice(2, 1) // (index start, how much)
-           console.log(arr)
-        
-           Output
-           [5, 1] 
-       </pre>
-    </div>
+
+
+
+
+    
+  
+
+
     <div> <!-- Remove the last element from an array and returns that element. -->
         <p onclick="toggle6()">6.- Remove the last element from an array and returns that element.</p>
         <pre id="pre9">
@@ -924,6 +927,56 @@
         </pre>
     </div>   
 
-    <br>
+    
+<div>
+    <div id="div0">pppp
+    <pre>
+       kok  
+    </pre>
+    <pre>
+        kok  22
+     </pre></div>
+</div>
+
+
+<div>
+    <p id="div1">pppp1111</p>
+    <pre>
+       jiji
+    </pre>
+</div>
+
+<div>
+    <p id="div2">pppp222</p>
+    <pre>pre22222</pre>
+</div>
+
+    <script>
+window.addEventListener('DOMContentLoaded', inicio, false)
+
+let divs = document.body.querySelectorAll('div').length; 
+console.log('divs:', divs)
+
+function inicio() {
+  for (let i= 0; i <= divs; i++) {
+    let tittle = document.getElementById('div' + i )
+    tittle.addEventListener('click', presion);
+  }
+}
+
+function presion(/* evt */) {
+  /*   let iidd = evt.target.id;
+    console.log('id:', iidd)
+    document.getElementById(iidd).nextElementSibling.classList.toggle("display") */
+
+    for (let i= 0; i <= divs; i++) {
+        let tittle = document.getElementById('div' + i ).children;
+        for (i = 0; i < tittle.length; i++) {
+            tittle[i].classList.toggle("display")
+        }  
+    }
+}
+
+    </script>
 </body>
 </html>
