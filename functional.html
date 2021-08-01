@@ -8,53 +8,7 @@
 
 </head>
 
-<style>
-
-    body{
-        font-family: sans-serif;
-        background-color: rgb(26, 17, 66);
-        color: cornsilk;
-        padding-left: 40px;
-    }
-
-    pre{
-        background-color:rgb(215, 230, 250);
-        color:rgba(0, 0, 0, 0.521);
-        display: none;
-        padding-right: 40px;
-        margin-left: 40px;
-    }
-
-    p{
-        user-select: none ;
-        padding-left: 20px ;
-    }
-
-    a{
-        text-decoration: none;
-    }
-
-    hr{
-        
-        border:1px solid rgba(0, 162, 255, 0.144)
-    }
-
-    .display{
-        display: inline-block;
-    }
-
-    #recuadro {
-       background-color:#ffff00;
-       border:1px solid #000000;
-       font-size:10px;
-       padding: 20px;
-    }
-
-    #listapaises {
-       list-style-type:decimal;
-    }
-
-</style>
+<link rel="stylesheet" href="DOM/style.css">
 <body>
 
     <h1>FUNCTIONAL PROGRAMING</h1>
@@ -937,7 +891,7 @@
 
             function separarConComa1() {
                 let resultado = ''
-                for (let i = 0 i < arguments.length i++) {
+                for (let i = 0; i < arguments.length; i++) {
                   if (resultado !== '') {
                     resultado += ' + '
                   }
@@ -1316,19 +1270,20 @@
     
 </body>
 <script>
+
     let divs = document.body.querySelectorAll('div').length; 
     
-    const presion = (evt) => {
-        let iidd = evt.target.id;
+    const toggle = (evt) => {
+        let iidd = evt.target.id
         let son = document.getElementById(iidd)
         son.nextElementSibling.classList.toggle("display")
         son.nextElementSibling.nextElementSibling.classList.toggle("display")
     }
     
     for (i = 0; i < divs; i++) {
-        document.getElementById('div' + i ).addEventListener('click', presion);
+        document.getElementById('div' + i ).addEventListener('click', toggle)
     }
     
-    </script>
+ </script>
 </html>
 
