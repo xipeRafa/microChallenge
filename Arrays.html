@@ -418,7 +418,11 @@
 
                 <hr>
 
-                .slice(< indexToGet>< indexToGet + 1>)  //give index & get value
+            .slice(< indexToGet >, < indexToGet > + 1)  //give index & get value
+
+            arr.slice(-1) // last item
+            arr.slice(-2, -1) // penultimate item
+            arr.slice(-3, -2) // antepenultimate item  
 
             const arr = [5, 1, 8]
             const slicedArr = arr.slice(2,3)
@@ -448,7 +452,7 @@
         </pre>
     </div> 
     <div> <!-- find item. first or last index number position -->
-        <p onclick="toggle11()">10.- find item. first or last index number position</p>
+        <p onclick="toggle11()">10.- find index. first or last index number position</p>
         <pre id="pre14">
 
             Returns the first index at which a given element 
@@ -535,16 +539,32 @@
 
             const arr = [5, 1, 8]
             const reducer = (a, b) => a + b
-            console.log(arr.reduce(reducer))
+            console.log(arr.reduce(reducer), // initial value: typed )
             
             Output
             14
         </pre>
         <pre id="pre17a">
 
-            Apply a function against an accumulator and
-            each value of the array (from left-to-right)
-            as to reduce it to a single value.
+
+            let min = [1, 2, 3, 4].reduce(( accumulator, currentValue, position, array) => {
+                   
+                    return Math.min(accumulator, currentValue)
+
+            })
+            console.log(min)
+
+            output: 1
+
+              <hr>
+            let max = [ 5, 1, 2, 3].reduce(( accumulator, currentValue, position, array) => {
+                   
+                    return Math.max(accumulator, currentValue)
+
+            })
+            console.log(max)
+
+            outout: 5
         </pre>
     </div>   
     <div> <!-- a value by reducing the Array, finish to start-->
@@ -710,9 +730,9 @@
             <hr>
             const arr = ['a', 'b', 'c']
 
-            const filtered = arr.map(el => el.toUpperCase())
+            const upCase = arr.map(el => el.toUpperCase())
            
-            console.log(filtered)
+            console.log(upCase)
 
 
             Output
@@ -733,8 +753,9 @@
             > Array ["h", "e", "l", "l", "o"]
 
             <hr>
+            let arr = [1,2,3]
 
-            console.log(Array.from([1, 2, 3], x => x * 3 ))
+            console.log(Array.from( arr , x => x * 3 ))
 
             Output
  
@@ -801,11 +822,11 @@
             const arr = 'string'
             console.log(arr.split(''))
 
-            ["5,1,8["s", "r", "i", "n", "g"]
+            ["s", "t", "r", "i", "n", "g"]
         </pre>
     </div>
-    <div> <!-- order an array, reverse the order of the array -->
-        <p onclick="toggle23()">22.- order an array, reverse the order of the array</p>
+    <div> <!--  reverse the order of the array -->
+        <p onclick="toggle23()">22.- reverse the order of the array</p>
         <pre id="pre26">
 
             const arr = [5, 1, 8]
@@ -904,7 +925,7 @@
 
             <hr>
 
-            let x = [1, 2, 3, 4, 5,6,7,8,9,0]
+            let x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 
             x.copyWithin(0, 3, 4).splice(3,1,1)
             
@@ -913,6 +934,28 @@
             Output
 
             x: [4, 2, 3, 1, 5, 6, 7, 8, 9, 0]
+
+            <hr>
+
+           let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+        
+           let n1 = 1  //I wanna change the number ?
+           
+           let n2 = 9 //for the number ?, & return back
+           
+           
+           let indexN1 = arr.indexOf(n1) //index
+           
+           let indexN2 = arr.indexOf(n2)                        
+           
+           arr.copyWithin(indexN2, indexN1, indexN1 + 1).splice(indexN1, 1, n2)
+           
+           console.log(arr)
+
+           
+           output:
+
+           [9, 2, 3, 4, 5, 6, 7, 8, 1, 0]
 
         </pre>
     </div>   
