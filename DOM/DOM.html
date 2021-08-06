@@ -621,25 +621,26 @@
         <p onclick="toggle12()">Create an attribute and add it to a node of type element (setAttribute) </p>
         <pre id="pre15">
  
-            < input type="button" value="Crear nodo tipo elemento y definir el atributo href" 
-            onClick="crearElementoyAtributo()">
+        < input type="button" value="Crear nodo y href" onClick="crearAtributo()">
 
-            < div id="direccion"> < /div>
+            < div id="div"> < /div>
 
         </pre>
         <pre id="pre15a">
  
-            function crearElementoyAtributo()
+          
+            function crearAtributo()
             {
-              let elemento=document.createElement('a')
-              let puntero=document.getElementById('direccion')
+              let a = document.createElement('a')
+              let div = document.getElementById('div')
             
-              puntero.appendChild(elemento)
-              nodotexto=document.createTextNode('google')
+              div.appendChild(a)
+              nodotexto = document.createTextNode('google')
               
-              elemento.appendChild(nodotexto)
-              elemento.setAttribute('href','http://www.google.com.ar')
-            }
+              a.appendChild(nodotexto)
+              a.setAttribute('href','http://www.google.com')
+            } 
+
         </pre>
         <pre id="pre15b">
 
@@ -1478,14 +1479,14 @@ function crearText()
         <pre id="pre24a">
 
 
-            function mostrarAtributos(objeto)
-            {
+            function mostrarAtributos(objeto){
+
               let ref=document.getElementById('titulo11')
-              ref.firstChild.nodeValue='Name:'+objeto.name+' Id:'+objeto.id+' Value:'+objeto.value
+              ref.firstChild.nodeValue = 'Name:'+objeto.name+' Id:'+objeto.id+' Value:'+objeto.value
+
             }
            
-        </pre>
-        <pre id="pre24b">
+    
 
             < h1 id="titulo11">Datos del objeto que emite el evento.< /h1>
 
@@ -1493,12 +1494,16 @@ function crearText()
             
             < input type="button" name="boton2" value="boton 2" id="b2" onclick="mostrarAtributos(this)">
 
-            <hr>
+        </pre>
+        <pre id="pre24b">
 
-            function concatenar(objeto){
-              let ref=document.getElementById('titulo12')
-              ref.firstChild.nodeValue=ref.firstChild.nodeValue+objeto.value
-            }
+            function concatenar(that){
+
+                let out = document.getElementById('titulo12')
+                out.firstChild.nodeValue = out.firstChild.nodeValue + that.value
+  
+              } 
+
 
             < h1 id="titulo12">Valor:< /h1>
 

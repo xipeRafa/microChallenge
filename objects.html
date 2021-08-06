@@ -102,7 +102,7 @@
     <h1>OBJECTS</h1>
 
     <div>  <!-- create a new object, make a copy of an object -->
-    <p onclick="toggle()">create a new object, make a copy of an object</p>
+    <p onclick="toggle()">1.- create a new object, make a copy of an object</p>
 
         <pre id="pre">
 
@@ -155,11 +155,9 @@
               }
         </pre>
     </div>  
-
     <br>
-
     <div>  <!-- create properties, a new property or modify an existing one -->
-        <p onclick="toggle2()">create properties, a new property or modify an existing one</p>
+        <p onclick="toggle2()">2.- create properties, a new property or modify an existing one</p>
 
         <pre id="pre3">
 
@@ -224,11 +222,9 @@
           {a: 1, b: 2, c: 3, d: 4, e: 5}
          </pre>    
     </div>  
-
     <br>
-
     <div>  <!-- get information about an object, determine if more properties can be added   -->
-        <p onclick="toggle3()">get information about an object, determine if more properties can be added  </p>
+        <p onclick="toggle3()">3.- get information about an object, determine if more properties can be added  </p>
 
         <pre id="pre5">
 
@@ -287,7 +283,7 @@
          </pre>    
     </div> 
     <div>  <!-- get information about an object, if an object and its properties cant be modified -->
-        <p onclick="toggle4()">get information about an object, if an object and its properties cant be modified</p>
+        <p onclick="toggle4()">4.- get information about an object, if an object and its properties cant be modified</p>
 
         <pre id="pre7">
 
@@ -337,7 +333,7 @@
        
     </div>  
     <div> <!--  get information about an object, determine if an object is in the prototype chain -->
-       <p onclick="toggle5()">get information about an object, determine if an object is in the prototype chain</p>
+       <p onclick="toggle5()">5.- get information about an object, determine if an object is in the prototype chain</p>
        <pre id="pre8">
 
         Object.isPrototypeOf()
@@ -355,11 +351,9 @@
         true
        </pre>
     </div>
-
     <br>
-
     <div> <!-- get information about properties, details about the properties -->
-        <p onclick="toggle6()">get information about properties, details about the properties</p>
+        <p onclick="toggle6()">6.- get information about properties, details about the properties</p>
         <pre id="pre9">
  
             Object.getOwnPropertyDescriptor()
@@ -426,7 +420,7 @@
         </pre>
     </div>
     <div> <!-- get information about properties, find out if the object is in the prototype chain. -->
-        <p onclick="toggle6a()">get information about properties, find out if the object is in the prototype chain.</p>
+        <p onclick="toggle6a()">7.- get information about properties, find out if the object is in the prototype chain.</p>
         
         <pre id="pre9b">
 
@@ -481,7 +475,7 @@
        
     </div> 
     <div> <!-- get information about properties, a list of all of the keys and/or values. -->
-        <p onclick="toggle7()">get information about properties, a list of all of the keys and/or values.</p>
+        <p onclick="toggle7()">8.- get information about properties, a list of all of the keys and/or values.</p>
         <pre id="pre10">
 
             I need to get an array of all of the KEYS
@@ -562,11 +556,9 @@
               ["a", "b", "c"]
         </pre>
     </div> 
-    
     <br>
-
     <div> <!-- restrict changes to an object, make sure properties cant be added or deleted -->
-        <p onclick="toggle8()">restrict changes to an object, make sure properties cant be added or deleted</p>
+        <p onclick="toggle8()">9.- restrict changes to an object, make sure properties cant be added or deleted</p>
         <pre id="pre11">
  
             Object.seal()
@@ -626,11 +618,9 @@
               undefined
         </pre>
     </div>  
-
     <br>
-
     <div> <!-- create a string from an object, return a string representation of the object -->
-        <p onclick="toggle9()">create a string from an object, return a string representation of the object</p>
+        <p onclick="toggle9()">10.- create a string from an object, return a string representation of the object</p>
         <pre id="pre12">
  
             Object.toString()
@@ -679,11 +669,9 @@
               12/29/2017, 8:57:35 PM
         </pre>
     </div> 
-
     <br>
-
     <div> <!-- manage prototypes, GET a prototype of the object -->
-        <p onclick="toggle11()">manage prototypes, GET a prototype of the object </p>
+        <p onclick="toggle11()">11.- manage prototypes, GET a prototype of the object </p>
 
         <pre id="pre14">
 
@@ -726,12 +714,9 @@
             true
         </pre>
     </div>   
-    
     <br>
-
-
     <div> <!-- Proxy -->
-        <p onclick="toggle12()">Proxy </p>
+        <p onclick="toggle12()">12.- Proxy </p>
 
         <pre id="pre15">
 
@@ -779,11 +764,9 @@
            
         </pre>
     </div> 
-    
     <br>
-    
     <div> <!-- class -->
-        <p onclick="toggle13()"> class </p>
+        <p onclick="toggle13()">13.- Classes </p>
 
         <pre id="pre16">
 
@@ -937,10 +920,8 @@
 
         </pre>
     </div>
-    
-        
     <div> <!-- Inheritance -->
-        <p onclick="toggle133()"> Inheritance </p>
+        <p onclick="toggle133()">14.- Inheritance </p>
 
         <pre id="pre166">
 
@@ -1031,7 +1012,11 @@
                   console.log(`Edad: ${this.edad}`)
                 }    
               }
-            
+
+              const persona1=new Persona('Juan', 44)
+              persona1.imprimir()
+
+            <hr>
               class Empleado extends Persona {
                 constructor(nombre, edad, sueldo) {
                   super(nombre, edad)
@@ -1050,21 +1035,15 @@
                     console.log(`${this.nombre} no debe pagar impuestos`)      
                 }
               }     
-              
-              const persona1=new Persona('Juan', 44)
-              persona1.imprimir()
-
-            
+                          
               const empleado1=new Empleado('Juan', 44, 7000)
               empleado1.imprimir()
               empleado1.pagaImpuestos()
           
         </pre>
     </div> 
-
-       
     <div> <!--  getters & setters -->
-        <p onclick="toggle14()">  getters & setters </p>
+        <p onclick="toggle14()">15.-  getters & setters </p>
 
         <pre id="pre17">
 
@@ -1170,9 +1149,8 @@
               
         </pre>
     </div> 
-
     <div> <!--  static methods -->
-        <p onclick="toggle15()">  static methods </p>
+        <p onclick="toggle15()">16.-  static methods </p>
 
         <pre id="pre18">
 
