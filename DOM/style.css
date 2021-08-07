@@ -4,6 +4,10 @@ body{
       color: cornsilk;
       padding-left: 40px;
   }
+  img{
+      width: 200px;
+      margin: 10px;
+  }
 
   pre{
       background-color:rgb(215, 230, 250);

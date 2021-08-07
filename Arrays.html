@@ -227,50 +227,13 @@
             console.log(vec) 
             console.log(vec1) 
 
-            <hr>
-
-            let arr1 = [1,2,3,4,5,2]
-            let arr = [...arr1]
-            
-            arr.forEach(()=>{
-            
-                let a = arr.indexOf(2)
-            
-                arr.splice(a,1,'jiji')
-            
-            
-            })
-            
-            console.log(arr)
-            console.log(arr1)
-
-            <hr>
-            let arr1 = [1,2,3,4,5,2]
-            let arr = [...arr1]
-            let val = 2
-
-            arr.forEach(()=>{
-
-                let startIndex = arr.indexOf(val)
-            
-                arr.splice(startIndex, 1, val.toString())
-            
-            })
-            
-            console.log(arr)
-            console.log(arr1)
-
-            Output
-
-            [1, "2", 3, 4, 5, "2"]
-            [1, 2, 3, 4, 5, 2]
-
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
         <p onclick="toggle2()">2.- Adds one or more elements to the end of an array</p>
-
+           
         <pre id="pre3">
+            <img src="arraysmutation.jpeg"  alt="ss">
 
             const arr = [5, 1, 8]
             arr.push(2)
@@ -280,7 +243,8 @@
             [5, 1, 8, 2]
         </pre>
         <pre id="pre4">
-          
+            <img src="arraysmutation.jpeg"  alt="sss">
+
             The reverse method called pop extracts the last element of the Array 
             and decrements the length attribute by one
 
@@ -296,6 +260,7 @@
         <p onclick="toggle3()">3.- Adds one or more elements to the FRONT of an array</p>
 
         <pre id="pre5">
+            <img src="arraysmutation.jpeg"  alt="ssss">
 
             const arr = [5, 1, 8]
             arr.unshift(2, 7)
@@ -305,6 +270,8 @@
             [2, 7, 5, 1, 8]
         </pre>
         <pre id="pre6">
+
+            <img src="arraysmutation.jpeg"  alt="sssss">
 
             The shift method extracts(remove) the first element of the vector 
             and shifts the rest of the vector elements forward.
@@ -684,16 +651,12 @@
             const vec11 = [0,7,4,3,4,2,6,8,2]
             const vec2 = [...vec11]
 
-            vec2.forEach((_, i)=> {
-
-                if ([i]==2){   //position 2     
-                    vec2[i]='jijji'   
-                }
-
-            })
+               vec2[2]='jijji' 
 
             console.log(vec2)
+            
             [0, 7, "jijji", 3, 4, 2, 6, 8, 2]
+
         </pre>
         <pre id="pre22a">
 
@@ -826,6 +789,21 @@
             console.log(arr.split(''))
 
             ["s", "t", "r", "i", "n", "g"]
+
+            <hr>
+
+            let arr = 'method split 111 222 333'
+
+            let filt = arr.split(' ', 3)
+
+            console.log(arr)
+            console.log(filt)
+
+            Output:
+
+            method split 111 222 333
+
+            ["method", "split", "111"]
         </pre>
     </div>
     <div> <!--  reverse the order of the array -->
