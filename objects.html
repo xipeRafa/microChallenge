@@ -811,11 +811,11 @@
 
               function NumeroQuiniela(nombre){
                 this.nombre = nombre
-                this.cargarNumero = cargarNumero
+                this.numeroElegido = numeroElegido
                 this.verificarSiGano = verificarSiGano
               }
               
-              function cargarNumero(){ this.numero = 10 }
+              function numeroElegido(){ this.numero = 10 }
               
               function verificarSiGano(num){
                 if (this.numero == num)
@@ -823,41 +823,35 @@
                 else
                   return false
               }
-
-
+              
+              let numeroQuinielaUno = new NumeroQuiniela("juan")
+              numeroQuinielaUno.numeroElegido()
+              
+              // --------------------------------------------
               
               function Bolillero(){
-                this.numero = -1
+                this.numero = this.numero
                 this.sortear = sortear
               }
               
-              function sortear(){ this.numero = 10 }
-
+              function sortear(){ this.numero = Math.floor(Math.random() * (1,11)) + 1; }
+              
               let bolillero = new Bolillero()
               bolillero.sortear()
-
-
               
-              let numeroQuinielaUno = new NumeroQuiniela("juan")
-              numeroQuinielaUno.cargarNumero()
-              
-              let numeroQuinielaDos = new NumeroQuiniela("ana")
-              numeroQuinielaDos.cargarNumero()
-              
-              
+              // ---------------------------------------------
               
               console.log('Numero sorteado:' + bolillero.numero)
               console.log(numeroQuinielaUno.nombre + ' eligió: ' + numeroQuinielaUno.numero)
-              console.log(numeroQuinielaDos.nombre + ' eligió: ' + numeroQuinielaDos.numero)
               
-              if (numeroQuinielaUno.verificarSiGano(bolillero.numero)){
-                console.log(numeroQuinielaUno.nombre + ' ha ganado ')
+              let check = numeroQuinielaUno.verificarSiGano(bolillero.numero)
+              
+              if (check){
+                console.log(numeroQuinielaUno.nombre + ' Ha ganado ')
+              }else{
+                console.log(numeroQuinielaUno.nombre + ' No gano ') 
               }
-              
-              if (numeroQuinielaDos.verificarSiGano(bolillero.numero)){
-                console.log(numeroQuinielaDos.nombre + ' ha ganado')
-              }  
-          
+               
         </pre>
         <pre id="pre16a">
         
@@ -1001,45 +995,45 @@
         </pre>
         <pre id="pre16bb">
 
-            class Persona {
-                constructor(nombre, edad) {
-                  this.nombre = nombre
-                  this.edad = edad
-                }
-            
-                imprimir() {
-                  console.log(`Nombre: ${this.nombre}`)
-                  console.log(`Edad: ${this.edad}`)
-                }    
-              }
+          class Persona {
+            constructor(nombre, edad) {
+              this.nombre = nombre
+              this.edad = edad
+            }
+            nombre(){return this.nombre = this.nombre}
+            edad(){return this.edad = this.edad}
+        
+            imprimir() {
+              console.log(`Nombre: ${this.nombre}`)
+              console.log(`Edad: ${this.edad}`)
+            }    
+          }
 
-              const persona1=new Persona('Juan', 44)
-              persona1.imprimir()
+        // ----------------------------------------
 
-            <hr>
-              class Empleado extends Persona {
-                constructor(nombre, edad, sueldo) {
-                  super(nombre, edad)
-                  this.sueldo = sueldo
-                }
-            
-                imprimir() {
-                  super.imprimir()
-                  console.log(`Sueldo: ${this.sueldo}`)      
-                }
-            
-                pagaImpuestos() {
-                  if (this.sueldo>5000)
-                    console.log(`${this.nombre} debe pagar impuestos`)
-                  else
-                    console.log(`${this.nombre} no debe pagar impuestos`)      
-                }
-              }     
-                          
-              const empleado1=new Empleado('Juan', 44, 7000)
-              empleado1.imprimir()
-              empleado1.pagaImpuestos()
-          
+          class Empleado extends Persona {
+            constructor(nombre,edad,sueldo) {
+              super(nombre, edad)
+              this.sueldo = sueldo
+            }
+        
+            imprimir() {
+              super.imprimir()
+              console.log(`Sueldo: ${this.sueldo}`)      
+            }
+        
+            pagaImpuestos() {
+              if (this.sueldo>5000)
+                console.log(`${super.nombre()} debe pagar impuestos`)
+              else
+                console.log(`${super.nombre()} no debe pagar impuestos`)      
+            }
+          }     
+                      
+          const empleado1=new Empleado('Juan', 44, 7000)
+          empleado1.imprimir()
+          empleado1.pagaImpuestos()
+
         </pre>
     </div> 
     <div> <!--  getters & setters -->
@@ -1084,40 +1078,32 @@
         </pre>
         <pre id="pre17a">
         
-            class Persona {
-                constructor(nom,ed) {
-                  this._nombre=null
-                  this._edad=0
-                }
-                
-                get nombre() {
-                  return this._nombre
-                }
-                
-                set nombre(n) {
-                  this._nombre=n
-                }
+          class Persona {
+            constructor(nombre,_edad) {
+              this.nombre=nombre
+              this._edad=_edad
+            }
+        
+            get edad() {
+              return this._edad
+            }
             
-                get edad() {
-                  return this._edad
-                }
-                
-                set edad(e) {
-                  if (e>=0)
-                    this._edad=e
-                  else
-                  throw "La edad no puede ser negativa"
-                }
-                
-                imprimir() {
-                  console.log(`Nombre:${this.nombre} y Edad:${this.edad}`)
-                }
-              }
-              
-              const persona1=new Persona()
-              persona1.nombre='Pablo Rodriguez'
-              persona1.edad=-43
-              persona1.imprimir()
+            set edad(edad) {
+              if (edad>=0)
+                this._edad=edad
+              else
+              throw "La edad no puede ser negativa"
+            }
+            
+            imprimir() {
+              console.log(`Nombre:${this.nombre} y Edad:${this.edad}`)
+            }
+          }
+          
+          const persona1=new Persona('Raul')
+          persona1.edad=43
+          persona1.imprimir()
+          
         </pre>
         <pre id="pre17b">
 
