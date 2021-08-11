@@ -505,16 +505,20 @@
 
           const original = [80, 3, 14, 22, 30]
 
-            const filterOnlyPairElements = (values) => values.filter((value) => value%2 === 0)
+            const onlyPairElements = (values) => values.filter((value) => value%2 === 0)
+
             const filterGreaterThan = (values) => (max) => values.filter((value) => value > max)
+
             const sumAllValues = (values) => values.reduce((accumulator, value) => accumulator + value)
+
             
-            const result = sumAllValues(
-                filterGreaterThan(
-                    filterOnlyPairElements(original)
-                )(20)
-            )
+             const result = sumAllValues(
+                                filterGreaterThan(
+                                    onlyPairElements(original)
+                                )(20)
+                            )
             
+
             console.log(result) // 132   
 
             <hr>
@@ -596,15 +600,15 @@
         const sumAllValues = (values) => values.reduce((accumulator, value) => accumulator + value)
         
         const pipe = (...callbacks) => (array) => (
-          callbacks.reduce((previous, callback) => (
-            callback(previous)
-          ), array)
-        )
+              callbacks.reduce((acc, curr) => (
+                  curr(acc)
+              ), array)
+          )
         
         const result = pipe(
-          filterOnlyPairElements,
-          filterGreaterThan(20),
-          sumAllValues,
+            filterOnlyPairElements,
+            filterGreaterThan(20),
+            sumAllValues,
         )(original)
         
         console.log(result) // 132
@@ -648,6 +652,70 @@
               error('error text')
               warning('warning text')
               success('success text')
+
+              <hr>
+                or:
+
+              function messages(typeM, styles) {
+                return function message(str) {
+                  console.log(`%c ${typeM}: ${str} `, styles)
+                }
+              }
+              
+              messages('Error', 'background: red')('error text')
+              messages('Warning', 'background: orange')('warning text')
+              messages('Success', 'background: green')('success text')
+
+              <hr>
+              let a = 'hola'
+
+              function global(){
+                   const b = ' que'
+              
+                  function local(){
+                     const c = ' tal'
+                     return a + b + c
+                  }
+              
+               return local
+              }
+              
+              const closure = global()
+
+              closure()
+
+              "hola que tal"
+
+              <hr>
+              const contador = (function(){
+    
+                let _cont=0
+          
+                  function incrementar(){
+                      return _cont++
+                  }
+          
+                  function decrementar(){
+                      return _cont--
+                  }
+                  
+                  function valor(){
+                      return _cont  
+                  }
+               
+                  return{
+                      incrementar,
+                      decrementar,
+                      valor 
+                  }
+              })()
+          
+              contador.incrementar()
+              contador.decrementar()
+              contador.incrementar()
+              contador.valor()
+
+              1
         </pre>
     </div>  
     <div> <!-- currying -->
@@ -671,6 +739,23 @@
 
             const res = sumCurrying(1)(2)
             console.log(res)
+
+            <hr>
+
+
+          const sumCurrying = (a) => {
+              console.log(a)
+            return function(b) {
+                 console.log(b)
+               return function(c){
+                    console.log(c)
+                      return a + b + c
+              }
+            }
+          }
+
+          const res = sumCurrying(1)(2)(3)
+          console.log(res)
 
         </pre>
         <pre> 

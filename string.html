@@ -129,6 +129,14 @@
             const cl = console.log 
             
             cl('hello')  // hello
+
+            function consoleLog(styles) {
+                return function a(str) {
+                  console.log(`%c ${str} `, styles)
+                }
+            }
+              
+            const l = consoleLog('background: red; color:white; padding:10px; font-size:22px;')
          </pre>    
     </div>  
     <div>  <!-- 3.- String Methods -->
