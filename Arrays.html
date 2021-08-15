@@ -145,7 +145,7 @@
 
 
             const arr = [5, 1, 8]
-            arr.splice(2, 0, 'tacos') // (index start, delete, what add)
+            arr.splice(2, 0, 'tacos') // (indexToStart, #Replace, toReplace) 
             console.log(arr)
 
             Output
@@ -165,7 +165,7 @@
 
             <hr>
             const arr = [5, 1, 8,3,4,2,3,4,5,6]
-            arr.splice(arr.length-1, 1, 'tacos') // Replace the last item
+            arr.splice(-1, 1, 'tacos') // Replace the last item
             console.log(arr)
             
             [5, 1, 8, 3, 4, 2, 3, 4, 5, "tacos"]
@@ -243,7 +243,29 @@
             console.log(arr)
             
             [5, "meme", 8, 4, "meme", 5, 6, "meme", 7]
+            
+            <hr>
+            let S = ["5", "2", "8", "4", "2", "5", "6", "2", "7"]
+       
+             S.forEach((_, i)=> {
 
+                   let v = S.slice(i, i+1)
+                   S.splice(i,1, Number(v)) 
+
+             })
+
+             <hr>
+             let arr = ["5", "2", "meme", "4", "2", "String", "6", "2", "7"]
+       
+             arr.forEach((_, i)=> {
+
+                 let v = Number(arr.slice(i, i+1))
+
+                 if(isNaN(v)===false){    
+                   arr.splice(i,1,v)
+                 }
+
+             })
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
@@ -821,6 +843,29 @@
             method split 111 222 333
 
             ["method", "split", "111"]
+
+            <hr>
+            let S = ["5", "2", "8", "4", "2", "5", "6", "2", "7"]
+            let zz = []
+            for(i=0; i < S.length; i++){
+
+                  zz.push( Number(S.slice(i,i+1)) )
+
+            }
+
+            <hr>
+            let S = ["5", "2", "8", "4", "2", "5", "6", "2", "7"]
+
+            let arr = []
+
+            S.forEach((_,i) =>{
+               arr.push( Number(S.slice(i,i+1)) )
+            })
+
+            <hr>
+            let arr = ["5", "2", "8", "4", "2", "5", "6", "2", "7"]
+
+            Array.from(arr, el => Number(el))
         </pre>
     </div>
     <div> <!--  reverse the order of the array -->
@@ -857,6 +902,15 @@
             Output
 
             [1, 5, 8]
+
+            Reverses the order of the elements of an array in place
+            — the first becomes the last, and the last becomes the first.
+  
+            const points = [40, 100, 1, 5, 25, 10]
+  
+            points.sort(function(a, b){return b - a})
+            points.reverse()
+            console.log(points)
 
         </pre>
         <pre id="pre27a">
@@ -901,7 +955,10 @@
 
             The copyWithin() method shallow copies part of an array to another
             location in the same array and returns it without modifying its length.
-             
+            
+            it one, just work with index:
+                .copyWithin(whereIntroduce, which, untill)
+            
             You can specify either just the ending element 
             (where begin will default to zero)
             or both the beginning and the end, comma-separated.
