@@ -213,20 +213,19 @@
             [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu"]
 
             <hr>
-            const vec1 = [0,7,2,3,4,2,6,8,2]
+            const vec1 = [0,7,2,3,4,2,6,8,2,3]
             const vec = [...vec1]
 
-            vec.forEach((_, i)=> {
+            vec.forEach((el, i)=> {
 
-                if (vec[i]==2){     
-                    vec.splice(i,1,'huhu')   
-                }
+                el==2 && vec.splice(i, 1, 'huhu')  
 
             })
 
-            console.log(vec) 
-            console.log(vec1)
+            console.log(vec1) 
+            console.log(vec)
             
+            [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu", 3]
             <hr>
             const arr = [5, 2, 8, 4, 2, 5, 6, 2, 7]
 
@@ -235,7 +234,7 @@
                 let findIt = arr.indexOf(2)
                 
                 if(findIt > -1){
-                    arr.splice(findIt,1,'meme')
+                    arr.splice(findIt, 1, 'meme')
                     console.log(findIt)
                 }
             })
@@ -243,29 +242,16 @@
             console.log(arr)
             
             [5, "meme", 8, 4, "meme", 5, 6, "meme", 7]
-            
-            <hr>
-            let S = ["5", "2", "8", "4", "2", "5", "6", "2", "7"]
-       
-             S.forEach((_, i)=> {
-
-                   let v = S.slice(i, i+1)
-                   S.splice(i,1, Number(v)) 
-
-             })
 
              <hr>
              let arr = ["5", "2", "meme", "4", "2", "String", "6", "2", "7"]
        
-             arr.forEach((_, i)=> {
+             arr.forEach((el, i)=> {
 
-                 let v = Number(arr.slice(i, i+1))
-
-                 if(isNaN(v)===false){    
-                   arr.splice(i,1,v)
-                 }
-
+                 !isNaN(el) && arr.splice(i, 1, Number(el))
+                 
              })
+
         </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
