@@ -396,6 +396,19 @@
             console.log(arrayWithNoDuplicates)
 
             output: Array ["a", "b", "c", "e", "d"]
+
+
+       <hr>
+          let arr = [
+                      { name: 'ball', points: 2 },
+                      { name: 'coin', points: 3 },
+                      { name: 'candy', points: 4}
+                    ]
+
+          const sumArray = array => array.map(el => el.points).reduce((acc, curr) => (acc + curr))
+
+          sumArray(arr)
+
         </pre>
     </div>
 
