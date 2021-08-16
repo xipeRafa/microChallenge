@@ -90,7 +90,7 @@ return (
 
       <input autoComplete='off' name='text' onChange={handleState} value={text}/>
 
-      <button type='submit'> {edit ? 'Save Edit' : 'To Do'} </button>
+      <button type='submit'> { edit ? 'Save Edit' : 'To Do' } </button>
 
     </form>
 
@@ -114,3 +114,31 @@ return (
   )
 }
 
+/* css----------------------------------css */
+
+/* 
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+body{
+  margin-left: 10%;
+  width: 80%;
+  background-color: rgba(245, 245, 220, 0.499);
+}
+div>div{
+  border:1px solid darkred;
+  margin-bottom: 10px;
+}
+p{
+  background-color: lightgray;
+  font-family: sans-serif;
+  padding: 10px;
+  margin:10px;
+  letter-spacing: .6px;
+}
+button{
+  margin: 10px;
+}
+
+*/
