@@ -156,3 +156,41 @@ button{
 }
 
 */
+
+
+
+
+/* 
+
+import { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+ 
+let arr = ['Work', 'Home', 'school','meme','mujata'];
+
+  const [val, setVal]=useState('');
+
+  const handleSelect = (e) => {
+    let x = Number(e.target.value);
+    let y = x + 1;
+    let v = arr.slice(x, y)
+    setVal(v)
+  }
+  
+  return (
+    <>
+      <select onChange={e => handleSelect(e)}>
+        {arr.map((el, i) => (
+          <option key={i} value={i}>{el}</option>
+        ))}
+      </select>
+
+      {
+        <p>{val}</p>
+      } 
+    </>
+  )
+}
+
+*/
