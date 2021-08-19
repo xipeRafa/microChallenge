@@ -76,8 +76,7 @@
             // 1 + 2 => 3
             // 3 + 3 => 6
             // => 6  
-        </pre>
-        <pre>
+        
 
             Higher-order functions are those that take one or more functions as
             an argument or return functions as a result. They interest us 
@@ -1379,9 +1378,8 @@
         son.nextElementSibling.nextElementSibling.classList.toggle("display")
     }
     
-    for (i = 0; i < divs; i++) {
-        document.getElementById('div' + i ).addEventListener('click', toggle)
-    }
+    document.addEventListener('click', toggle)
+    
     
  </script>
 </html>

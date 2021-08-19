@@ -278,9 +278,8 @@ const toggle = (evt) => {
     son.nextElementSibling.nextElementSibling.classList.toggle("display")
 }
 
-for (i = 0; i < divs; i++) {
-    document.getElementById('div' + i ).addEventListener('click', toggle)
-}
+document.addEventListener('click', toggle)
+
 
 </script>
 </html>

@@ -978,30 +978,27 @@
 
             <hr>
 
-           let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-        
-           let n1 = 1  //I wanna change the number ?
-           
-           let n2 = 9 //for the number ?, & return back
-           
-           
-           let indexN1 = arr.indexOf(n1) //index
-           
-           let indexN2 = arr.indexOf(n2)                        
-           
-           arr.copyWithin(indexN2, indexN1, indexN1 + 1).splice(indexN1, 1, n2)
-           
-           console.log(arr)
+            const change = (n1, n2, arr) => {
 
+                let indexN1 = arr.indexOf(n1)
 
-           output:
+                let indexN2 = arr.indexOf(n2) 
 
-           [9, 2, 3, 4, 5, 6, 7, 8, 1, 0]
+                arr.copyWithin(indexN2, indexN1, indexN1 + 1).splice(indexN1, 1, n2)
 
-        </pre>
+                return arr
+            }
+
+            change(3, 9, arr)
+             
+            [1, 2, 9, 4, 5, 6, 7, 8, 3, 0]
+
+            </pre>
     </div>   
 
     <br>
     
 </body>
 </html>
+
+
