@@ -45,3 +45,8 @@ body{
   #listapaises {
      list-style-type:decimal;
   }
+
+  .classImg{
+      width: 82%;
+      margin-top: 50px;
+  }
