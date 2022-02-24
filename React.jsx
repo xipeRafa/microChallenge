@@ -53,11 +53,9 @@ export default function App() {
   };
 
   const toggle = (id) => {
-    setEdit(
+  
       arr.map((el) => (el.id === id ? (el.toggle = !el.toggle) : el.toggle))
-    );
-    act();
-    setEdit(null);
+  
   };
 
   const [finder, setFinder] = useState("");
@@ -127,6 +125,10 @@ export default function App() {
     </Fragment>
   );
 }
+
+setTimeout(() => {
+  
+}, 1000);
 
 /* css----------------------------------css */
 
