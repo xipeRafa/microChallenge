@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INTERVIEW CSS</title>
+    <title>INTERVIEW PATTERNS</title>
 </head>
 
 <link rel="stylesheet" href="DOM/style.css">
@@ -134,70 +134,193 @@
 </script>
 <body>
 
-    <h1>CSS Interview Questions</h1>
-    <a href="https://www.simplilearn.com/tutorials/css-tutorial/css-interview-questions"
-             target="_blank">CSS →</a>
-
-    <a href="https://css-tricks.com/guides/"
-             target="_blank">CSS Guides →</a>
-
+    <h1>Arrays</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"
+             target="_blank">MDN →</a>
 
     <div>  <!-- Adds and/or removes elements from an array -->
-    <p onclick="toggle()">1.-  Define z-index.</p>
+    <p onclick="toggle()">1.- Adds and or removes elements from an array</p>
 
         <pre id="pre">
 
-            Z-index is used to specify the stack order of elements that overlap each other.
+
+            const arr = [5, 1, 8]
+            arr.splice(2, 0, 'tacos') // (indexToStart, #Replace, toReplace) 
+            console.log(arr)
+
+            Output
+            [5, 1, 'tacos', 8]
+
+            <hr>
+            without modify the original array:
+
+            const arr = [1,2,3]
+            const arr2 = [...arr]
+            arr2.splice(1,0,'jiji')
+            
+            console.log(arr2)
+            console.log(arr)
+
+            // .splice modifies the original Array
+
+            <hr>
+            const arr = [5, 1, 8,3,4,2,3,4,5,6]
+            arr.splice(-1, 1, 'tacos') // Replace the last item
+            console.log(arr)
+            
+            [5, 1, 8, 3, 4, 2, 3, 4, 5, "tacos"]
+            <hr>
+
+            const arr = [5, 1, 8, 4, 3, 5, 6, 7, 7]
+            let val = 4
+            
+            let valueArr = arr.slice(val, val + 1) //give index & get value
+            let valueNum = Number(arr.slice(val, val + 1)) 
+            let valueString = String(arr.slice(val, val + 1)) 
+  
+            console.log(arr)
+            console.log(valueArr)
+            console.log(valueNum)
+            console.log(valueString)
+
+            output:
+
+            [5, 1, 8, 4, 3, 5, 6, 7, 7]
+            [3]
+            3
+            3 
+
         </pre>
-        
+        <pre id="pre2">
+          
+            const vec1 = [0,7,2,3,4,2,6,8,2]
+            const vec = [...vec1]
+            
+                for(i = 0; i < vec.length; i++){  
+
+                    if (vec[i]==2){     //if a item == 2
+                        vec.splice(i,1,'huhu')   //replace with a string
+                    }
+
+                }
+
+             console.log(vec1)
+             console.log(vec)
+
+            Output
+
+            [0, 7, 2, 3, 4, 2, 6, 8, 2]
+            [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu"]
+
+            <hr>
+            const vec1 = [0,7,2,3,4,2,6,8,2,3]
+            const vec = [...vec1]
+
+            vec.forEach((el, i)=> {
+
+                el==2 && vec.splice(i, 1, 'huhu')  
+
+            })
+
+            console.log(vec1) 
+            console.log(vec)
+            
+            [0, 7, "huhu", 3, 4, "huhu", 6, 8, "huhu", 3]
+            <hr>
+            const arr = [5, 2, 8, 4, 2, 5, 6, 2, 7]
+
+            arr.forEach(el=>{
+
+                let findIt = arr.indexOf(2)
+                
+                if(findIt > -1){
+                    arr.splice(findIt, 1, 'meme')
+                    console.log(findIt)
+                }
+            })
+
+            console.log(arr)
+            
+            [5, "meme", 8, 4, "meme", 5, 6, "meme", 7]
+
+             <hr>
+             let arr = ["5", "2", "meme", "4", "2", "String", "6", "2", "7"]
+       
+             arr.forEach((el, i)=> {
+
+                 !isNaN(el) && arr.splice(i, 1, Number(el))
+                 
+             })
+
+        </pre>
     </div>  
     <div>  <!-- Adds one or more elements to the end of an array -->
-        <p onclick="toggle2()">2.- How can you target h3 and h2 with the same styling?</p>
+        <p onclick="toggle2()">2.- Adds one or more elements to the end of an array</p>
            
         <pre id="pre3">
+            <img src="arraysmutation.jpeg"  alt="ss">
 
-            Multiple elements can be targeted by separating with a comma:
+            const arr = [5, 1, 8]
+            arr.push(2)
+            console.log(arr)
 
-            h2, h3 {color: red;}
+            Output
+            [5, 1, 8, 2]
         </pre>
-       
+        <pre id="pre4">
+            <img src="arraysmutation.jpeg"  alt="sss">
+
+            The reverse method called pop extracts the last element of the Array 
+            and decrements the length attribute by one
+
+            const arr = [5, 1, 8]
+            arr.pop()
+            console.log(arr)
+
+            Output
+            [5, 1]
+         </pre>    
     </div>  
     <div>  <!-- Adds one or more elements to the front of an array -->
-        <p onclick="toggle3()">3.- How can you use CSS to control image repetition?</p>
+        <p onclick="toggle3()">3.- Adds one or more elements to the FRONT of an array</p>
 
         <pre id="pre5">
+            <img src="arraysmutation.jpeg"  alt="ssss">
 
-            The background-repeat property is used to control the image. Example:
-
-            h3 {
+            const arr = [5, 1, 8]
+            arr.unshift(2, 7)
+            console.log(arr)
             
-            background-repeat: none;
-            
-             }
-
+            Output
+            [2, 7, 5, 1, 8]
         </pre>
-     
+        <pre id="pre6">
+
+            <img src="arraysmutation.jpeg"  alt="sssss">
+
+            The shift method extracts(remove) the first element of the vector 
+            and shifts the rest of the vector elements forward.
+            
+            const arr = [5, 1, 8]
+            arr.shift()
+            console.log(arr)
+
+            Output
+            [1, 8]
+         </pre>    
     </div> 
     <div>  <!-- Returns a new array comprised of this array joined with other array(s) and/or value(s) -->
-        <p onclick="toggle4()">4.- Tell us about the property used for image scroll controlling?</p>
+        <p onclick="toggle4()">4.- New array comprised of this array joined with other array(s) and/or value(s)</p>
 
         <pre id="pre7">
 
-            The background-attachment property is used to set whether
-             the background image is fixed or it scrolls with the rest of the page.
-
-            Example for a fixed background-image:
-
-            body {
-
-                background-image: url(‘url_of_image’);
-
-                background-repeat: no-repeat;
-
-                background-attachment: fixed;
-
-            }
-
+            const arr = [5, 1, 8]
+            const arr2 = ['a', 'b', 'c']
+            const arr3 = arr.concat(arr2)
+            console.log(arr3)
+            
+            Output
+            [5, 1, 8, 'a', 'b', 'c']
 
         </pre>
        
@@ -206,104 +329,196 @@
     <br/>
 
     <div> <!--Removes elements from an array. -->
-       <p onclick="toggle5()">5.- Explain CSS specificity.</p>
+       <p onclick="toggle5()">5.- Removes elements from an array.</p>
        <pre id="pre8">
 
-
-        CSS specificity is a rank or score that decides style declaration to be used to an element
-
-        The four CSS categories that authorize the selector's specificity level are 
-        IDs, inline style, elements/pseudo-elements, and classes and attributes.
-
+           const arr = [5, 1, 8]
+           arr.splice(2, 1) // (index start, how much)
+           console.log(arr)
+        
+           Output
+           [5, 1] 
        </pre>
     </div>
     <div> <!-- Remove the last element from an array and returns that element. -->
-        <p onclick="toggle6()">6.- What are the properties of flexbox?.</p>
+        <p onclick="toggle6()">6.- Remove the last element from an array and returns that element.</p>
         <pre id="pre9">
  
-            The properties of flexbox are flex-direction, wrap, flow, content, and align-items, and content. 
+            const arr = [5, 1, 8]
+            arr.pop()
+            console.log(arr)
+
+            Output
+            [5,1]
         </pre>
     </div> 
     <div> <!-- Remove the first element from an array and returns that element. -->
-        <p onclick="toggle7()">7.- Tell us about the use of the CSS Box Model.</p>
+        <p onclick="toggle7()">7.- Remove the first element from an array and returns that element.</p>
         <pre id="pre10">
  
-            The CSS Box model is a box binding HTML element that includes padding,
-            border, margin, and the actual content. 
+            const arr = [5, 1, 8]
+            const shiftValue = arr.shift()
+            console.log(arr) // [1,8]
+            console.log(shiftValue) // 5 
             
-            With the box model, we get the authority to add a border all around elements
-            and define space between elements. 
+            Output
+            [1, 8]
         </pre>
     </div>  
     <div> <!-- Remove one or more elements in order for use -->
-        <p onclick="toggle8()">8.- What are the position states in CSS?</p>
+        <p onclick="toggle8()">8.- Remove one or more elements in order for use</p>
         <pre id="pre11">
  
-            The four-position states in CSS are: 
-
-            relative, static, absolute, and fixed. 
+            const arr = [5, 1, 8]
+            const slicedArr = arr.slice(1)
+            console.log(arr)
+            console.log(slicedArr)
             
-            The default position state is static. 
+            Output
+            [5, 1, 8]
+            [1, 8]
+        </pre>
+        <pre id="pre11a">
+
+ 
+            The slice() method returns a shallow copy
+            of a portion of an array into a new array object. 
+            You can specify either just the beginning element 
+            (where end will default to the arrays length) 
+            or both the beginning and the end, 
+            comma-separated.
+            The original array will not be modified.
+
+            <hr>
+
+      const animals = ['ant', 'bison', 'camel', 'duck', 'elephant']
+
+            animals.slice(2)
+                output: Array ["camel", "duck", "elephant"]
+
+            animals.slice(2, 4)
+                output: Array ["camel", "duck"]
+
+            animals.slice(1, 5)
+                output: Array ["bison", "camel", "duck", "elephant"]
+
+            animals.slice(-2)
+                output: Array ["duck", "elephant"]
+
+            animals.slice(2, -1)
+                output: Array ["camel", "duck"]
+
+                <hr>
+
+            .slice(< indexToGet >, < indexToGet > + 1)  //give index & get value
+
+            arr.slice(0,1) // first item 
+            arr.slice(1,2) // second item
+
+            arr.slice(-1) // last item
+            arr.slice(-2, -1) // penultimate item
+            arr.slice(-3, -2) // antepenultimate item  
+
+            const arr = [5, 1, 8]
+            const slicedArr = arr.slice(2,3)
+
+            console.log(arr)
+            console.log(slicedArr)
+
+            [5, 1, 8]
+            [8]
+
         </pre>
     </div>  
 
     <br>
 
     <div> <!-- find item. out if a certain element exist-->
-        <p onclick="toggle9()">9.- Differentiate between absolute and relative in CSS</p>
+        <p onclick="toggle9()">9.- find item. out if a certain element exist</p>
         <pre id="pre12">
  
-            The main difference is that relative is used for the same tag in CSS.
-            If we write right:20 px, then padding shifts 20 px in the right.
-            
-            Whereas absolute is relative to the non-static parent, i.e., 
-            if we write right:20 px, the result will be 20 px far 
-            from the right edge of the parent element. 
+            const arr = [5, 1, 8]
+            const inc = arr.includes(1)
+            console.log(inc)
+
+            Output
+            true
 
         </pre>
     </div> 
     <div> <!-- find item. first or last index number position -->
-        <p onclick="toggle11()">10.- What is the difference between inline, inline-block, and block?</p>
+        <p onclick="toggle11()">10.- find index. first or last index number position</p>
         <pre id="pre14">
 
-            The block elements always start on a new line. 
-            They will also take space for an entire row or width. 
-            List of block elements are < div >, < p >.
+            Returns the first index at which a given element 
+            can be found in the array, or -1 if it is not present.
 
-            Inline elements don't start on a new line, they appear on the same line 
-            as the content and tags beside them. 
-            Some examples of inline elements are < a >, < span > , < strong >, and < img > tags. 
-                
-           Inline-block elements are similar to inline elements, 
-           except they can have padding and margins and set height and width values.
-                
-                
+            const arr = [5, 1, 8, 5]
+            console.log(arr.indexOf(5))
+
+            Output
+            0
         </pre>
-       
+        <pre id="pre14a">
+
+            Returns the LAST (greatest) index of an element within the array 
+            equal to the specified value, or -1 if none is found.
+ 
+            const arr = [5, 1, 8, 5]
+            console.log(arr.lastIndexOf(5))                     
+
+            Output
+            3
+        </pre>
     </div>   
     <div> <!-- the first element value that satisfies a condition -->
-        <p onclick="toggle12()">11.- What are Pseudo elements and Pseudo classes?</p>
+        <p onclick="toggle12()">11.- the first element value that satisfies a condition</p>
         <pre id="pre15">
 
-            ::before
-            ::after
-            ::first-letter
-            ::first-line
-            ::selection
+            const arr = [5, 1, 8]
+            const isTiny = (el) => el < 2
+            console.log(arr.find(isTiny))
+            
+            Output
+            1
+
+            <hr>
+            const arr = [1,1,2,2,3,3,4,4,5,5]
+
+            const isTiny = el => el > 4
+            
+            const tiny = arr.find(isTiny)
+            const positionTiny = arr.findIndex(isTiny)
+            
+            console.log('original:', arr)
+            console.log('value:', tiny)
+            console.log('index', positionTiny)
 
         </pre>
-       
+        <pre id="pre15a">
+
+            Returns the found value in the array, 
+            if an element in the array satisfies 
+            the provided testing function or undefined if not found. 
+            Similar to findIndex(), but it returns the item instead of the index.
+
+            const array = [0,1,,,,5,6]
+
+            array.find(function(value, index) {
+                  console.log('Visited index ' + index + ' with value ' + value)
+            })
+        </pre>
     </div> 
     <div> <!-- the first index of an item that satisfies a condition -->
-        <p onclick="toggle13()">12.- What do the following CSS selectors mean?</p>
+        <p onclick="toggle13()">12.- the first index of an item that satisfies a condition</p>
         <pre id="pre16">
 
-            div, p
-            div p
-            div ~ p 
-            div + p
-            div > p
+            const arr = [5, 1, 8]
+            const isBig = (el) => el > 6
+            console.log(arr.findIndex(isBig))
 
+            Output
+            2
         </pre>
         <pre id="pre16a">
 
