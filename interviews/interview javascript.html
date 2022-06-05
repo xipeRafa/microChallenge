@@ -166,11 +166,14 @@
             Examples:
 
             function crearObjeto(){
+
                 const NAME = Symbol()  
+
                 let obj = {
                     [NAME]:"jon",
                     eage:33
                 }
+
                 let id = Symbol('identificador')
                 obj[id]=0
 
@@ -179,7 +182,7 @@
                         obj[id]=val
                     },
                     getId(){
-                        return obj[id]
+                        return obj[id]  // acceder a las propiedades con Symbol
                     },
                     get(){
                         return obj
@@ -218,7 +221,7 @@
                 console.log('hola tontos')
             }
 
-            persona[SALUDAR]()
+            persona[SALUDAR]()  // acceder a las funciones
 
             for(let propiedad in persona){
                 console.log('key: ', propiedad)
