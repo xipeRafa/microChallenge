@@ -137,7 +137,7 @@
 </script>
 <body>
 
-    <h1>Arrays</h1>
+    <h1>Javascript</h1>
     <a href="https://www.interviewbit.com/javascript-interview-questions/#javscript-data-types"
              target="_blank">Linkn to →</a>
 
@@ -152,17 +152,97 @@
             * BigInt - This data type is used to store numbers which are above
                 the limitation of the Number data type. 
  
-            It can store large integers and is represented by adding “n” to an integer literal.
+                It can store large integers and is represented by adding “n” to an integer literal.
+
+            Collection of data like  objects and arrays
 
             <hr>
             * Symbol - It is a new data type introduced in
-             the ES6 version of javascript. It is used to store an anonymous and unique value.
+             the ES6 version of javascript. It is used to store an anonymous and unique value. (primitive)
 
-            Example :
-            var symbol1 = Symbol('symbol');
+             para crear propiedades privadas en los objetos 
+             (pones la propiedad entre corchetes [] ( const PROPIEDAD = Symbol('description') ) ) 
+             
+            Examples:
+
+            function crearObjeto(){
+                const NAME = Symbol()  
+                let obj = {
+                    [NAME]:"jon",
+                    eage:33
+                }
+                let id = Symbol('identificador')
+                obj[id]=0
+
+                return{
+                    setId(val){
+                        obj[id]=val
+                    },
+                    getId(){
+                        return obj[id]
+                    },
+                    get(){
+                        return obj
+                    }
+                }
+            }
+
+            let x = crearObjeto()
+
+            let objeto = x.get()
+            console.log('objeto:', objeto)
+
+            x.setId(33)
+
+            let t = x.getId()
+            console.log(t)
+
+            console:
+            objeto: {age: 33, Symbol(): 'jon', Symbol(identificador): 0}
+            33
 
 
-            Collection of data like  objects and arrays
+            <hr>
+
+            
+            const NOMBRE = Symbol('nombre');
+            const SALUDAR = Symbol('saludarFunction');
+
+            let persona = {
+                [NOMBRE]:'raulito',
+                edad: 33,
+                color:'rojo'
+            }
+
+            persona[SALUDAR]= function(){
+                console.log('hola tontos')
+            }
+
+            persona[SALUDAR]()
+
+            for(let propiedad in persona){
+                console.log('key: ', propiedad)
+                console.log('value: ', persona[propiedad])
+            }
+
+
+           Object.getOwnPropertySymbols(persona)
+
+
+           console:
+
+            hola tontos
+
+            key:  edad
+            value:  33
+
+            key:  color
+            value:  rojo
+
+           (2) [Symbol(nombre), Symbol(saludarFunction)]
+
+           
+
 
            
         </pre>
@@ -198,7 +278,10 @@
 
             “ === “ is used to compare both value and types.
 
+            
+            <img src="./estrict.png" class="classImg" alt="">
 
+            <img src="./abstract.png" class="classImg" alt="">
         </pre>
          
     </div> 
@@ -581,7 +664,7 @@
             
             var is function scope (global scope)
 
-
+            <img src="./let.png" class="classImg" alt="">
         </pre>
      
     </div> 
